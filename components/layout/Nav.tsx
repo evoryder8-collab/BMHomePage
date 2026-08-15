@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import CartButton from "@/components/cart/CartButton";
+import AccountLink from "@/components/auth/AccountLink";
 
 const LINKS = [
   { href: "/apps", label: "Apps" },
@@ -40,13 +41,8 @@ export default function Nav() {
         </div>
 
         <div className="flex items-center gap-3">
-          <span id="nav-account-slot" className="hidden md:block">
-            <Link
-              href="/login"
-              className="text-sm text-ink/70 transition-colors hover:text-ink"
-            >
-              Log in
-            </Link>
+          <span className="hidden md:block">
+            <AccountLink />
           </span>
           <CartButton />
           <button

@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
 import CheckoutModal from "@/components/cart/CheckoutModal";
 import { CartProvider } from "@/lib/cart";
+import { AuthProvider } from "@/lib/auth";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -32,13 +33,15 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} flex min-h-screen flex-col antialiased`}
       >
-        <CartProvider>
-          <Nav />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <CartDrawer />
-          <CheckoutModal />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Nav />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <CartDrawer />
+            <CheckoutModal />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
