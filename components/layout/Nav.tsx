@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import CartButton from "@/components/cart/CartButton";
 
 const LINKS = [
   { href: "/apps", label: "Apps" },
@@ -47,7 +48,7 @@ export default function Nav() {
               Log in
             </Link>
           </span>
-          <span id="nav-cart-slot" />
+          <CartButton />
           <button
             aria-label="Menu"
             className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
