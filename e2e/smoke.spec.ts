@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 const ROUTES: [string, string | RegExp][] = [
-  [".", "Instruments,"],
+  [".", "Make your work"],
   ["apps/", "The instruments."],
   ["finalova/", /The finishing/],
   ["finalova/pricing/", /Own it\. Or subscribe\./],
@@ -62,11 +62,11 @@ test("account gate redirects logged-out users to login", async ({ page }) => {
   await expect(page.locator("h1")).toContainText("Welcome back.");
 });
 
-test("hero renders under reduced motion", async ({ browser }) => {
+test("hero renders under reduced motion", async ({ browser, baseURL }) => {
   const ctx = await browser.newContext({ reducedMotion: "reduce" });
   const page = await ctx.newPage();
-  await page.goto("http://localhost:4173/BMHomePage/");
-  await expect(page.locator("h1")).toContainText("Instruments,");
+  await page.goto(baseURL!);
+  await expect(page.locator("h1")).toContainText("Make your work");
   await ctx.close();
 });
 

@@ -30,12 +30,19 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: {
-    default: "Barbu Media: Instruments, not apps.",
+    default: "Barbu Media: Make your work undeniable.",
     template: "%s · Barbu Media",
   },
   description:
-    "Professional Mac and iPhone software from Zürich: Finalova, the media adaptation and delivery studio, and B∕A Studio, the before-and-after that can't lie.",
+    "Native professional software from Zürich: Finalova finishes every media deliverable, and B∕A Studio turns real before-and-after results into measurable proof.",
   metadataBase: new URL(SITE.url),
+  openGraph: {
+    title: "Barbu Media: Make your work undeniable.",
+    description:
+      "Finalova finishes media. B∕A Studio proves results. Two native instruments for professionals who refuse to ship almost.",
+    type: "website",
+    siteName: "Barbu Media",
+  },
 };
 
 export default function RootLayout({
@@ -44,6 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${bodoni.variable} ${newsreader.variable} ${grotesk.variable} ${syne.variable}`}
     >
       <body className="flex min-h-screen flex-col antialiased">

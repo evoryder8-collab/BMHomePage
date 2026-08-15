@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button";
 import Chapter from "@/components/finalova/Chapter";
 import Tilt3D from "@/components/ui/Tilt3D";
 import ScreenshotFrame from "@/components/ui/ScreenshotFrame";
+import { withBase } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Finalova: the finishing line",
@@ -119,9 +120,9 @@ const CHAPTERS = [
 
 export default function FinalovaPage() {
   return (
-    <div>
+    <div className="product-detail product-detail-finalova">
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="product-detail-hero relative overflow-hidden">
         <div className="container-page flex min-h-[78vh] flex-col items-center justify-center pt-24 text-center">
           <p
             className="eyebrow rise mb-7 text-aurora-to/90"
@@ -150,14 +151,18 @@ export default function FinalovaPage() {
             </Button>
           </div>
         </div>
-        <div className="container-page relative pb-28 pt-16">
-          <Tilt3D from={26}>
-            <ScreenshotFrame
-              src="/screenshots/finalova/window-main.webp"
-              alt="The Finalova main window with a full batch, live preview and caption timeline"
-              priority
+        <div className="container-page relative pb-24 pt-6">
+          <div className="product-campaign-visual rise" style={{ animationDelay: "0.48s" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={withBase("/art/finalova-devices.webp")}
+              alt="Finalova on a Mac with vertical and widescreen mobile video previews"
+              width="1536"
+              height="1024"
+              loading="eager"
+              decoding="async"
             />
-          </Tilt3D>
+          </div>
         </div>
       </section>
 

@@ -1,5 +1,8 @@
 import { defineConfig } from "@playwright/test";
 
+const port = process.env.PLAYWRIGHT_PORT ?? "4173";
+const previewUrl = `http://localhost:${port}/BMHomePage/`;
+
 // Tests run against the production static export served with the same
 // basePath GitHub Pages uses, so path bugs surface before deploy.
 export default defineConfig({
@@ -9,13 +12,13 @@ export default defineConfig({
   use: {
     // Trailing slash matters: relative page.goto() paths resolve under the
     // basePath instead of the origin root.
-    baseURL: "http://localhost:4173/BMHomePage/",
+    baseURL: previewUrl,
   },
   webServer: {
     // Nest the export under /BMHomePage so the served paths match GitHub Pages.
     command:
-      "mkdir -p .serve && rm -f .serve/BMHomePage && ln -s ../out .serve/BMHomePage && npx serve .serve -l 4173",
-    url: "http://localhost:4173/BMHomePage/",
+      `mkdir -p .serve && rm -f .serve/BMHomePage && ln -s ../out .serve/BMHomePage && npx serve .serve -l ${port}`,
+    url: previewUrl,
     reuseExistingServer: !process.env.CI,
     timeout: 30_000,
   },

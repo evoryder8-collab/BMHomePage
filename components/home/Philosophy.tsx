@@ -1,66 +1,90 @@
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
 
-const PILLARS = [
+const PRINCIPLES = [
   {
     n: "01",
-    title: "Offline first",
-    body: "Your work never leaves your machine. No cloud requirement, no telemetry, no quiet uploads. Your clients' faces and your masters stay yours.",
+    title: "Native, all the way down.",
+    body: "Metal, Core Image and VideoToolbox—not a web wrapper wearing a Mac costume.",
   },
   {
     n: "02",
-    title: "Preview is truth",
-    body: "Both apps render their preview through the same engine as the export. What you approve on screen is, pixel for pixel, what ships.",
+    title: "Private by construction.",
+    body: "Your masters and your clients’ faces stay on the devices you trust. No cloud dependency. No telemetry.",
   },
   {
     n: "03",
-    title: "Born on Apple Silicon",
-    body: "Native Metal and VideoToolbox pipelines, tuned for everything from an M1 Air to an M4 Max. No Electron anywhere.",
+    title: "Preview is a promise.",
+    body: "The geometry you approve is the geometry we export. No approximation between screen and delivery.",
   },
 ];
 
 export default function Philosophy() {
   return (
-    <section className="relative py-32">
-      <div className="hairline-jade absolute left-0 right-0 top-0 mx-auto max-w-5xl" />
-      <div className="container-page">
-        <Reveal>
-          <p className="eyebrow mb-5 text-jade/80">Why Barbu Media</p>
-        </Reveal>
-        <Reveal delay={0.06}>
-          <h2 className="display-lg max-w-3xl">
-            Software you can <span className="shimmer-jade">defend.</span>
-          </h2>
-        </Reveal>
-        <Reveal delay={0.12}>
-          <p className="lede mt-6 max-w-xl text-ink/60">
-            Every instrument is built in Zürich on the same three promises.
-          </p>
-        </Reveal>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {PILLARS.map((p, i) => (
-            <Reveal key={p.title} delay={0.1 + i * 0.08}>
-              <div className="glass-card gleam-border h-full p-8">
-                <div className="font-display text-4xl text-jade/45">{p.n}</div>
-                <h3 className="font-ui mt-5 text-lg font-semibold tracking-wide text-ink">
-                  {p.title}
-                </h3>
-                <p className="mt-4 text-[15.5px] leading-relaxed text-ink/60">
-                  {p.body}
-                </p>
-              </div>
+    <>
+      <section className="bm-atelier">
+        <div className="container-page">
+          <Reveal>
+            <p className="bm-kicker">The Barbu standard</p>
+          </Reveal>
+          <div className="bm-atelier-heading">
+            <Reveal delay={0.06}>
+              <h2>
+                Built like the work
+                <br />
+                <em>depends on it.</em>
+              </h2>
             </Reveal>
-          ))}
-        </div>
-        <Reveal delay={0.2}>
-          <div className="mt-16 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-            <Button href="/store">Visit the store</Button>
-            <span className="text-[15px] italic text-ink/50">
-              Try before you buy. Both apps ship with a free trial.
-            </span>
+            <Reveal delay={0.12}>
+              <p>
+                Because it does. Every instrument is conceived and engineered
+                in Zürich around three promises that are expensive to keep—and
+                obvious when they are broken.
+              </p>
+            </Reveal>
           </div>
-        </Reveal>
-      </div>
-    </section>
+
+          <div className="bm-principles">
+            {PRINCIPLES.map((principle, i) => (
+              <Reveal key={principle.n} delay={0.06 + i * 0.07}>
+                <article>
+                  <span>{principle.n}</span>
+                  <h3>{principle.title}</h3>
+                  <p>{principle.body}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bm-closing">
+        <div className="bm-closing-glow" aria-hidden />
+        <div className="container-page bm-closing-inner">
+          <Reveal>
+            <p className="bm-kicker bm-kicker-dark">Ready when your work is</p>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <h2>
+              Ship the work.
+              <br />
+              <em>Keep the standard.</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <p>
+              Try both instruments before you buy. No cloud account required
+              to understand what native professional software should feel like.
+            </p>
+          </Reveal>
+          <Reveal delay={0.18}>
+            <div className="bm-closing-actions">
+              <Button href="/store">Visit the store</Button>
+              <Button href="/apps" variant="ghost">Compare the instruments</Button>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }

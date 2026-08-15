@@ -4,10 +4,10 @@ import Philosophy from "@/components/home/Philosophy";
 
 export default function Home() {
   return (
-    <>
+    <div className="home-page">
       <Hero />
       <AppShowcase />
       <Philosophy />
-    </>
+    </div>
   );
 }

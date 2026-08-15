@@ -3,6 +3,7 @@ import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
 import Tilt3D from "@/components/ui/Tilt3D";
 import ScreenshotFrame from "@/components/ui/ScreenshotFrame";
+import { withBase } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "B∕A Studio: the comparison that can't lie",
@@ -16,9 +17,9 @@ function GildedDivider() {
 
 export default function BaStudioPage() {
   return (
-    <div className="didone-scope">
+    <div className="didone-scope product-detail product-detail-ba">
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="product-detail-hero product-detail-hero-ba relative overflow-hidden">
         <div className="container-page flex min-h-[78vh] flex-col items-center justify-center pt-24 text-center">
           <p
             className="eyebrow rise mb-7 text-jade/90"
@@ -56,14 +57,18 @@ export default function BaStudioPage() {
             </Button>
           </div>
         </div>
-        <div className="container-page relative pb-28 pt-16">
-          <Tilt3D from={26}>
-            <ScreenshotFrame
-              src="/screenshots/ba-studio/window-main.webp"
-              alt="The B∕A Studio workspace: an aligned pair on the editorial card beside the Export Lab"
-              priority
+        <div className="container-page relative pb-24 pt-6">
+          <div className="product-campaign-visual rise" style={{ animationDelay: "0.48s" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={withBase("/art/ba-studio-devices.webp")}
+              alt="B/A Studio running on a Mac and iPhone with an honest measured comparison"
+              width="1536"
+              height="1024"
+              loading="eager"
+              decoding="async"
             />
-          </Tilt3D>
+          </div>
         </div>
       </section>
 

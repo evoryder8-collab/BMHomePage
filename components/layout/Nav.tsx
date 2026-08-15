@@ -6,72 +6,67 @@ import CartButton from "@/components/cart/CartButton";
 import AccountLink from "@/components/auth/AccountLink";
 
 const LINKS = [
-  { href: "/apps", label: "Apps" },
   { href: "/finalova", label: "Finalova" },
   { href: "/ba-studio", label: "B∕A Studio" },
+  { href: "/apps", label: "All instruments" },
+];
+
+const MOBILE_LINKS = [
+  ...LINKS,
   { href: "/store", label: "Store" },
   { href: "/press", label: "Press" },
   { href: "/contact", label: "Contact" },
+  { href: "/login", label: "Log in" },
 ];
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/10 bg-sage/80 backdrop-blur-xl">
-      <nav className="container-page flex h-[4.5rem] items-center justify-between">
-        <Link
-          href="/"
-          className="font-display text-lg tracking-[0.22em] text-ink"
-          onClick={() => setOpen(false)}
-        >
-          BARBU&nbsp;MEDIA
+    <header className="bm-nav">
+      <nav className="container-page bm-nav-inner" aria-label="Main navigation">
+        <Link href="/" className="bm-logo" onClick={() => setOpen(false)}>
+          <span className="bm-logo-glyph" aria-hidden>B∕M</span>
+          <span>
+            <strong>BARBU MEDIA</strong>
+            <small>SOFTWARE ATELIER · ZÜRICH</small>
+          </span>
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
-          {LINKS.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="font-ui text-[13px] tracking-[0.08em] text-ink/60 transition-colors duration-200 hover:text-jade-soft"
-            >
-              {l.label}
-            </Link>
+        <div className="bm-nav-links">
+          {LINKS.map((link) => (
+            <Link key={link.href} href={link.href}>{link.label}</Link>
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
-          <span className="hidden md:block">
-            <AccountLink />
-          </span>
+        <div className="bm-nav-actions">
+          <AccountLink className="bm-nav-account" />
+          <Link href="/store" className="bm-nav-store">Store</Link>
           <CartButton />
           <button
-            aria-label="Menu"
-            className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
-            onClick={() => setOpen((v) => !v)}
+            type="button"
+            className={`bm-menu-button ${open ? "is-open" : ""}`}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
           >
-            <span className="h-px w-5 bg-ink" />
-            <span className="h-px w-5 bg-ink" />
+            <span />
+            <span />
           </button>
         </div>
       </nav>
 
-      {open && (
-        <div className="border-t border-ink/10 bg-sage md:hidden">
-          <div className="container-page flex flex-col gap-4 py-6">
-            {[...LINKS, { href: "/login", label: "Log in" }].map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="font-ui text-base text-ink/80"
-                onClick={() => setOpen(false)}
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
+      <div className={`bm-mobile-menu ${open ? "is-open" : ""}`}>
+        <div className="container-page">
+          <p>Navigate the atelier</p>
+          {MOBILE_LINKS.map((link, index) => (
+            <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
+              <span>0{index + 1}</span>
+              {link.label}
+            </Link>
+          ))}
         </div>
-      )}
+      </div>
     </header>
   );
 }
