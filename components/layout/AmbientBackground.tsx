@@ -4,7 +4,7 @@
 export default function AmbientBackground() {
   return (
     <div className="ambient" aria-hidden>
-      <div className="ambient-blob ambient-gold" />
+      <div className="ambient-blob ambient-jade" />
       <div className="ambient-blob ambient-meadow" />
       <div className="ambient-blob ambient-cream" />
     </div>

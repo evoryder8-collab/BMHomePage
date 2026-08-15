@@ -27,7 +27,7 @@ export default function CartButton() {
       {count > 0 && (
         <span
           data-testid="cart-badge"
-          className="absolute -right-0.5 -top-0.5 flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-gold px-1 text-[10px] font-bold text-white"
+          className="absolute -right-0.5 -top-0.5 flex h-4.5 min-w-4.5 items-center justify-center rounded-full bg-jade px-1 text-[10px] font-bold text-white"
         >
           {count}
         </span>

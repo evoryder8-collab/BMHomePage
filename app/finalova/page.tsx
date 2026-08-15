@@ -167,7 +167,7 @@ export default function FinalovaPage() {
 
       {/* Apple Silicon + trust strip */}
       <section className="relative">
-        <div className="hairline-gold mx-auto max-w-4xl" />
+        <div className="hairline-jade mx-auto max-w-4xl" />
         <div className="container-page py-24 text-center md:py-28">
           <Reveal>
             <h2 className="display-md">
@@ -185,11 +185,11 @@ export default function FinalovaPage() {
           <Reveal delay={0.2}>
             <div className="font-ui mt-11 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-[12.5px] uppercase tracking-[0.18em] text-ink/45">
               <span>Fully offline</span>
-              <span className="text-gold/60">·</span>
+              <span className="text-jade/60">·</span>
               <span>No telemetry</span>
-              <span className="text-gold/60">·</span>
+              <span className="text-jade/60">·</span>
               <span>Preview = export</span>
-              <span className="text-gold/60">·</span>
+              <span className="text-jade/60">·</span>
               <span>Originals never modified</span>
             </div>
           </Reveal>
@@ -198,11 +198,11 @@ export default function FinalovaPage() {
 
       {/* Closing CTA */}
       <section className="relative">
-        <div className="hairline-gold mx-auto max-w-4xl" />
+        <div className="hairline-jade mx-auto max-w-4xl" />
         <div className="container-page py-28 text-center md:py-36">
           <Reveal>
             <h2 className="display-lg">
-              Invoice the <span className="shimmer-gold">adaptation,</span>
+              Invoice the <span className="shimmer-jade">adaptation,</span>
               <br />
               not just the shoot.
             </h2>

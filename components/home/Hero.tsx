@@ -11,13 +11,13 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="container-page relative flex min-h-[88vh] flex-col items-center justify-center pb-12 pt-28 text-center">
-        <p className="eyebrow rise mb-8 text-gold/90" style={d(0.05)}>
+        <p className="eyebrow rise mb-8 text-jade/90" style={d(0.05)}>
           Barbu Media · Zürich
         </p>
         <h1 className="display-xl rise max-w-5xl" style={d(0.14)}>
           Instruments,
           <br />
-          <span className="shimmer-gold">not apps.</span>
+          <span className="shimmer-jade">not apps.</span>
         </h1>
         <p
           className="lede rise mt-9 max-w-2xl text-ink/70"
@@ -42,7 +42,7 @@ export default function Hero() {
       </div>
 
       <div className="container-page relative pb-32">
-        <div className="hairline-gold mx-auto mb-16 max-w-3xl" />
+        <div className="hairline-jade mx-auto mb-16 max-w-3xl" />
         <Tilt3D from={24}>
           <ScreenshotFrame
             src="/screenshots/finalova/window-main.webp"

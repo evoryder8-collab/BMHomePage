@@ -31,7 +31,7 @@ export default function CheckoutModal() {
         className="w-full max-w-md rounded-2xl bg-linen p-8 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="eyebrow mb-2 text-gold">Sandbox</div>
+        <div className="eyebrow mb-2 text-jade">Sandbox</div>
         <h2 className="display-md mb-3">Almost open.</h2>
         <p className="mb-5 text-sm leading-relaxed text-ink/65">
           Secure worldwide checkout is almost ready. Your cart is saved on

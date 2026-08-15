@@ -6,15 +6,17 @@ import { formatPrice, type Product } from "@/lib/products";
 interface PricingCardProps {
   product: Product;
   highlight?: boolean;
-  dark?: boolean;
-  /** Gradient for the highlight ring; defaults to the gold pair. */
+  /** Accent gradient pair; defaults to the jade pair. */
   accent?: [string, string];
+  /** Optional honest footnote rendered under the button. */
+  note?: string;
 }
 
 export default function PricingCard({
   product,
   highlight = false,
-  accent = ["#c8a44b", "#e6cf8d"],
+  accent = ["#2e7d54", "#6bb08c"],
+  note,
 }: PricingCardProps) {
   const { add } = useCart();
   const period =
@@ -22,38 +24,40 @@ export default function PricingCard({
       ? "per month"
       : product.billing === "annual"
         ? "per year"
-        : "one purchase";
+        : "one payment";
 
   return (
     <div
       className={`group relative h-full rounded-[1.6rem] p-px transition-transform duration-300 hover:-translate-y-1.5 ${
-        highlight ? "" : "bg-ink/15"
+        highlight ? "" : "bg-ink/12"
       }`}
       style={
         highlight
           ? {
               background: `linear-gradient(140deg, ${accent[0]}, ${accent[1]} 45%, ${accent[0]})`,
-              boxShadow: `0 30px 80px -30px ${accent[0]}80`,
+              boxShadow: `0 30px 80px -34px ${accent[0]}99`,
             }
           : undefined
       }
     >
-      <div className="gleam-border relative flex h-full flex-col rounded-[calc(1.6rem-1px)] bg-white/85 p-8 backdrop-blur">
-        {product.badge && (
-          <span
-            className="font-ui absolute -top-3 right-7 rounded-full px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-espresso shadow-md"
-            style={{
-              background: `linear-gradient(120deg, ${accent[1]}, ${accent[0]})`,
-            }}
-          >
-            {product.badge}
-          </span>
-        )}
-
-        <div className="eyebrow text-[10px] text-ink/45">
-          {product.edition}
+      <div className="gleam-border relative flex h-full flex-col rounded-[calc(1.6rem-1px)] bg-white/90 p-8 backdrop-blur">
+        {/* Header row: edition left, badge right, nothing absolute, nothing clipped */}
+        <div className="flex items-center justify-between gap-3">
+          <div className="eyebrow text-[10px] text-ink/45">
+            {product.edition}
+          </div>
+          {product.badge && (
+            <span
+              className="font-ui whitespace-nowrap rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white"
+              style={{
+                background: `linear-gradient(120deg, ${accent[0]}, ${accent[1]})`,
+              }}
+            >
+              {product.badge}
+            </span>
+          )}
         </div>
-        <h3 className="font-display mt-2 text-xl text-ink">
+        <h3 className="font-display mt-2.5 text-xl text-ink">
           {product.name}
         </h3>
 
@@ -93,21 +97,27 @@ export default function PricingCard({
 
         <button
           onClick={() => add(product.sku)}
-          className={`font-ui w-full rounded-full py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 active:scale-[0.98] ${
+          className={`btn-leaf font-ui w-full py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.16em] ${
             highlight
-              ? "text-espresso shadow-lg hover:brightness-110"
-              : "border border-ink/25 text-ink hover:border-gold/60 hover:text-gold-soft"
+              ? "text-white shadow-lg hover:brightness-110"
+              : "border border-ink/25 text-ink hover:border-jade hover:text-jade-deep"
           }`}
           style={
             highlight
               ? {
-                  background: `linear-gradient(120deg, ${accent[1]}, ${accent[0]})`,
+                  background: `linear-gradient(120deg, ${accent[0]}, ${accent[1]})`,
                 }
               : undefined
           }
         >
           Add to cart
         </button>
+
+        {note && (
+          <p className="mt-4 border-t border-ink/10 pt-4 text-[12.5px] leading-relaxed text-ink/50">
+            {note}
+          </p>
+        )}
       </div>
     </div>
   );

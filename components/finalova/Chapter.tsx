@@ -30,7 +30,7 @@ export default function Chapter({
       {index && (
         <div
           aria-hidden
-          className={`chapter-num absolute -top-6 ${flip ? "left-2 md:left-8" : "right-2 md:right-8"}`}
+          className={`chapter-num absolute top-4 ${flip ? "left-4 md:left-10" : "right-4 md:right-10"}`}
         >
           {index}
         </div>

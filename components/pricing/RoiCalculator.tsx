@@ -41,15 +41,15 @@ export default function RoiCalculator() {
   const r = roi(shoots, fee);
 
   return (
-    <div className="glass-card glass-card-gold overflow-hidden">
+    <div className="glass-card glass-card-jade overflow-hidden">
       <div className="grid lg:grid-cols-[1fr_1.1fr]">
         {/* Inputs */}
         <div className="p-9 sm:p-12">
-          <div className="eyebrow mb-4 text-gold/90">Do the math</div>
+          <div className="eyebrow mb-4 text-jade/90">Do the math</div>
           <h3 className="display-md">
             Your edit is done.
             <br />
-            <span className="shimmer-gold">Now sell the delivery.</span>
+            <span className="shimmer-jade">Now sell the delivery.</span>
           </h3>
           <p className="mt-5 max-w-sm text-[15.5px] leading-[1.8] text-ink/60">
             Studios charge for the ready-to-post package: every channel, every
@@ -73,7 +73,7 @@ export default function RoiCalculator() {
                 max={30}
                 value={shoots}
                 onChange={(e) => setShoots(Number(e.target.value))}
-                className="slider-gold w-full"
+                className="slider-jade w-full"
                 aria-label="Shoots delivered per month"
               />
             </label>
@@ -93,7 +93,7 @@ export default function RoiCalculator() {
                 step={25}
                 value={fee}
                 onChange={(e) => setFee(Number(e.target.value))}
-                className="slider-gold w-full"
+                className="slider-jade w-full"
                 aria-label="Adaptation package price"
               />
             </label>
@@ -116,7 +116,7 @@ export default function RoiCalculator() {
             </div>
             <div
               data-testid="roi-monthly"
-              className="shimmer-gold font-display mt-2 text-6xl sm:text-7xl"
+              className="shimmer-jade font-display mt-2 text-6xl sm:text-7xl"
             >
               $<RollingNumber value={r.monthlyRevenue} />
             </div>
@@ -133,7 +133,7 @@ export default function RoiCalculator() {
               className="text-lg text-ink"
             >
               Studio has paid for itself{" "}
-              <span className="text-gold-soft">
+              <span className="text-jade-soft">
                 {r.shootsToPayOff === 1
                   ? "after your first shoot"
                   : `after ${r.shootsToPayOff} shoots`}

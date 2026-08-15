@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 function GildedDivider() {
-  return <div className="hairline-gold mx-auto my-0 w-full max-w-4xl" />;
+  return <div className="hairline-jade mx-auto my-0 w-full max-w-4xl" />;
 }
 
 export default function BaStudioPage() {
@@ -21,7 +21,7 @@ export default function BaStudioPage() {
       <section className="relative overflow-hidden">
         <div className="container-page flex min-h-[78vh] flex-col items-center justify-center pt-24 text-center">
           <p
-            className="eyebrow rise mb-7 text-gold/90"
+            className="eyebrow rise mb-7 text-jade/90"
             style={{ animationDelay: "0.05s" }}
           >
             B∕A Studio · for Mac &amp; iPhone
@@ -29,7 +29,7 @@ export default function BaStudioPage() {
           <h1 className="display-xl rise" style={{ animationDelay: "0.14s" }}>
             The comparison
             <br />
-            <span className="shimmer-gold">that can&rsquo;t lie.</span>
+            <span className="shimmer-jade">that can&rsquo;t lie.</span>
           </h1>
           <p
             className="lede rise mt-8 max-w-2xl text-ink/70"
@@ -40,8 +40,14 @@ export default function BaStudioPage() {
             facialists and lifting practitioners whose real results deserve to
             be believed again.
           </p>
+          <p
+            className="rise mt-7 font-mono text-[11px] tracking-[0.28em] text-jade/80"
+            style={{ animationDelay: "0.32s" }}
+          >
+            RIGID TRANSFORM · GLOBAL TONE MATCH · 95% CONFIDENCE GATE
+          </p>
           <div
-            className="rise mt-11 flex flex-col gap-4 sm:flex-row"
+            className="rise mt-9 flex flex-col gap-4 sm:flex-row"
             style={{ animationDelay: "0.38s" }}
           >
             <Button href="/ba-studio/pricing">See pricing</Button>
@@ -63,17 +69,17 @@ export default function BaStudioPage() {
 
       {/* Honesty, illustrated by the zero card */}
       <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute -top-6 right-2 md:right-8">
+        <div aria-hidden className="chapter-num absolute top-4 right-4 md:right-10">
           01
         </div>
         <div className="container-page grid items-center gap-14 py-24 md:grid-cols-2 md:py-32">
           <div>
             <Reveal>
-              <p className="eyebrow mb-5 text-gold">The thesis</p>
+              <p className="eyebrow mb-5 text-jade">The thesis</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display-md">
-                Honesty is <span className="shimmer-gold">the product.</span>
+                Honesty is <span className="shimmer-jade">the product.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
@@ -109,7 +115,7 @@ export default function BaStudioPage() {
 
       {/* Measurement */}
       <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute -top-6 left-2 md:left-8">
+        <div aria-hidden className="chapter-num absolute top-4 left-4 md:left-10">
           02
         </div>
         <div className="container-page grid items-center gap-14 py-24 md:grid-cols-2 md:py-32">
@@ -122,11 +128,11 @@ export default function BaStudioPage() {
           </Tilt3D>
           <div>
             <Reveal>
-              <p className="eyebrow mb-5 text-gold">The B∕A Lift Index</p>
+              <p className="eyebrow mb-5 text-jade">The B∕A Lift Index</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display-md">
-                Measured in <span className="shimmer-gold">millimetres.</span>
+                Measured in <span className="shimmer-jade">millimetres.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
@@ -140,11 +146,11 @@ export default function BaStudioPage() {
               </p>
             </Reveal>
             <Reveal delay={0.24}>
-              <div className="glass-card glass-card-gold mt-9 px-7 py-6 text-center">
+              <div className="glass-card glass-card-jade mt-9 px-7 py-6 text-center">
                 <div className="font-ui text-[13.5px] text-ink/70">
                   Lift Index = 250 × max(0, measured lift − 95% noise limit)
                 </div>
-                <div className="font-ui mt-3 text-xs tracking-[0.24em] text-gold-soft">
+                <div className="font-ui mt-3 text-xs tracking-[0.24em] text-jade-soft">
                   B∕A LIFT INDEX 375 · +2.9 MM
                 </div>
               </div>
@@ -157,18 +163,18 @@ export default function BaStudioPage() {
 
       {/* Capture */}
       <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute -top-6 right-2 md:right-8">
+        <div aria-hidden className="chapter-num absolute top-4 right-4 md:right-10">
           03
         </div>
         <div className="container-page py-24 md:py-32">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <p className="eyebrow mb-5 text-gold">Guided capture</p>
+              <p className="eyebrow mb-5 text-jade">Guided capture</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display-md">
                 The camera that{" "}
-                <span className="shimmer-gold">matches your last shot.</span>
+                <span className="shimmer-jade">matches your last shot.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
@@ -198,7 +204,7 @@ export default function BaStudioPage() {
 
       {/* Content engine */}
       <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute -top-6 left-2 md:left-8">
+        <div aria-hidden className="chapter-num absolute top-4 left-4 md:left-10">
           04
         </div>
         <div className="container-page grid items-center gap-14 py-24 md:grid-cols-2 md:py-32">
@@ -211,11 +217,11 @@ export default function BaStudioPage() {
           </Tilt3D>
           <div>
             <Reveal>
-              <p className="eyebrow mb-5 text-gold">The content engine</p>
+              <p className="eyebrow mb-5 text-jade">The content engine</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display-md">
-                One capture. <span className="shimmer-gold">A full campaign.</span>
+                One capture. <span className="shimmer-jade">A full campaign.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
@@ -229,7 +235,7 @@ export default function BaStudioPage() {
               </p>
             </Reveal>
             <Reveal delay={0.24}>
-              <ul className="mt-8 space-y-3 border-l border-gold/35 pl-5 font-ui text-[13.5px] text-ink/70">
+              <ul className="mt-8 space-y-3 border-l border-jade/35 pl-5 font-ui text-[13.5px] text-ink/70">
                 <li>Full-resolution Display P3 stills for feed, story and print</li>
                 <li>Live preview renders pixel-for-pixel what you&rsquo;ll post</li>
                 <li>Measurement claims structurally excluded from video cards</li>
@@ -243,18 +249,18 @@ export default function BaStudioPage() {
 
       {/* Trust */}
       <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute -top-6 right-2 md:right-8">
+        <div aria-hidden className="chapter-num absolute top-4 right-4 md:right-10">
           05
         </div>
         <div className="container-page py-24 md:py-32">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <p className="eyebrow mb-5 text-gold">Trust architecture</p>
+              <p className="eyebrow mb-5 text-jade">Trust architecture</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display-md">
                 Provenance without{" "}
-                <span className="shimmer-gold">surveillance.</span>
+                <span className="shimmer-jade">surveillance.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
@@ -275,10 +281,10 @@ export default function BaStudioPage() {
 
       {/* Motto + CTA */}
       <section className="relative py-24 text-center md:py-32">
-        <div className="hairline-gold absolute left-0 right-0 top-0 mx-auto max-w-4xl" />
+        <div className="hairline-jade absolute left-0 right-0 top-0 mx-auto max-w-4xl" />
         <div className="container-page">
           <Reveal>
-            <p className="font-ui text-xs tracking-[0.4em] text-gold-soft">
+            <p className="font-ui text-xs tracking-[0.4em] text-jade-soft">
               TWO ORIGINALS · ONE RIGID FRAME · ZERO COSMETIC EDITS
             </p>
           </Reveal>
@@ -286,7 +292,7 @@ export default function BaStudioPage() {
             <h2 className="display-lg mt-8">
               Results that hold up
               <br />
-              when a <span className="shimmer-gold">skeptic</span> pushes back.
+              when a <span className="shimmer-jade">skeptic</span> pushes back.
             </h2>
           </Reveal>
           <Reveal delay={0.22}>

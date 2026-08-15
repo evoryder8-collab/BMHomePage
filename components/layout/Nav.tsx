@@ -33,7 +33,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="font-ui text-[13px] tracking-[0.08em] text-ink/60 transition-colors duration-200 hover:text-gold-soft"
+              className="font-ui text-[13px] tracking-[0.08em] text-ink/60 transition-colors duration-200 hover:text-jade-soft"
             >
               {l.label}
             </Link>

@@ -22,14 +22,14 @@ const PILLARS = [
 export default function Philosophy() {
   return (
     <section className="relative py-32">
-      <div className="hairline-gold absolute left-0 right-0 top-0 mx-auto max-w-5xl" />
+      <div className="hairline-jade absolute left-0 right-0 top-0 mx-auto max-w-5xl" />
       <div className="container-page">
         <Reveal>
-          <p className="eyebrow mb-5 text-gold/80">Why Barbu Media</p>
+          <p className="eyebrow mb-5 text-jade/80">Why Barbu Media</p>
         </Reveal>
         <Reveal delay={0.06}>
           <h2 className="display-lg max-w-3xl">
-            Software you can <span className="shimmer-gold">defend.</span>
+            Software you can <span className="shimmer-jade">defend.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.12}>
@@ -41,7 +41,7 @@ export default function Philosophy() {
           {PILLARS.map((p, i) => (
             <Reveal key={p.title} delay={0.1 + i * 0.08}>
               <div className="glass-card gleam-border h-full p-8">
-                <div className="font-display text-4xl text-gold/45">{p.n}</div>
+                <div className="font-display text-4xl text-jade/45">{p.n}</div>
                 <h3 className="font-ui mt-5 text-lg font-semibold tracking-wide text-ink">
                   {p.title}
                 </h3>

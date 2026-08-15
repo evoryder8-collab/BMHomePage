@@ -60,7 +60,7 @@ export default function PressPage() {
                 download
                 className="block h-full rounded-2xl border border-ink/10 bg-linen p-7 shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="eyebrow mb-3 text-gold">Download · Markdown</div>
+                <div className="eyebrow mb-3 text-jade">Download · Markdown</div>
                 <h2 className="text-lg font-semibold">{b.name}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-ink/60">
                   {b.blurb}

@@ -11,7 +11,7 @@ export default function AppShowcase() {
       <section className="relative overflow-hidden py-28">
         <div
           aria-hidden
-          className="chapter-num absolute -top-8 right-2 select-none md:right-10"
+          className="chapter-num absolute top-4 right-4 select-none md:right-10"
         >
           I
         </div>
@@ -74,7 +74,7 @@ export default function AppShowcase() {
       <section className="didone-scope relative overflow-hidden py-28">
         <div
           aria-hidden
-          className="chapter-num absolute -top-8 left-2 select-none md:left-10"
+          className="chapter-num absolute top-4 left-4 select-none md:left-10"
         >
           II
         </div>
@@ -88,7 +88,7 @@ export default function AppShowcase() {
           </Tilt3D>
           <div>
             <Reveal>
-              <p className="eyebrow mb-5 text-gold">
+              <p className="eyebrow mb-5 text-jade">
                 B∕A Studio · Mac &amp; iPhone
               </p>
             </Reveal>
@@ -96,7 +96,7 @@ export default function AppShowcase() {
               <h2 className="display-lg">
                 The comparison
                 <br />
-                <span className="shimmer-gold">that can&rsquo;t lie.</span>
+                <span className="shimmer-jade">that can&rsquo;t lie.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
@@ -107,15 +107,15 @@ export default function AppShowcase() {
               </p>
             </Reveal>
             <Reveal delay={0.24}>
-              <div className="hairline-gold mt-9 max-w-md" />
-              <p className="font-ui mt-5 text-[13px] tracking-[0.22em] text-gold-soft">
+              <div className="hairline-jade mt-9 max-w-md" />
+              <p className="font-ui mt-5 text-[13px] tracking-[0.22em] text-jade-soft">
                 B/A LIFT INDEX 375 · +2.9 MM
               </p>
             </Reveal>
             <Reveal delay={0.3}>
               <Link
                 href="/ba-studio"
-                className="font-ui mt-9 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-gold transition-colors hover:text-ink"
+                className="font-ui mt-9 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-jade transition-colors hover:text-ink"
               >
                 Discover B∕A Studio <span aria-hidden>→</span>
               </Link>

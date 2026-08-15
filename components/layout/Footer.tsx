@@ -34,7 +34,7 @@ const COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [
 export default function Footer() {
   return (
     <footer className="relative">
-      <div className="hairline-gold" />
+      <div className="hairline-jade" />
       <div className="container-page grid gap-12 py-16 md:grid-cols-4">
         <div className="space-y-5">
           <div className="font-display text-lg tracking-[0.22em] text-ink">
@@ -47,13 +47,13 @@ export default function Footer() {
         </div>
         {COLUMNS.map((col) => (
           <div key={col.title}>
-            <div className="eyebrow mb-5 text-gold/80">{col.title}</div>
+            <div className="eyebrow mb-5 text-jade/80">{col.title}</div>
             <ul className="space-y-3">
               {col.links.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="font-ui text-sm text-ink/55 transition-colors hover:text-gold-soft"
+                    className="font-ui text-sm text-ink/55 transition-colors hover:text-jade-soft"
                   >
                     {l.label}
                   </Link>
