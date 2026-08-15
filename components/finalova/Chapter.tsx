@@ -1,6 +1,6 @@
 import Reveal from "@/components/ui/Reveal";
-import Gleam from "@/components/ui/Gleam";
-import { withBase } from "@/lib/site";
+import Tilt3D from "@/components/ui/Tilt3D";
+import ScreenshotFrame from "@/components/ui/ScreenshotFrame";
 
 interface ChapterProps {
   eyebrow: string;
@@ -12,8 +12,8 @@ interface ChapterProps {
   points?: string[];
 }
 
-/** One feature chapter on the Finalova page: copy beside a gleaming
- *  screenshot, alternating sides. */
+/** One feature chapter: copy beside a screenshot that straightens out of
+ *  3D space as it scrolls into view, alternating sides. */
 export default function Chapter({
   eyebrow,
   title,
@@ -53,16 +53,9 @@ export default function Chapter({
           )}
         </div>
         {image && (
-          <Reveal delay={0.18}>
-            <Gleam className="rounded-xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={withBase(image)}
-                alt={imageAlt ?? title}
-                className="w-full max-w-full drop-shadow-2xl"
-              />
-            </Gleam>
-          </Reveal>
+          <Tilt3D from={22} fromY={flip ? 8 : -8}>
+            <ScreenshotFrame src={image} alt={imageAlt ?? title} />
+          </Tilt3D>
         )}
       </div>
     </section>

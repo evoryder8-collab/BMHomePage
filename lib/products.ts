@@ -39,9 +39,9 @@ export const PRODUCTS: Record<SKU, Product> = {
     features: [
       "Aspect-aware logo & text watermarking",
       "Crops, trims, reframes and captions",
-      "Full-quality, source-aware exports — never crippled, never nagged",
-      "12 months of updates included; the app keeps working forever",
-      "2 Mac activations, self-serve",
+      "Full-quality exports with no caps and no nagging",
+      "A year of updates included, and the app keeps working forever",
+      "Use it on 2 of your Macs",
     ],
   },
   "finalova-studio-perpetual": {
@@ -55,10 +55,10 @@ export const PRODUCTS: Record<SKU, Product> = {
     tagline: "The automation tier that invoices for you.",
     features: [
       "Everything in Finalova",
-      "Client Delivery Packs — full multi-channel folder trees in one click",
-      "Watch Folders — automate straight out of your NLE",
+      "Client Delivery Packs: every channel, one click",
+      "Watch Folders that finish your renders for you",
       "Web-optimized export sets",
-      "12 months of updates included; 2 Mac activations",
+      "A year of updates included, works on 2 of your Macs",
     ],
   },
   "finalova-studio-monthly": {
@@ -71,7 +71,7 @@ export const PRODUCTS: Record<SKU, Product> = {
     tagline: "Full Studio, month by month.",
     features: [
       "Everything in Finalova Studio",
-      "Cancel anytime — effective end of period",
+      "Cancel anytime",
       "Always the newest version",
     ],
   },
@@ -101,7 +101,7 @@ export const PRODUCTS: Record<SKU, Product> = {
     features: [
       "Extends update entitlement by 12 months",
       "Applies to either perpetual edition",
-      "Skip a year, come back later — no penalty",
+      "Skip a year and come back later, no penalty",
     ],
   },
   "ba-lite-monthly": {

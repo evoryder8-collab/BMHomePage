@@ -101,7 +101,7 @@ export default function TermsPage() {
         <h2>7. Warranty and liability</h2>
         <p>
           The software is provided with the care of a diligent Swiss craftsman
-          — and, to the maximum extent permitted by law, without warranty of
+          and, to the maximum extent permitted by law, without warranty of
           fitness for a particular purpose. To the extent permitted by Swiss
           law, our total liability arising from the software or these Terms is
           limited to the amount you paid in the twelve months preceding the

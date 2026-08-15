@@ -31,13 +31,13 @@ function friendly(message: string): string {
   if (m.includes("invalid login credentials"))
     return "That email and password don't match. Try again, or create an account.";
   if (m.includes("email not confirmed"))
-    return "Please confirm your email first — check your inbox for our message.";
+    return "Please confirm your email first. Check your inbox for our message.";
   if (m.includes("password should be"))
     return "Passwords need at least 6 characters.";
   if (m.includes("user already registered"))
     return "There's already an account for this email. Log in instead.";
   if (m.includes("rate limit") || m.includes("too many"))
-    return "Too many attempts — give it a minute, then try again.";
+    return "Too many attempts. Give it a minute, then try again.";
   return message;
 }
 

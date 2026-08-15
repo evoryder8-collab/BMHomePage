@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const FACTS = [
-  ["Company", "Barbu Media — sole proprietorship, Zürich, Switzerland"],
+  ["Company", "Barbu Media, sole proprietorship, Zürich, Switzerland"],
   ["Founder", "Constantin Barbu"],
   ["Products", "Finalova (macOS), B∕A Studio (macOS & iOS)"],
   ["Posture", "Offline-first, no telemetry, native Apple Silicon"],
@@ -18,13 +18,13 @@ const FACTS = [
 
 const BRIEFS = [
   {
-    name: "Finalova — Press & Product Brief",
+    name: "Finalova Press & Product Brief",
     file: "/press/finalova-brief.md",
     blurb:
       "The intelligent media adaptation and delivery studio: the problem, the system, the engineering posture, and pricing.",
   },
   {
-    name: "B∕A Studio — Press & Product Brief",
+    name: "B∕A Studio Press & Product Brief",
     file: "/press/ba-studio-brief.md",
     blurb:
       "The before-and-after that can't lie: the thesis, the Lift Index science, capture, content engine and trust architecture.",
@@ -48,7 +48,7 @@ export default function PressPage() {
             >
               {SITE.supportEmail}
             </a>
-            &nbsp;— we answer within two business days.
+            . We answer within two business days.
           </p>
         </Reveal>
 

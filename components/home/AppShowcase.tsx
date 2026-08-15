@@ -1,112 +1,100 @@
+import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
-import Gleam from "@/components/ui/Gleam";
-import Button from "@/components/ui/Button";
-import { withBase } from "@/lib/site";
+import Tilt3D from "@/components/ui/Tilt3D";
+import ScreenshotFrame from "@/components/ui/ScreenshotFrame";
 
+/** Two acts, one per instrument, each in its own atmosphere. */
 export default function AppShowcase() {
   return (
     <>
-      {/* ---- Finalova: aurora dark ---- */}
-      <section className="aurora-bg relative overflow-hidden text-ivory">
-        <div className="container-page grid items-center gap-12 py-24 md:grid-cols-2 md:py-32">
+      {/* Act I: Finalova */}
+      <section className="aurora-bg relative overflow-hidden py-28 text-ivory">
+        <div className="container-page grid items-center gap-14 lg:grid-cols-[1fr_1.15fr]">
           <div>
             <Reveal>
-              <p className="eyebrow mb-4 text-ivory/50">Finalova · for Mac</p>
+              <p className="eyebrow mb-4 text-[#a78bfa]">Finalova for Mac</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display-lg">
-                Everything after the edit,{" "}
-                <span className="aurora-text">handled.</span>
+                Your edit ends.
+                <br />
+                <span className="aurora-text">Finalova finishes.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="mt-6 max-w-md text-base leading-relaxed text-ivory/70">
-                One finished film becomes a Reel, a square ad, a Maps clip, a
-                captioned cut, a clean client master and a web-ready set — from
-                one batch, with your brand perfectly placed on every one.
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-ivory/70">
+                One finished film becomes a Reel, a square ad, a captioned cut,
+                a clean client master and a web-ready set, all from one
+                workspace that understands your media.
               </p>
             </Reveal>
             <Reveal delay={0.24}>
-              <ul className="mt-7 space-y-2.5 text-sm text-ivory/80">
-                <li>· Watermarks calibrated for how the eye actually sees</li>
-                <li>· Local, editable captions — no uploads, no subscriptions</li>
-                <li>· Client Delivery Packs: a whole delivery in one click</li>
+              <ul className="mt-8 space-y-3 text-[15px] text-ivory/80">
+                <li>Watermarks that stay visually consistent in every shape</li>
+                <li>Local captions that respect how people actually speak</li>
+                <li>Whole client deliveries produced in one click</li>
               </ul>
             </Reveal>
-            <Reveal delay={0.32}>
-              <div className="mt-9 flex gap-3">
-                <Button href="/finalova" variant="gold">
-                  Discover Finalova
-                </Button>
-                <Button
-                  href="/finalova/pricing"
-                  variant="ghost"
-                  className="border-ivory/25 !text-ivory hover:border-ivory/60 hover:!bg-ivory/10"
-                >
-                  Pricing
-                </Button>
-              </div>
+            <Reveal delay={0.3}>
+              <Link
+                href="/finalova"
+                className="mt-9 inline-flex items-center gap-2 text-sm font-semibold text-[#a78bfa] transition-colors hover:text-ivory"
+              >
+                Discover Finalova <span aria-hidden>→</span>
+              </Link>
             </Reveal>
           </div>
-          <Reveal delay={0.2}>
-            <Gleam className="rounded-xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={withBase("/screenshots/finalova/window-main.webp")}
-                alt="Finalova's main workspace: the Media Bay with a mixed batch of photos and videos, preview and brand controls"
-                className="w-full max-w-full drop-shadow-2xl"
-              />
-            </Gleam>
-          </Reveal>
+          <Tilt3D from={20} fromY={-7}>
+            <ScreenshotFrame
+              src="/screenshots/finalova/media-bay.webp"
+              alt="The Finalova Media Bay with a production batch and live phone preview"
+            />
+          </Tilt3D>
         </div>
       </section>
 
-      {/* ---- B/A Studio: warm editorial ---- */}
-      <section className="bg-ivory-deep">
-        <div className="container-page grid items-center gap-12 py-24 md:grid-cols-2 md:py-32">
-          <Reveal delay={0.2} className="order-last md:order-first">
-            <Gleam className="rounded-xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={withBase("/screenshots/ba-studio/window-main.webp")}
-                alt="B∕A Studio's editorial comparison card: before and after, one rigid frame"
-                className="w-full max-w-full drop-shadow-2xl"
-              />
-            </Gleam>
-          </Reveal>
+      {/* Act II: B∕A Studio */}
+      <section className="grain relative overflow-hidden bg-ivory py-28">
+        <div className="container-page grid items-center gap-14 lg:grid-cols-[1.05fr_1fr]">
+          <Tilt3D from={20} fromY={7} className="order-last lg:order-first">
+            <ScreenshotFrame
+              src="/screenshots/ba-studio/measurement.webp"
+              alt="A B∕A Studio comparison card with millimetre measurement guides and the B∕A Lift Index"
+              tone="light"
+              className="mx-auto max-w-md"
+            />
+          </Tilt3D>
           <div>
             <Reveal>
-              <p className="eyebrow mb-4 text-ink/45">
-                B∕A Studio · for Mac &amp; iPhone
-              </p>
+              <p className="eyebrow mb-4 text-gold">B∕A Studio for Mac and iPhone</p>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="display-lg serif-display">
-                The comparison that can&rsquo;t lie.
+                The comparison
+                <br />
+                that can&rsquo;t lie.
               </h2>
             </Reveal>
-            <div className="gilded-rule my-6 max-w-xs" />
             <Reveal delay={0.16}>
-              <p className="max-w-md text-base leading-relaxed text-ink/65">
-                Two originals. One rigid frame. Zero cosmetic edits — enforced
-                by mathematics, not by promise. The before-and-after studio for
-                practitioners whose results deserve to be believed.
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-ink/70">
+                Two originals. One rigid frame. Zero cosmetic edits, enforced by
+                mathematics. Results measured in millimetres, on a card that
+                looks like a page from a fashion magazine.
               </p>
             </Reveal>
             <Reveal delay={0.24}>
-              <ul className="mt-7 space-y-2.5 text-sm text-ink/70">
-                <li>· A comparison engine that structurally cannot retouch</li>
-                <li>· Lift measured in millimetres, with an honest noise floor</li>
-                <li>· Gallery-grade editorial cards from a single capture</li>
-              </ul>
+              <div className="gilded-rule mt-8 max-w-md" />
+              <p className="mt-4 font-mono text-[13px] tracking-wide text-ink/50">
+                B/A LIFT INDEX 375 · +2.9 MM
+              </p>
             </Reveal>
-            <Reveal delay={0.32}>
-              <div className="mt-9 flex gap-3">
-                <Button href="/ba-studio">Discover B∕A Studio</Button>
-                <Button href="/ba-studio/pricing" variant="ghost">
-                  Pricing
-                </Button>
-              </div>
+            <Reveal delay={0.3}>
+              <Link
+                href="/ba-studio"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-gold transition-colors hover:text-ink"
+              >
+                Discover B∕A Studio <span aria-hidden>→</span>
+              </Link>
             </Reveal>
           </div>
         </div>

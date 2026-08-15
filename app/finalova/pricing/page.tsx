@@ -7,18 +7,33 @@ import { PRODUCTS } from "@/lib/products";
 export const metadata: Metadata = {
   title: "Finalova Pricing",
   description:
-    "Own Finalova outright or subscribe to Studio. Perpetual licenses with 12 months of updates, optional penalty-free renewals, and a 14-day full trial.",
+    "Own Finalova outright or subscribe to Studio. Perpetual licenses with a year of updates, optional renewals, and a 14-day full trial.",
 };
+
+const AURORA: [string, string] = ["#6d28d9", "#2563eb"];
 
 const COMPARISON: { feature: string; base: boolean; studio: boolean }[] = [
   { feature: "Logo & text watermarking with aspect-aware calibration", base: true, studio: true },
   { feature: "Crops, trims, reframes and keyframed motion", base: true, studio: true },
   { feature: "Local, editable, multilingual captions", base: true, studio: true },
-  { feature: "Source-aware, full-quality export — no caps, no nags", base: true, studio: true },
-  { feature: "Client Delivery Packs — multi-channel trees in one click", base: false, studio: true },
+  { feature: "Full-quality export with no caps and no nagging", base: true, studio: true },
+  { feature: "Client Delivery Packs: every channel in one click", base: false, studio: true },
   { feature: "Watch Folders automation from your NLE", base: false, studio: true },
   { feature: "Web-optimized export sets", base: false, studio: true },
 ];
+
+function Mark({ on }: { on: boolean }) {
+  return on ? (
+    <span
+      className="mx-auto flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold text-white"
+      style={{ background: "linear-gradient(120deg,#6d28d9,#2563eb)" }}
+    >
+      ✓
+    </span>
+  ) : (
+    <span className="mx-auto block h-1.5 w-1.5 rounded-full bg-ink/15" />
+  );
+}
 
 export default function FinalovaPricingPage() {
   return (
@@ -36,34 +51,35 @@ export default function FinalovaPricingPage() {
         </Reveal>
         <Reveal delay={0.16}>
           <p className="mx-auto mt-6 max-w-2xl text-base text-ink/60">
-            Perpetual licenses include 12 months of updates and keep working
-            forever — renewing is optional, penalty-free, and $49. Every
-            license covers 2 Macs with self-serve deactivation. Try Studio
-            free for 14 days, full-featured.
+            A perpetual license includes a year of updates and keeps working
+            forever. Renewing is optional and $49. Every license works on 2 of
+            your Macs, and Studio is free to try for 14 days, full-featured.
           </p>
         </Reveal>
       </section>
 
       <section className="container-page grid gap-8 pb-20 md:grid-cols-3">
         <Reveal>
-          <PricingCard product={PRODUCTS["finalova-perpetual"]} />
+          <PricingCard product={PRODUCTS["finalova-perpetual"]} accent={AURORA} />
         </Reveal>
         <Reveal delay={0.1}>
-          <PricingCard product={PRODUCTS["finalova-studio-perpetual"]} highlight />
+          <PricingCard
+            product={PRODUCTS["finalova-studio-perpetual"]}
+            highlight
+            accent={AURORA}
+          />
         </Reveal>
         <Reveal delay={0.2}>
-          <div className="flex h-full flex-col gap-8">
-            <PricingCard product={PRODUCTS["finalova-studio-annual"]} />
-          </div>
+          <PricingCard product={PRODUCTS["finalova-studio-annual"]} accent={AURORA} />
         </Reveal>
       </section>
 
       <section className="container-page grid gap-8 pb-20 md:grid-cols-2">
         <Reveal>
-          <PricingCard product={PRODUCTS["finalova-studio-monthly"]} />
+          <PricingCard product={PRODUCTS["finalova-studio-monthly"]} accent={AURORA} />
         </Reveal>
         <Reveal delay={0.1}>
-          <PricingCard product={PRODUCTS["finalova-updates-renewal"]} />
+          <PricingCard product={PRODUCTS["finalova-updates-renewal"]} accent={AURORA} />
         </Reveal>
       </section>
 
@@ -89,10 +105,10 @@ export default function FinalovaPricingPage() {
                   <tr key={row.feature} className="border-b border-ink/5 last:border-0">
                     <td className="px-6 py-3.5 text-ink/75">{row.feature}</td>
                     <td className="px-6 py-3.5 text-center">
-                      {row.base ? <span className="text-gold">✓</span> : <span className="text-ink/20">—</span>}
+                      <Mark on={row.base} />
                     </td>
                     <td className="px-6 py-3.5 text-center">
-                      {row.studio ? <span className="text-gold">✓</span> : <span className="text-ink/20">—</span>}
+                      <Mark on={row.studio} />
                     </td>
                   </tr>
                 ))}
@@ -102,8 +118,8 @@ export default function FinalovaPricingPage() {
         </Reveal>
         <Reveal delay={0.16}>
           <p className="mt-5 text-center text-sm text-ink/55">
-            Already own Finalova? Upgrade to Studio for the difference — your
-            key, your activations and your presets carry over untouched.
+            Already own Finalova? Upgrade to Studio for the difference. Your
+            key, your Macs and your presets carry over untouched.
           </p>
         </Reveal>
       </section>

@@ -33,3 +33,22 @@ synthetic demo portrait, no client imagery)
 
 A live launch capture of the empty "Build the reveal" composition was also
 taken and discarded in favor of the richer previews above.
+
+## Refresh 2026-08-15 (redesign round)
+
+Rebuilt both apps from latest source (READ-ONLY, scratchpad DerivedData).
+- finalova/window-main.webp + media-bay.webp: fresh capture, 19-file curated
+  batch (owner's own portfolio media, screened: passport scans and personal
+  documents excluded), list bay with 7 visible items, WMF video in device
+  preview. App bundle is now Finalova.app; in-window brand label still reads
+  "Stamp" (app-side, worth fixing in the app).
+- ba-studio/window-main.webp: live workspace, synthetic demo pair (from the
+  app's own persisted QA sessions), new BEFORE/AFTER Bodoni Moda card.
+  Integrity lock advisories visible (pair is a near-copy by design).
+- ba-studio/editorial-card.webp + measurement.webp: composed fresh via
+  `StudioTools compose` (gallery preset; measurement card via
+  --measurement-demo, Lift Index 375 · +2.9 mm).
+- ba-studio/card-zero.webp: live card crop scoring an unchanged face as
+  LIFT INDEX 0 · WITHIN NOISE · EXPLORATORY (the honesty story).
+- ba-studio/measure-flow.webp: three-set measurement onboarding dialog crop.
+- ba-studio/canvas-live.webp: composition canvas crop (unused so far).

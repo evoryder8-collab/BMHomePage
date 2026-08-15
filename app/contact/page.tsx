@@ -13,7 +13,7 @@ export default function ContactPage() {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Website contact from ${name || email}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    const body = encodeURIComponent(`${message}\n\nFrom ${name} (${email})`);
     window.location.href = `mailto:${SITE.supportEmail}?subject=${subject}&body=${body}`;
   };
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-md text-base leading-relaxed text-ink/65">
-              Support, licensing, press, an idea the apps should steal — it
+              Support, licensing, press, an idea the apps should steal: it
               all lands in the same inbox, read by the person who builds the
               software. We answer within two business days.
             </p>
@@ -91,7 +91,7 @@ export default function ContactPage() {
               Open in your mail app
             </Button>
             <p className="text-center text-xs text-ink/45">
-              The button composes the message in your own mail client — nothing
+              The button composes the message in your own mail client, so nothing
               is sent through this website.
             </p>
           </form>

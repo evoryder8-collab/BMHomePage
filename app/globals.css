@@ -18,7 +18,7 @@
 :root {
   color-scheme: light;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-didone: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-didone: var(--font-bodoni), "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
 }
 
 body {
@@ -133,6 +133,37 @@ body {
     transform: none;
     animation: none;
   }
+}
+
+/* ---------- Gold range slider ---------- */
+.slider-gold {
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-gold), rgba(255, 255, 255, 0.14));
+  outline-offset: 4px;
+}
+.slider-gold::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 999px;
+  background: linear-gradient(140deg, #e3c878, #b8963e);
+  border: 2px solid #fff8e7;
+  box-shadow: 0 2px 10px rgba(184, 150, 62, 0.55);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.slider-gold::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+.slider-gold::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 999px;
+  background: linear-gradient(140deg, #e3c878, #b8963e);
+  border: 2px solid #fff8e7;
+  cursor: pointer;
 }
 
 /* ---------- Gilded hairline (B/A editorial) ---------- */

@@ -68,7 +68,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {SITE.name}, {SITE.location}. All
             rights reserved.
           </span>
-          <span>Sole proprietorship · Sales handled by Paddle (coming soon)</span>
+          <span>Finalova · B∕A Studio · More on the bench</span>
         </div>
       </div>
     </footer>

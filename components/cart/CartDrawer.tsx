@@ -92,8 +92,8 @@ export default function CartDrawer() {
                   </span>
                 </div>
                 <p className="mb-4 text-xs text-ink/45">
-                  Taxes and local currency are handled at checkout by Paddle,
-                  our merchant of record.
+                  Prices shown in USD. Checkout charges you in your own
+                  currency, taxes included.
                 </p>
                 <Button
                   className="w-full"

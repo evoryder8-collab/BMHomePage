@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/ui/Reveal";
 import PricingCard from "@/components/pricing/PricingCard";
+import AppStoreBadge from "@/components/ui/AppStoreBadge";
 import { PRODUCTS } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "B∕A Studio Pricing",
   description:
-    "B∕A Studio Lite, Pro and Lifetime. Priced like a professional instrument — because that's what it is.",
+    "B∕A Studio Lite, Pro and Lifetime. Priced like a professional instrument, because that's what it is.",
 };
 
 export default function BaPricingPage() {
@@ -24,8 +25,8 @@ export default function BaPricingPage() {
         <Reveal delay={0.16}>
           <p className="mx-auto mt-6 max-w-2xl text-base text-ink/60">
             Because that&rsquo;s what it is. Exports carry your logo, so your
-            license markets your studio — and only yours. Monthly, annual, or
-            one purchase forever.
+            license markets your studio and no one else&rsquo;s. Monthly,
+            annual, or one purchase forever.
           </p>
         </Reveal>
       </section>
@@ -53,14 +54,17 @@ export default function BaPricingPage() {
 
       <section className="container-page pb-24">
         <Reveal>
-          <div className="mx-auto max-w-2xl rounded-2xl border border-ink/10 bg-ivory-deep px-8 py-7 text-center">
-            <h2 className="text-lg font-semibold">On iPhone</h2>
-            <p className="mt-3 text-sm leading-relaxed text-ink/65">
-              B∕A Studio for iPhone — with LiDAR Enhanced capture — is
-              distributed through the App&nbsp;Store, and subscriptions there
-              run through your Apple&nbsp;ID. Mac licenses are sold right here
-              and include everything above.
-            </p>
+          <div className="mx-auto flex max-w-2xl flex-col items-center gap-5 rounded-2xl border border-ink/10 bg-ivory-deep px-8 py-7 text-center">
+            <div>
+              <h2 className="text-lg font-semibold">On iPhone</h2>
+              <p className="mt-3 text-sm leading-relaxed text-ink/65">
+                B∕A Studio for iPhone brings the guided camera with LiDAR
+                Enhanced capture. It ships through the App&nbsp;Store, and
+                subscriptions there run through your Apple&nbsp;ID. Mac
+                licenses are sold right here and include everything above.
+              </p>
+            </div>
+            <AppStoreBadge />
           </div>
         </Reveal>
       </section>

@@ -44,12 +44,12 @@ export default function AccountPage() {
       <div className="space-y-10">
         <section>
           <h2 className="mb-3 text-lg font-semibold">Licenses</h2>
-          <ZeroState label="Your purchases will appear here once checkout opens — license keys, editions and update entitlements, all in one place." />
+          <ZeroState label="Your purchases will appear here once checkout opens: license keys, editions and update entitlements, all in one place." />
         </section>
 
         <section>
           <h2 className="mb-3 text-lg font-semibold">Activations</h2>
-          <ZeroState label="Each license includes 2 Mac activations. You'll deactivate an old machine here yourself — no support email required." />
+          <ZeroState label="Each license includes 2 Mac activations. You'll deactivate an old machine here yourself, with no support email required." />
         </section>
 
         <section>
@@ -59,7 +59,7 @@ export default function AccountPage() {
 
         <section>
           <h2 className="mb-3 text-lg font-semibold">Invoices</h2>
-          <ZeroState label="Invoices are issued by Paddle, our merchant of record, and will be linked here after each purchase." />
+          <ZeroState label="Your invoices will appear here after each purchase." />
         </section>
       </div>
     </div>

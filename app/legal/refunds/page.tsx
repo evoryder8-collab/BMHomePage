@@ -15,7 +15,7 @@ export default function RefundsPage() {
         <p>
           If a Barbu Media app isn&rsquo;t right for you, tell us within{" "}
           <strong>14 days</strong> of purchase and you&rsquo;ll get your money
-          back — no forms, no interrogation. Email{" "}
+          back, with no forms and no interrogation. Email{" "}
           <strong>{SITE.supportEmail}</strong> from your purchase email or use
           the receipt link; refunds are executed by Paddle, our merchant of
           record, to the original payment method. Refunded licenses are
@@ -29,7 +29,7 @@ export default function RefundsPage() {
           Cancel anytime from your account or receipt link; cancellation takes
           effect at the end of the paid period and no further charges are
           made. The first 14 days of a new subscription are covered by the
-          same money-back guarantee. We recommend using the free trial first —
+          same money-back guarantee. We recommend using the free trial first;
           it&rsquo;s the full product.
         </p>
       </section>

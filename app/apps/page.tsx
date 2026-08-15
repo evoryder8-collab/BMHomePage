@@ -7,7 +7,7 @@ import { withBase } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Apps",
   description:
-    "The Barbu Media instruments: Finalova for media delivery, B∕A Studio for provable before-and-afters — with more on the bench.",
+    "The Barbu Media instruments: Finalova for media delivery, B∕A Studio for provable before-and-afters, with more on the bench.",
 };
 
 export default function AppsPage() {
@@ -19,7 +19,7 @@ export default function AppsPage() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mx-auto mt-5 max-w-xl text-base text-ink/60">
-            Each one built in Zürich to do a professional job completely — and
+            Each one built in Zürich to do a professional job completely, and
             to pay for itself in the work it wins you.
           </p>
         </Reveal>
@@ -65,8 +65,8 @@ export default function AppsPage() {
               <Gleam className="mt-6 rounded-lg">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={withBase("/screenshots/ba-studio/editorial-card.webp")}
-                  alt="A finished B∕A Studio editorial card"
+                  src={withBase("/screenshots/ba-studio/measurement.webp")}
+                  alt="A measured B∕A Studio comparison: millimetre guides and the B∕A Lift Index"
                   className="w-full transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </Gleam>
@@ -81,7 +81,7 @@ export default function AppsPage() {
               The next instrument is on the bench.
             </h2>
             <p className="mt-3 max-w-md text-sm text-ink/50">
-              Barbu Media builds one tool at a time, completely. Follow along —
+              Barbu Media builds one tool at a time, completely. Follow along;
               new instruments land here first.
             </p>
           </div>

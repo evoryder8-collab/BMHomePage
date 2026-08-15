@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { createElement } from "react";
 import type { ElementType, ReactNode } from "react";
 
 interface RevealProps {
@@ -22,8 +23,7 @@ export default function Reveal({
   const M = motion.create(as);
 
   if (reduce) {
-    const Tag = as;
-    return <Tag className={className}>{children}</Tag>;
+    return createElement(as, { className }, children);
   }
 
   return (

@@ -1,7 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+} from "framer-motion";
 import { roi } from "./roi";
+
+/** Springs a number toward its target so the figure rolls like a meter. */
+function RollingNumber({ value }: { value: number }) {
+  const reduce = useReducedMotion();
+  const mv = useMotionValue(value);
+  const spring = useSpring(mv, { stiffness: 120, damping: 22 });
+  const [display, setDisplay] = useState(value);
+  const first = useRef(true);
+
+  useEffect(() => {
+    if (reduce || first.current) {
+      first.current = false;
+      mv.jump(value);
+      setDisplay(value);
+      return;
+    }
+    mv.set(value);
+  }, [value, mv, reduce]);
+
+  useEffect(
+    () => spring.on("change", (v) => setDisplay(Math.round(v))),
+    [spring],
+  );
+
+  return <>{display.toLocaleString("en-US")}</>;
+}
 
 export default function RoiCalculator() {
   const [shoots, setShoots] = useState(6);
@@ -9,69 +41,102 @@ export default function RoiCalculator() {
   const r = roi(shoots, fee);
 
   return (
-    <div className="rounded-2xl border border-ivory/12 bg-ink-soft p-8 text-ivory">
-      <div className="eyebrow mb-2 text-gold-soft">The Studio math</div>
-      <h3 className="display-md mb-6">
-        Invoice the adaptation,
-        <br />
-        not just the shoot.
-      </h3>
-      <p className="mb-8 max-w-md text-sm leading-relaxed text-ivory/65">
-        Working shooters charge a delivery add-on — &ldquo;every channel, every
-        format, ready to post&rdquo; — and let Finalova Studio do it in one
-        click. Move the sliders to see what that&rsquo;s worth.
-      </p>
+    <div className="overflow-hidden rounded-[2rem] border border-ivory/10 bg-[#131318] text-ivory">
+      <div className="grid lg:grid-cols-[1fr_1.1fr]">
+        {/* Inputs */}
+        <div className="p-8 sm:p-10">
+          <div className="eyebrow mb-3 text-gold-soft">Do the math</div>
+          <h3 className="display-md">
+            Your edit is done.
+            <br />
+            Now sell the delivery.
+          </h3>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/60">
+            Studios charge for the ready-to-post package: every channel, every
+            format, named and organized. Finalova Studio builds it in one
+            click. Slide your numbers.
+          </p>
 
-      <div className="mb-8 grid gap-6 sm:grid-cols-2">
-        <label className="block">
-          <span className="mb-2 flex justify-between text-xs font-semibold text-ivory/60">
-            Shoots per month <span className="text-ivory">{shoots}</span>
-          </span>
-          <input
-            type="range"
-            min={1}
-            max={30}
-            value={shoots}
-            onChange={(e) => setShoots(Number(e.target.value))}
-            className="w-full accent-[#b8963e]"
-          />
-        </label>
-        <label className="block">
-          <span className="mb-2 flex justify-between text-xs font-semibold text-ivory/60">
-            Adaptation add-on <span className="text-ivory">${fee}</span>
-          </span>
-          <input
-            type="range"
-            min={50}
-            max={600}
-            step={25}
-            value={fee}
-            onChange={(e) => setFee(Number(e.target.value))}
-            className="w-full accent-[#b8963e]"
-          />
-        </label>
-      </div>
-
-      <div className="grid gap-6 border-t border-ivory/10 pt-6 sm:grid-cols-2">
-        <div>
-          <div
-            data-testid="roi-monthly"
-            className="text-3xl font-bold tracking-tight text-gold-soft"
-          >
-            ${r.monthlyRevenue.toLocaleString("en-US")}
-          </div>
-          <div className="mt-1 text-xs text-ivory/55">
-            added revenue, every month
+          <div className="mt-9 space-y-7">
+            <label className="block">
+              <span className="mb-3 flex items-baseline justify-between text-sm">
+                <span className="text-ivory/60">Shoots you deliver monthly</span>
+                <span className="text-lg font-bold">{shoots}</span>
+              </span>
+              <input
+                type="range"
+                min={1}
+                max={30}
+                value={shoots}
+                onChange={(e) => setShoots(Number(e.target.value))}
+                className="slider-gold w-full"
+                aria-label="Shoots delivered per month"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-3 flex items-baseline justify-between text-sm">
+                <span className="text-ivory/60">
+                  What you charge for the package
+                </span>
+                <span className="text-lg font-bold">${fee}</span>
+              </span>
+              <input
+                type="range"
+                min={50}
+                max={600}
+                step={25}
+                value={fee}
+                onChange={(e) => setFee(Number(e.target.value))}
+                className="slider-gold w-full"
+                aria-label="Adaptation package price"
+              />
+            </label>
           </div>
         </div>
-        <div>
-          <div className="text-3xl font-bold tracking-tight">
-            {r.shootsToPayOff === 1
-              ? "1 shoot"
-              : `${r.shootsToPayOff} shoots`}
+
+        {/* Result */}
+        <div className="relative flex flex-col justify-center gap-8 border-t border-ivory/10 p-8 sm:p-10 lg:border-l lg:border-t-0">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 opacity-60"
+            style={{
+              background:
+                "radial-gradient(30rem 18rem at 75% 20%, rgba(184,150,62,0.18), transparent 65%)",
+            }}
+          />
+          <div className="relative">
+            <div className="text-sm text-ivory/55">
+              That&rsquo;s new revenue of
+            </div>
+            <div
+              data-testid="roi-monthly"
+              className="mt-1 bg-gradient-to-r from-[#e3c878] via-[#f2e3ae] to-[#b8963e] bg-clip-text text-6xl font-bold tracking-tight text-transparent sm:text-7xl"
+            >
+              $<RollingNumber value={r.monthlyRevenue} />
+            </div>
+            <div className="mt-1 text-sm text-ivory/55">
+              every month, for work that takes one click
+            </div>
           </div>
-          <div className="mt-1 text-xs text-ivory/55">
-            and Studio ($249) has paid for itself
+
+          <div className="relative border-t border-ivory/10 pt-6">
+            <motion.div
+              key={r.shootsToPayOff}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-lg font-semibold"
+            >
+              Studio has paid for itself{" "}
+              <span className="text-gold-soft">
+                {r.shootsToPayOff === 1
+                  ? "after your first shoot"
+                  : `after ${r.shootsToPayOff} shoots`}
+              </span>
+              .
+            </motion.div>
+            <div className="mt-1 text-xs text-ivory/45">
+              Finalova Studio, $249 once. Everything after that is margin.
+            </div>
           </div>
         </div>
       </div>

@@ -38,7 +38,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
     }
     if (needsConfirmation) {
       setNotice(
-        "Account created — confirm your email to finish. We've sent you a message; once you confirm, log in here.",
+        "Account created. Confirm your email to finish. We've sent you a message; once you confirm, log in here.",
       );
     } else {
       router.push("/account");

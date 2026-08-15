@@ -34,9 +34,8 @@ export default function CheckoutModal() {
         <div className="eyebrow mb-2 text-gold">Sandbox</div>
         <h2 className="display-md mb-3">Almost open.</h2>
         <p className="mb-5 text-sm leading-relaxed text-ink/65">
-          Secure checkout is being finalized with Paddle, our merchant of
-          record. Purchasing opens shortly — your cart is saved on this device
-          and will be waiting.
+          Secure worldwide checkout is almost ready. Your cart is saved on
+          this device and will be waiting.
         </p>
         <ul className="mb-5 space-y-2 border-y border-ink/10 py-4">
           {cart.items.map((i) => {

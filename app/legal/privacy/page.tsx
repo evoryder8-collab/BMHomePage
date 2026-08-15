@@ -5,7 +5,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Barbu Media handles data — on this website and in our offline-first apps.",
+    "How Barbu Media handles data, on this website and in our offline-first apps.",
 };
 
 export default function PrivacyPage() {
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       <section>
         <h2>1. What our apps do NOT do</h2>
         <ul>
-          <li>No cloud requirement — processing happens on your device.</li>
+          <li>No cloud requirement. Processing happens on your device.</li>
           <li>No telemetry, analytics or usage tracking.</li>
           <li>Your media and your clients&rsquo; photos never leave your device through us.</li>
           <li>No face-recognition registry; B∕A Studio&rsquo;s client records are non-biometric by default and any local face grouping is off unless you explicitly enable it.</li>
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
         <p>
           Activating a license or trial transmits your license key, app
           version and a <strong>salted, one-way hash</strong> of a hardware
-          identifier — never the identifier itself, and nothing about your
+          identifier, never the identifier itself, and nothing about your
           media. We store this to enforce seat counts and prevent fraud. You
           can deactivate machines from your account at any time.
         </p>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
           When you photograph clients with our apps, you are the controller of
           that material. The apps are designed to help you honour that
           responsibility: originals stay on your device, records are
-          non-biometric by default, and nothing is uploaded to us — ever.
+          non-biometric by default, and nothing is ever uploaded to us.
         </p>
       </section>
     </LegalLayout>
