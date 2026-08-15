@@ -52,7 +52,7 @@ export default function AppShowcase() {
             <Gleam className="rounded-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={withBase("/screenshots/finalova/window-main.png")}
+                src={withBase("/screenshots/finalova/window-main.webp")}
                 alt="Finalova's main workspace: the Media Bay with a mixed batch of photos and videos, preview and brand controls"
                 className="w-full max-w-full drop-shadow-2xl"
               />
@@ -68,7 +68,7 @@ export default function AppShowcase() {
             <Gleam className="rounded-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={withBase("/screenshots/ba-studio/window-main.png")}
+                src={withBase("/screenshots/ba-studio/window-main.webp")}
                 alt="B∕A Studio's editorial comparison card: before and after, one rigid frame"
                 className="w-full max-w-full drop-shadow-2xl"
               />
