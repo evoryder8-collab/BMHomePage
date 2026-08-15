@@ -20,18 +20,26 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
     setError(null);
     setNotice(null);
     setPending(true);
-    const fn = mode === "login" ? signIn : signUp;
-    const { error } = await fn(email.trim(), password);
+    if (mode === "login") {
+      const { error } = await signIn(email.trim(), password);
+      setPending(false);
+      if (error) {
+        setError(error);
+        return;
+      }
+      router.push("/account");
+      return;
+    }
+    const { error, needsConfirmation } = await signUp(email.trim(), password);
     setPending(false);
     if (error) {
       setError(error);
       return;
     }
-    if (mode === "signup") {
+    if (needsConfirmation) {
       setNotice(
-        "Account created. If confirmation is required, check your inbox — then you're in.",
+        "Account created — confirm your email to finish. We've sent you a message; once you confirm, log in here.",
       );
-      setTimeout(() => router.push("/account"), 1200);
     } else {
       router.push("/account");
     }

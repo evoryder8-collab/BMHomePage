@@ -16,7 +16,10 @@ interface AuthApi {
   user: User | null;
   loading: boolean;
   signIn: (email: string, password: string) => Promise<{ error?: string }>;
-  signUp: (email: string, password: string) => Promise<{ error?: string }>;
+  signUp: (
+    email: string,
+    password: string,
+  ) => Promise<{ error?: string; needsConfirmation?: boolean }>;
   signOut: () => Promise<void>;
 }
 
@@ -70,8 +73,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signUp = useCallback(
     async (email: string, password: string) => {
-      const { error } = await supabase.auth.signUp({ email, password });
-      return error ? { error: friendly(error.message) } : {};
+      const { data, error } = await supabase.auth.signUp({ email, password });
+      if (error) return { error: friendly(error.message) };
+      return { needsConfirmation: !data.session };
     },
     [supabase],
   );
