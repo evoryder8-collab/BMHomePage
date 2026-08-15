@@ -33,13 +33,13 @@ const BRIEFS = [
 
 export default function PressPage() {
   return (
-    <div className="bg-ivory">
+    <div className="bg-obsidian-soft">
       <section className="container-page py-16 md:py-20">
         <Reveal>
           <h1 className="display-lg">Press.</h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-5 max-w-2xl text-base text-ink/60">
+          <p className="mt-5 max-w-2xl text-base text-pearl/60">
             Writing about honest software? Everything below is yours to quote.
             For interviews, review licenses or anything else, write to{" "}
             <a
@@ -58,11 +58,11 @@ export default function PressPage() {
               <a
                 href={withBase(b.file)}
                 download
-                className="block h-full rounded-2xl border border-ink/10 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
+                className="block h-full rounded-2xl border border-pearl/10 bg-obsidian-soft p-7 shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="eyebrow mb-3 text-gold">Download · Markdown</div>
                 <h2 className="text-lg font-semibold">{b.name}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-ink/60">
+                <p className="mt-3 text-sm leading-relaxed text-pearl/60">
                   {b.blurb}
                 </p>
               </a>
@@ -71,15 +71,15 @@ export default function PressPage() {
         </div>
 
         <Reveal delay={0.15}>
-          <div className="mt-12 overflow-hidden rounded-2xl border border-ink/10 bg-white shadow-sm">
+          <div className="mt-12 overflow-hidden rounded-2xl border border-pearl/10 bg-obsidian-soft shadow-sm">
             <table className="w-full text-left text-sm">
               <tbody>
                 {FACTS.map(([k, v]) => (
-                  <tr key={k} className="border-b border-ink/5 last:border-0">
-                    <th className="w-40 px-6 py-3.5 align-top font-semibold text-ink/50">
+                  <tr key={k} className="border-b border-pearl/5 last:border-0">
+                    <th className="w-40 px-6 py-3.5 align-top font-semibold text-pearl/50">
                       {k}
                     </th>
-                    <td className="px-6 py-3.5 text-ink/80">{v}</td>
+                    <td className="px-6 py-3.5 text-pearl/80">{v}</td>
                   </tr>
                 ))}
               </tbody>

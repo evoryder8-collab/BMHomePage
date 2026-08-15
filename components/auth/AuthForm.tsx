@@ -50,7 +50,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
       <h1 className="display-md mb-2">
         {mode === "login" ? "Welcome back." : "Create your account."}
       </h1>
-      <p className="mb-8 text-sm text-ink/60">
+      <p className="mb-8 text-sm text-pearl/60">
         {mode === "login"
           ? "Your licenses, downloads and invoices live here."
           : "One account for every Barbu Media instrument."}
@@ -58,7 +58,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
 
       <form onSubmit={onSubmit} className="space-y-4" noValidate>
         <label className="block">
-          <span className="mb-1.5 block text-xs font-semibold text-ink/60">
+          <span className="mb-1.5 block text-xs font-semibold text-pearl/60">
             Email
           </span>
           <input
@@ -67,12 +67,12 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
             autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-ink/40"
+            className="w-full rounded-xl border border-pearl/15 bg-obsidian-soft px-4 py-3 text-sm outline-none transition focus:border-pearl/40"
             placeholder="you@studio.com"
           />
         </label>
         <label className="block">
-          <span className="mb-1.5 block text-xs font-semibold text-ink/60">
+          <span className="mb-1.5 block text-xs font-semibold text-pearl/60">
             Password
           </span>
           <input
@@ -82,7 +82,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
             autoComplete={mode === "login" ? "current-password" : "new-password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-ink/40"
+            className="w-full rounded-xl border border-pearl/15 bg-obsidian-soft px-4 py-3 text-sm outline-none transition focus:border-pearl/40"
             placeholder="••••••••"
           />
         </label>
@@ -107,7 +107,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
         </Button>
       </form>
 
-      <p className="mt-6 text-center text-sm text-ink/60">
+      <p className="mt-6 text-center text-sm text-pearl/60">
         {mode === "login" ? (
           <>
             New here?{" "}

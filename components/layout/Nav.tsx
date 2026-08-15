@@ -18,29 +18,29 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/10 bg-ivory/85 backdrop-blur-md">
-      <nav className="container-page flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-40 border-b border-pearl/8 bg-obsidian/70 backdrop-blur-xl">
+      <nav className="container-page flex h-[4.5rem] items-center justify-between">
         <Link
           href="/"
-          className="text-sm font-bold tracking-[0.28em] text-ink"
+          className="font-display text-lg tracking-[0.22em] text-pearl"
           onClick={() => setOpen(false)}
         >
           BARBU&nbsp;MEDIA
         </Link>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm text-ink/70 transition-colors hover:text-ink"
+              className="font-ui text-[13px] tracking-[0.08em] text-pearl/60 transition-colors duration-200 hover:text-gold-soft"
             >
               {l.label}
             </Link>
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <span className="hidden md:block">
             <AccountLink />
           </span>
@@ -50,20 +50,20 @@ export default function Nav() {
             className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
             onClick={() => setOpen((v) => !v)}
           >
-            <span className="h-px w-5 bg-ink" />
-            <span className="h-px w-5 bg-ink" />
+            <span className="h-px w-5 bg-pearl" />
+            <span className="h-px w-5 bg-pearl" />
           </button>
         </div>
       </nav>
 
       {open && (
-        <div className="border-t border-ink/10 bg-ivory md:hidden">
-          <div className="container-page flex flex-col gap-4 py-5">
+        <div className="border-t border-pearl/8 bg-obsidian md:hidden">
+          <div className="container-page flex flex-col gap-4 py-6">
             {[...LINKS, { href: "/login", label: "Log in" }].map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-base text-ink/80"
+                className="font-ui text-base text-pearl/80"
                 onClick={() => setOpen(false)}
               >
                 {l.label}

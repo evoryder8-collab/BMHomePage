@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Bodoni_Moda } from "next/font/google";
+import { Bodoni_Moda, Newsreader, Space_Grotesk } from "next/font/google";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
+import AmbientBackground from "@/components/layout/AmbientBackground";
 import CartDrawer from "@/components/cart/CartDrawer";
 import CheckoutModal from "@/components/cart/CheckoutModal";
 import { CartProvider } from "@/lib/cart";
@@ -9,10 +10,18 @@ import { AuthProvider } from "@/lib/auth";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-bodoni",
+});
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
+});
+const grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -29,8 +38,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${bodoni.variable}`}>
+    <html
+      lang="en"
+      className={`${bodoni.variable} ${newsreader.variable} ${grotesk.variable}`}
+    >
       <body className="flex min-h-screen flex-col antialiased">
+        <AmbientBackground />
         <AuthProvider>
           <CartProvider>
             <Nav />

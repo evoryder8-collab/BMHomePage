@@ -51,8 +51,8 @@ function AppTile({
       href={href}
       className={`group relative overflow-hidden rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-6 ${
         dark
-          ? "border-ivory/10 bg-ink text-ivory"
-          : "border-ink/10 bg-ivory-deep text-ink"
+          ? "border-pearl/10 bg-obsidian-soft text-pearl"
+          : "border-pearl/10 bg-obsidian-soft text-pearl"
       }`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -62,10 +62,10 @@ function AppTile({
         className="mb-4 aspect-[16/10] w-full rounded-lg object-cover object-top opacity-95 transition-transform duration-500 group-hover:scale-[1.04]"
         loading="eager"
       />
-      <div className={`text-base font-bold sm:text-lg ${serif ? "serif-display" : ""}`}>
+      <div className={`text-base font-bold sm:text-lg ${serif ? "font-display" : ""}`}>
         {name}
       </div>
-      <div className={`mt-1 text-xs sm:text-sm ${dark ? "text-ivory/60" : "text-ink/60"}`}>
+      <div className={`mt-1 text-xs sm:text-sm ${dark ? "text-pearl/60" : "text-pearl/60"}`}>
         {price}
       </div>
       <span
@@ -81,13 +81,13 @@ function AppTile({
 
 export default function StorePage() {
   return (
-    <div className="bg-ivory">
+    <div>
       <section className="container-page pb-10 pt-16 text-center md:pt-20">
         <Reveal>
-          <h1 className="display-lg">The store.</h1>
+          <h1 className="display-lg">The <span className="shimmer-gold">store.</span></h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-4 max-w-xl text-base text-ink/60">
+          <p className="mx-auto mt-4 max-w-xl text-base text-pearl/60">
             Two instruments. Own them outright or subscribe. Try both free
             before you decide.
           </p>
@@ -118,7 +118,7 @@ export default function StorePage() {
           <div className="mb-8 flex items-end justify-between">
             <div>
               <h2 className="display-md">Finalova</h2>
-              <p className="mt-1 text-sm text-ink/55">
+              <p className="mt-1 text-sm text-pearl/55">
                 For Mac · free 14-day trial, full Studio
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function StorePage() {
               <PricingCard
                 product={PRODUCTS[sku]}
                 highlight={sku === "finalova-studio-perpetual"}
-                accent={["#6d28d9", "#2563eb"]}
+                accent={["#7c5cff", "#38bdf8"]}
               />
             </Reveal>
           ))}
@@ -144,8 +144,8 @@ export default function StorePage() {
         <Reveal>
           <div className="mb-8 flex items-end justify-between">
             <div>
-              <h2 className="display-md serif-display">B∕A Studio</h2>
-              <p className="mt-1 text-sm text-ink/55">
+              <h2 className="display-md font-display">B∕A Studio</h2>
+              <p className="mt-1 text-sm text-pearl/55">
                 For Mac &amp; iPhone · free trial included
               </p>
             </div>
@@ -165,12 +165,12 @@ export default function StorePage() {
           ))}
         </div>
         <Reveal delay={0.2}>
-          <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-ink/10 bg-ivory-deep px-8 py-7 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-pearl/10 bg-obsidian-soft px-8 py-7 sm:flex-row">
             <div>
               <h3 className="text-lg font-semibold">
                 B∕A Studio for iPhone
               </h3>
-              <p className="mt-1.5 max-w-md text-sm leading-relaxed text-ink/65">
+              <p className="mt-1.5 max-w-md text-sm leading-relaxed text-pearl/65">
                 The guided camera with LiDAR Enhanced capture lives on your
                 iPhone. Get it on the App&nbsp;Store; subscriptions there run
                 through your Apple&nbsp;ID.

@@ -14,8 +14,7 @@ interface PricingCardProps {
 export default function PricingCard({
   product,
   highlight = false,
-  dark = false,
-  accent = ["#b8963e", "#e3c878"],
+  accent = ["#c8a44b", "#e6cf8d"],
 }: PricingCardProps) {
   const { add } = useCart();
   const period =
@@ -25,94 +24,84 @@ export default function PricingCard({
         ? "per year"
         : "one purchase";
 
-  const inner = dark
-    ? "bg-[#16161c]/95 text-ivory"
-    : "bg-white/90 text-ink backdrop-blur";
-  const sub = dark ? "text-ivory/55" : "text-ink/55";
-  const rule = dark ? "border-ivory/10" : "border-ink/10";
-
   return (
     <div
-      className={`group relative h-full rounded-[1.6rem] p-[1.5px] transition-transform duration-300 hover:-translate-y-1.5 ${
-        highlight ? "" : dark ? "bg-white/10" : "bg-ink/10"
+      className={`group relative h-full rounded-[1.6rem] p-px transition-transform duration-300 hover:-translate-y-1.5 ${
+        highlight ? "" : "bg-pearl/12"
       }`}
       style={
         highlight
           ? {
               background: `linear-gradient(140deg, ${accent[0]}, ${accent[1]} 45%, ${accent[0]})`,
-              boxShadow: `0 24px 60px -24px ${accent[0]}66`,
+              boxShadow: `0 30px 80px -30px ${accent[0]}80`,
             }
           : undefined
       }
     >
-      <div
-        className={`relative flex h-full flex-col rounded-[calc(1.6rem-1.5px)] p-7 ${inner}`}
-      >
+      <div className="gleam-border relative flex h-full flex-col rounded-[calc(1.6rem-1px)] bg-obsidian-soft/95 p-8 backdrop-blur">
         {product.badge && (
           <span
-            className="absolute -top-3 right-6 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white shadow-md"
+            className="font-ui absolute -top-3 right-7 rounded-full px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-obsidian shadow-md"
             style={{
-              background: `linear-gradient(120deg, ${accent[0]}, ${accent[1]})`,
+              background: `linear-gradient(120deg, ${accent[1]}, ${accent[0]})`,
             }}
           >
             {product.badge}
           </span>
         )}
 
-        <div className={`text-[11px] font-semibold uppercase tracking-[0.18em] ${sub}`}>
+        <div className="eyebrow text-[10px] text-pearl/45">
           {product.edition}
         </div>
-        <h3 className="mt-1.5 text-lg font-bold tracking-tight">
+        <h3 className="font-display mt-2 text-xl text-pearl">
           {product.name}
         </h3>
 
-        <div className="mt-5 flex items-end gap-2.5">
-          <span className="text-[2.6rem] font-bold leading-none tracking-tight">
+        <div className="mt-6 flex items-end gap-3">
+          <span className="font-display text-[2.9rem] leading-none text-pearl">
             {formatPrice(product).replace(/\/(mo|yr)$/, "")}
           </span>
           <div className="pb-1">
             {product.listPrice && (
-              <div className={`text-sm line-through ${sub}`}>
+              <div className="text-sm text-pearl/40 line-through">
                 ${product.listPrice}
               </div>
             )}
-            <div className={`text-xs ${sub}`}>{period}</div>
+            <div className="font-ui text-[11px] uppercase tracking-[0.14em] text-pearl/45">
+              {period}
+            </div>
           </div>
         </div>
 
-        <p className={`mt-3 text-sm leading-relaxed ${sub}`}>
+        <p className="mt-4 text-[15px] italic leading-relaxed text-pearl/55">
           {product.tagline}
         </p>
 
-        <ul className={`my-6 flex-1 space-y-3 border-t pt-5 text-[13.5px] ${rule}`}>
+        <ul className="my-7 flex-1 space-y-3.5 border-t border-pearl/10 pt-6 font-ui text-[13.5px]">
           {product.features.map((f) => (
             <li key={f} className="flex items-start gap-3">
               <span
-                className="mt-0.5 flex h-4.5 w-4.5 flex-none items-center justify-center rounded-full text-[9px] font-bold text-white"
+                className="mt-1.5 block h-1 w-4 flex-none rounded-full"
                 style={{
-                  background: `linear-gradient(120deg, ${accent[0]}, ${accent[1]})`,
+                  background: `linear-gradient(90deg, ${accent[0]}, ${accent[1]})`,
                 }}
-              >
-                ✓
-              </span>
-              <span className={dark ? "text-ivory/85" : "text-ink/80"}>{f}</span>
+              />
+              <span className="text-pearl/75">{f}</span>
             </li>
           ))}
         </ul>
 
         <button
           onClick={() => add(product.sku)}
-          className={`w-full rounded-xl py-3.5 text-sm font-semibold transition-all duration-200 active:scale-[0.98] ${
+          className={`font-ui w-full rounded-full py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 active:scale-[0.98] ${
             highlight
-              ? "text-white shadow-lg hover:brightness-110"
-              : dark
-                ? "bg-ivory text-ink hover:bg-white"
-                : "bg-ink text-ivory hover:bg-ink-soft"
+              ? "text-obsidian shadow-lg hover:brightness-110"
+              : "border border-pearl/25 text-pearl hover:border-gold/60 hover:text-gold-soft"
           }`}
           style={
             highlight
               ? {
-                  background: `linear-gradient(120deg, ${accent[0]}, ${accent[1]})`,
+                  background: `linear-gradient(120deg, ${accent[1]}, ${accent[0]})`,
                 }
               : undefined
           }

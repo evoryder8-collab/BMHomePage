@@ -4,30 +4,23 @@ import { withBase } from "@/lib/site";
 interface ScreenshotFrameProps {
   src: string;
   alt: string;
-  /** "dark" puts a deep glass rim around the shot; "light" a soft ivory one. */
+  /** Kept for API compatibility; the obsidian stage has one tone now. */
   tone?: "dark" | "light";
   className?: string;
   priority?: boolean;
 }
 
-/**
- * A screenshot presented as a physical object: glass rim, depth shadow,
- * gleam sweep. Pair with <Tilt3D> for the full cinematic treatment.
- */
+/** A screenshot presented as an object under gallery light: glass rim,
+ *  gold-warmed depth shadow, one gleam sweep on entry. */
 export default function ScreenshotFrame({
   src,
   alt,
-  tone = "dark",
   className = "",
   priority,
 }: ScreenshotFrameProps) {
   return (
     <Gleam
-      className={`rounded-2xl ${
-        tone === "dark"
-          ? "bg-white/[0.06] ring-1 ring-white/15 shadow-[0_40px_80px_-24px_rgba(0,0,0,0.55)]"
-          : "bg-ink/[0.03] ring-1 ring-ink/10 shadow-[0_40px_80px_-32px_rgba(16,16,20,0.35)]"
-      } p-2 backdrop-blur-sm ${className}`}
+      className={`rounded-2xl bg-white/[0.05] p-2 ring-1 ring-pearl/12 shadow-[0_50px_100px_-30px_rgba(0,0,0,0.8),0_24px_60px_-30px_rgba(200,164,75,0.18)] backdrop-blur-sm ${className}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
