@@ -29,6 +29,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
+  applicationName: "Barbu Media Software",
   title: {
     default: "Barbu Media Software: Software that finishes the thought.",
     template: "%s · Barbu Media Software",
@@ -36,13 +37,44 @@ export const metadata: Metadata = {
   description:
     "Purpose-built professional software from Zürich. Barbu Media Software creates unusually complete native tools without the missing pieces.",
   metadataBase: new URL(SITE.url),
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: "Barbu Media Software: Software that finishes the thought.",
     description:
       "Purpose-built professional software that resolves the whole job, not just the obvious feature.",
+    url: "/",
     type: "website",
     siteName: "Barbu Media Software",
+    locale: "en_CH",
+    images: [
+      {
+        url: "/social/barbu-media-social-card.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Barbu Media Software — software that finishes the thought, conceived and built in Zürich",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Barbu Media Software: Software that finishes the thought.",
+    description:
+      "Purpose-built professional software that resolves the whole job, not just the obvious feature.",
+    images: ["/social/barbu-media-social-card.jpg"],
+  },
+  creator: "Barbu Media Software",
+  publisher: "Barbu Media Software",
+  category: "Software Development",
 };
 
 export default function RootLayout({
