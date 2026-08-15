@@ -29,10 +29,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} ${playfair.variable} flex min-h-screen flex-col antialiased`}
-      >
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="flex min-h-screen flex-col antialiased">
         <AuthProvider>
           <CartProvider>
             <Nav />
