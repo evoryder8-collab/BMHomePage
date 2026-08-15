@@ -114,36 +114,36 @@ export default function FinalovaPage() {
       {/* Hero */}
       <section className="grain relative">
         <div className="container-page flex min-h-[80vh] flex-col items-center justify-center py-24 text-center">
-          <Reveal>
-            <p className="eyebrow mb-5 text-gold-soft">Finalova · for Mac</p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h1 className="display-xl">
-              The finishing <span className="aurora-text">line.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ivory/70">
-              The intelligent media adaptation and delivery studio. One
-              finished piece becomes every deliverable — branded, reframed,
-              captioned, optimized and organized — from one coherent workspace.
-            </p>
-          </Reveal>
-          <Reveal delay={0.3}>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Button href="/finalova/pricing" variant="gold">
-                See pricing
-              </Button>
-              <Button
-                href="/store"
-                variant="ghost"
-                className="border-ivory/25 !text-ivory hover:border-ivory/60 hover:!bg-ivory/10"
-              >
-                Visit the store
-              </Button>
-            </div>
-          </Reveal>
-          <Reveal delay={0.42} className="mt-16 w-full max-w-4xl">
+          <p className="eyebrow rise mb-5 text-gold-soft" style={{ animationDelay: "0.05s" }}>
+            Finalova · for Mac
+          </p>
+          <h1 className="display-xl rise" style={{ animationDelay: "0.12s" }}>
+            The finishing <span className="aurora-text">line.</span>
+          </h1>
+          <p
+            className="rise mt-7 max-w-2xl text-lg leading-relaxed text-ivory/70"
+            style={{ animationDelay: "0.22s" }}
+          >
+            The intelligent media adaptation and delivery studio. One finished
+            piece becomes every deliverable — branded, reframed, captioned,
+            optimized and organized — from one coherent workspace.
+          </p>
+          <div
+            className="rise mt-10 flex flex-col gap-3 sm:flex-row"
+            style={{ animationDelay: "0.32s" }}
+          >
+            <Button href="/finalova/pricing" variant="gold">
+              See pricing
+            </Button>
+            <Button
+              href="/store"
+              variant="ghost"
+              className="border-ivory/25 !text-ivory hover:border-ivory/60 hover:!bg-ivory/10"
+            >
+              Visit the store
+            </Button>
+          </div>
+          <div className="rise mt-16 w-full max-w-4xl" style={{ animationDelay: "0.4s" }}>
             <Gleam className="rounded-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -152,7 +152,7 @@ export default function FinalovaPage() {
                 className="w-full drop-shadow-2xl"
               />
             </Gleam>
-          </Reveal>
+          </div>
         </div>
       </section>
 

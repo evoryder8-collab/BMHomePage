@@ -39,14 +39,14 @@ export default function Footer() {
           <div className="text-sm font-bold tracking-[0.28em]">
             BARBU&nbsp;MEDIA
           </div>
-          <p className="max-w-[16rem] text-sm text-ink/60">
+          <p className="max-w-[16rem] text-sm text-ink/70">
             Professional instruments for people whose work has to hold up.
           </p>
           <SwissMark />
         </div>
         {COLUMNS.map((col) => (
           <div key={col.title}>
-            <div className="eyebrow mb-4 text-ink/50">{col.title}</div>
+            <div className="eyebrow mb-4 text-ink/60">{col.title}</div>
             <ul className="space-y-2.5">
               {col.links.map((l) => (
                 <li key={l.href}>
@@ -63,7 +63,7 @@ export default function Footer() {
         ))}
       </div>
       <div className="border-t border-ink/10">
-        <div className="container-page flex flex-col gap-2 py-6 text-xs text-ink/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="container-page flex flex-col gap-2 py-6 text-xs text-ink/60 sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {new Date().getFullYear()} {SITE.name}, {SITE.location}. All
             rights reserved.

@@ -10,13 +10,15 @@
   --color-aurora-from: #6d28d9;
   --color-aurora-mid: #4338ca;
   --color-aurora-to: #2563eb;
-
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-didone: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
 
+/* Font stacks live outside @theme: Tailwind v4 prunes theme variables that
+   no generated utility consumes, and these are referenced only from custom
+   CSS below. next/font defines --font-inter / --font-playfair on <body>. */
 :root {
   color-scheme: light;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-didone: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
 
 body {
@@ -110,6 +112,26 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .gleam-host::before {
     display: none;
+  }
+}
+
+/* ---------- CSS-only entrance (hero: paints before hydration) ---------- */
+.rise {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: rise-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes rise-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
 

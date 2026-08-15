@@ -1,55 +1,39 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import SwissMark from "@/components/ui/SwissMark";
 
+/** Server component: the opening animation is pure CSS so the hero paints
+ *  with the first frame instead of waiting for hydration (LCP). */
 export default function Hero() {
-  const reduce = useReducedMotion();
-  const rise = (delay: number) =>
-    reduce
-      ? {}
-      : {
-          initial: { opacity: 0, y: 34 },
-          animate: { opacity: 1, y: 0 },
-          transition: {
-            duration: 0.85,
-            delay,
-            ease: [0.22, 1, 0.36, 1] as const,
-          },
-        };
+  const d = (s: number) => ({ animationDelay: `${s}s` });
 
   return (
     <section className="grain relative overflow-hidden bg-ivory">
       <div className="container-page flex min-h-[82vh] flex-col items-center justify-center py-24 text-center">
-        <motion.p {...rise(0.05)} className="eyebrow mb-6 text-ink/50">
+        <p className="eyebrow rise mb-6 text-ink/50" style={d(0.05)}>
           Barbu Media
-        </motion.p>
-        <motion.h1 {...rise(0.15)} className="display-xl max-w-4xl">
+        </p>
+        <h1 className="display-xl rise max-w-4xl" style={d(0.12)}>
           Instruments,
           <br />
           not apps.
-        </motion.h1>
-        <motion.p
-          {...rise(0.3)}
-          className="mt-7 max-w-2xl text-lg leading-relaxed text-ink/65"
+        </h1>
+        <p
+          className="rise mt-7 max-w-2xl text-lg leading-relaxed text-ink/65"
+          style={d(0.22)}
         >
           Professional Mac and iPhone software that pays for itself — precision
           tools that help you work faster, deliver more, and win the clients
           your work deserves.
-        </motion.p>
-        <motion.div
-          {...rise(0.45)}
-          className="mt-10 flex flex-col gap-3 sm:flex-row"
-        >
+        </p>
+        <div className="rise mt-10 flex flex-col gap-3 sm:flex-row" style={d(0.32)}>
           <Button href="/finalova">Explore Finalova</Button>
           <Button href="/ba-studio" variant="ghost">
             Explore B∕A Studio
           </Button>
-        </motion.div>
-        <motion.div {...rise(0.6)} className="mt-14">
+        </div>
+        <div className="rise mt-14" style={d(0.42)}>
           <SwissMark />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

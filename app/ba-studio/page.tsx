@@ -20,37 +20,35 @@ export default function BaStudioPage() {
       {/* Hero */}
       <section className="grain relative bg-ivory-deep">
         <div className="container-page flex min-h-[80vh] flex-col items-center justify-center py-24 text-center">
-          <Reveal>
-            <p className="eyebrow mb-5 text-gold">
-              B∕A Studio · for Mac &amp; iPhone
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h1 className="display-xl serif-display">
-              The comparison
-              <br />
-              that can&rsquo;t lie.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink/65">
-              Two originals. One rigid frame. Zero cosmetic edits — enforced by
-              mathematics, not by promise. For massage therapists, facialists
-              and lifting practitioners whose real results deserve to be
-              believed again.
-            </p>
-          </Reveal>
-          <Reveal delay={0.3}>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Button href="/ba-studio/pricing" variant="gold">
-                See pricing
-              </Button>
-              <Button href="/store" variant="ghost">
-                Visit the store
-              </Button>
-            </div>
-          </Reveal>
-          <Reveal delay={0.42} className="mt-16 w-full max-w-4xl">
+          <p className="eyebrow rise mb-5 text-gold" style={{ animationDelay: "0.05s" }}>
+            B∕A Studio · for Mac &amp; iPhone
+          </p>
+          <h1 className="display-xl serif-display rise" style={{ animationDelay: "0.12s" }}>
+            The comparison
+            <br />
+            that can&rsquo;t lie.
+          </h1>
+          <p
+            className="rise mt-7 max-w-2xl text-lg leading-relaxed text-ink/65"
+            style={{ animationDelay: "0.22s" }}
+          >
+            Two originals. One rigid frame. Zero cosmetic edits — enforced by
+            mathematics, not by promise. For massage therapists, facialists
+            and lifting practitioners whose real results deserve to be
+            believed again.
+          </p>
+          <div
+            className="rise mt-10 flex flex-col gap-3 sm:flex-row"
+            style={{ animationDelay: "0.32s" }}
+          >
+            <Button href="/ba-studio/pricing" variant="gold">
+              See pricing
+            </Button>
+            <Button href="/store" variant="ghost">
+              Visit the store
+            </Button>
+          </div>
+          <div className="rise mt-16 w-full max-w-4xl" style={{ animationDelay: "0.4s" }}>
             <Gleam className="rounded-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -59,7 +57,7 @@ export default function BaStudioPage() {
                 className="w-full drop-shadow-2xl"
               />
             </Gleam>
-          </Reveal>
+          </div>
         </div>
       </section>
 
