@@ -4,53 +4,64 @@ import Button from "@/components/ui/Button";
 const PRINCIPLES = [
   {
     n: "01",
-    title: "Native, all the way down.",
-    body: "Metal, Core Image and VideoToolbox—not a web wrapper wearing a Mac costume.",
+    title: "Complete by design",
+    body: "We start with the whole professional outcome, then engineer backwards until the handoffs, edge cases and repetitive last steps disappear.",
+    proof: "The job—not the feature list—is the unit of design.",
   },
   {
     n: "02",
-    title: "Private by construction.",
-    body: "Your masters and your clients’ faces stay on the devices you trust. No cloud dependency. No telemetry.",
+    title: "Useful on first launch",
+    body: "Strong defaults carry real judgment. You can work immediately, then go deeper only when the job actually demands it.",
+    proof: "No assembly project disguised as software.",
   },
   {
     n: "03",
-    title: "Preview is a promise.",
-    body: "The geometry you approve is the geometry we export. No approximation between screen and delivery.",
+    title: "Native and local",
+    body: "Apple-native frameworks, hardware acceleration and private on-device processing make the software fast, calm and dependable.",
+    proof: "Your work stays on the machines you trust.",
   },
-];
+  {
+    n: "04",
+    title: "Built to own",
+    body: "Clear pricing, perpetual options and software that remains useful without a permanent cloud dependency or an artificial upgrade treadmill.",
+    proof: "A tool should answer to its owner.",
+  },
+] as const;
 
 export default function Philosophy() {
   return (
     <>
-      <section className="bm-atelier">
+      <section id="standard" className="publisher-standard">
         <div className="container-page">
-          <Reveal>
-            <p className="bm-kicker">The Barbu standard</p>
-          </Reveal>
-          <div className="bm-atelier-heading">
+          <div className="publisher-standard-intro">
+            <Reveal>
+              <p className="publisher-overline">The Barbu standard</p>
+            </Reveal>
             <Reveal delay={0.06}>
               <h2>
-                Built like the work
+                The useful idea,
                 <br />
-                <em>depends on it.</em>
+                <em>taken all the way.</em>
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
               <p>
-                Because it does. Every instrument is conceived and engineered
-                in Zürich around three promises that are expensive to keep—and
-                obvious when they are broken.
+                Barbu Media Software is a developer and publisher of focused
+                professional software. Our reputation is meant to travel ahead
+                of every new product: if we built it, the awkward parts have
+                already been thought through.
               </p>
             </Reveal>
           </div>
 
-          <div className="bm-principles">
-            {PRINCIPLES.map((principle, i) => (
-              <Reveal key={principle.n} delay={0.06 + i * 0.07}>
+          <div className="publisher-standard-list">
+            {PRINCIPLES.map((principle, index) => (
+              <Reveal key={principle.n} delay={0.04 + index * 0.05}>
                 <article>
                   <span>{principle.n}</span>
                   <h3>{principle.title}</h3>
                   <p>{principle.body}</p>
+                  <small>{principle.proof}</small>
                 </article>
               </Reveal>
             ))}
@@ -58,29 +69,31 @@ export default function Philosophy() {
         </div>
       </section>
 
-      <section className="bm-closing">
-        <div className="bm-closing-glow" aria-hidden />
-        <div className="container-page bm-closing-inner">
+      <section className="publisher-closing">
+        <div className="publisher-closing-grid" aria-hidden />
+        <div className="container-page publisher-closing-inner">
           <Reveal>
-            <p className="bm-kicker bm-kicker-dark">Ready when your work is</p>
+            <p className="publisher-overline">Software without the missing pieces</p>
           </Reveal>
           <Reveal delay={0.06}>
             <h2>
-              Ship the work.
+              Built to remove
               <br />
-              <em>Keep the standard.</em>
+              <em>the last workaround.</em>
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p>
-              Try both instruments before you buy. No cloud account required
-              to understand what native professional software should feel like.
+              Explore each product on its own terms, try the complete workflow
+              and choose the tool that belongs in your work.
             </p>
           </Reveal>
           <Reveal delay={0.18}>
-            <div className="bm-closing-actions">
-              <Button href="/store">Visit the store</Button>
-              <Button href="/apps" variant="ghost">Compare the instruments</Button>
+            <div className="publisher-closing-actions">
+              <Button href="/apps">Explore all software</Button>
+              <Button href="/store" variant="ghost">
+                Visit the store
+              </Button>
             </div>
           </Reveal>
         </div>

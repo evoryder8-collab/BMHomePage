@@ -30,18 +30,18 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: {
-    default: "Barbu Media: Make your work undeniable.",
-    template: "%s · Barbu Media",
+    default: "Barbu Media Software: Software that finishes the thought.",
+    template: "%s · Barbu Media Software",
   },
   description:
-    "Native professional software from Zürich: Finalova finishes every media deliverable, and B∕A Studio turns real before-and-after results into measurable proof.",
+    "Purpose-built professional software from Zürich. Barbu Media Software creates unusually complete native tools without the missing pieces.",
   metadataBase: new URL(SITE.url),
   openGraph: {
-    title: "Barbu Media: Make your work undeniable.",
+    title: "Barbu Media Software: Software that finishes the thought.",
     description:
-      "Finalova finishes media. B∕A Studio proves results. Two native instruments for professionals who refuse to ship almost.",
+      "Purpose-built professional software that resolves the whole job, not just the obvious feature.",
     type: "website",
-    siteName: "Barbu Media",
+    siteName: "Barbu Media Software",
   },
 };
 

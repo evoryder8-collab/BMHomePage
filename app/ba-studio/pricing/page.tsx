@@ -6,52 +6,72 @@ import AppStoreBadge from "@/components/ui/AppStoreBadge";
 export const metadata: Metadata = {
   title: "B∕A Studio Pricing",
   description:
-    "B∕A Studio Lite, Pro and Lifetime. Pay once or subscribe; priced like a professional instrument.",
+    "Choose B∕A Studio Lite, Pro or Lifetime. Subscription and lifetime options for Mac, with the iPhone edition on the App Store.",
 };
+
+const BA_ACCENT: [string, string] = ["#361528", "#62c4aa"];
 
 export default function BaPricingPage() {
   return (
-    <div className="didone-scope">
-      <section className="container-page py-20 text-center md:py-24">
-        <Reveal>
-          <p className="eyebrow mb-4 text-jade">B∕A Studio pricing</p>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <h1 className="display-lg">
-            Priced like <span className="shimmer-jade">an instrument.</span>
-          </h1>
-        </Reveal>
-        <Reveal delay={0.16}>
-          <p className="mx-auto mt-6 max-w-2xl text-base text-ink/60">
-            Because that&rsquo;s what it is. Exports carry your logo, so your
-            license markets your studio and no one else&rsquo;s.
-          </p>
-        </Reveal>
+    <div className="pricing-page ba-pricing-page didone-scope">
+      <section className="product-pricing-hero">
+        <div className="product-pricing-grid" aria-hidden />
+        <div className="container-page product-pricing-layout">
+          <div>
+            <Reveal><p>B∕A Studio · Pricing &amp; ownership</p></Reveal>
+            <Reveal delay={0.05}>
+              <h1>
+                Invest in proof.
+                <br />
+                <em>Choose how you own it.</em>
+              </h1>
+            </Reveal>
+          </div>
+          <Reveal delay={0.1}>
+            <div className="product-pricing-promise">
+              <p>
+                Start with editorial exports, add measurement and client
+                records with Pro, or purchase the whole instrument once and
+                keep every future update.
+              </p>
+              <dl>
+                <div><dt>Lite</dt><dd>Content production</dd></div>
+                <div><dt>Pro</dt><dd>Measurement &amp; records</dd></div>
+                <div><dt>Lifetime</dt><dd>The whole instrument, forever</dd></div>
+              </dl>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
-      <section className="container-page pb-20">
-        <Reveal delay={0.1}>
-          <PricingSwitcher app="ba-studio" />
-        </Reveal>
+      <section className="pricing-page-body">
+        <div className="container-page pricing-page-intro">
+          <Reveal><span>B∕A Studio editions</span></Reveal>
+          <Reveal delay={0.05}><h2>From content production to complete evidence.</h2></Reveal>
+          <Reveal delay={0.1}><p>Choose a subscription for flexibility or Lifetime for permanent ownership and every future update.</p></Reveal>
+        </div>
+        <div className="container-page">
+          <Reveal delay={0.08}>
+            <PricingSwitcher app="ba-studio" accent={BA_ACCENT} />
+          </Reveal>
+        </div>
       </section>
 
-      <section className="container-page pb-24">
-        <Reveal>
-          <div className="mx-auto flex max-w-2xl flex-col items-center gap-5 rounded-2xl border border-ink/10 bg-white/70 px-8 py-7 text-center backdrop-blur">
+      <section className="ba-pricing-mobile">
+        <div className="container-page">
+          <Reveal>
             <div>
-              <h2 className="font-ui text-base font-semibold text-ink">
-                On iPhone
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-ink/60">
-                B∕A Studio for iPhone brings the guided camera with LiDAR
-                Enhanced capture. It ships through the App Store, and
-                subscriptions there run through your Apple ID. Mac licenses
-                are sold right here and include everything above.
+              <span>On iPhone</span>
+              <h2>Guided capture, carried with you.</h2>
+              <p>
+                B∕A Studio for iPhone includes the guided camera and LiDAR
+                Enhanced capture. Download it from the App Store; Apple ID
+                subscriptions are managed by Apple.
               </p>
             </div>
-            <AppStoreBadge />
-          </div>
-        </Reveal>
+          </Reveal>
+          <Reveal delay={0.08}><AppStoreBadge /></Reveal>
+        </div>
       </section>
     </div>
   );

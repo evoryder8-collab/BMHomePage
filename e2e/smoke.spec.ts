@@ -1,13 +1,13 @@
 import { test, expect } from "@playwright/test";
 
 const ROUTES: [string, string | RegExp][] = [
-  [".", "Make your work"],
-  ["apps/", "The instruments."],
-  ["finalova/", /The finishing/],
-  ["finalova/pricing/", /Own it\. Or subscribe\./],
-  ["ba-studio/", /The comparison/],
-  ["ba-studio/pricing/", /Priced like an instrument\./],
-  ["store/", "The store."],
+  [".", "Software that"],
+  ["apps/", "Purpose-built software."],
+  ["finalova/", /Everything after/],
+  ["finalova/pricing/", /Choose the workflow\./],
+  ["ba-studio/", /Evidence,/],
+  ["ba-studio/pricing/", /Invest in proof\./],
+  ["store/", "Software store."],
   ["press/", "Press."],
   ["contact/", "Talk to us."],
   ["login/", "Welcome back."],
@@ -66,7 +66,7 @@ test("hero renders under reduced motion", async ({ browser, baseURL }) => {
   const ctx = await browser.newContext({ reducedMotion: "reduce" });
   const page = await ctx.newPage();
   await page.goto(baseURL!);
-  await expect(page.locator("h1")).toContainText("Make your work");
+  await expect(page.locator("h1")).toContainText("Software that");
   await ctx.close();
 });
 

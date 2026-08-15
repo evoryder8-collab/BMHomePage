@@ -1,308 +1,327 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
-import Tilt3D from "@/components/ui/Tilt3D";
-import ScreenshotFrame from "@/components/ui/ScreenshotFrame";
 import { withBase } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "B∕A Studio: the comparison that can't lie",
+  title: "B∕A Studio: evidence, beautifully presented",
   description:
-    "The before-and-after studio for aesthetics professionals. Two originals, one rigid frame, zero cosmetic edits, with lift measured in millimetres against an honest noise floor.",
+    "The before-and-after studio for aesthetics professionals: guided capture, rigid alignment, defensible measurement and editorial exports on Mac and iPhone.",
 };
-
-function GildedDivider() {
-  return <div className="hairline-jade mx-auto my-0 w-full max-w-4xl" />;
-}
 
 export default function BaStudioPage() {
   return (
-    <div className="didone-scope product-detail product-detail-ba">
-      {/* Hero */}
-      <section className="product-detail-hero product-detail-hero-ba relative overflow-hidden">
-        <div className="container-page flex min-h-[78vh] flex-col items-center justify-center pt-24 text-center">
-          <p
-            className="eyebrow rise mb-7 text-jade/90"
-            style={{ animationDelay: "0.05s" }}
-          >
-            B∕A Studio · for Mac &amp; iPhone
-          </p>
-          <h1 className="display-xl rise" style={{ animationDelay: "0.14s" }}>
-            The comparison
-            <br />
-            <span className="shimmer-jade">that can&rsquo;t lie.</span>
-          </h1>
-          <p
-            className="lede rise mt-8 max-w-2xl text-ink/70"
-            style={{ animationDelay: "0.26s" }}
-          >
-            Two originals. One rigid frame. Zero cosmetic edits, enforced by
-            mathematics rather than promises. For massage therapists,
-            facialists and lifting practitioners whose real results deserve to
-            be believed again.
-          </p>
-          <p
-            className="rise mt-7 font-mono text-[11px] tracking-[0.28em] text-jade/80"
-            style={{ animationDelay: "0.32s" }}
-          >
-            RIGID TRANSFORM · GLOBAL TONE MATCH · 95% CONFIDENCE GATE
-          </p>
-          <div
-            className="rise mt-9 flex flex-col gap-4 sm:flex-row"
-            style={{ animationDelay: "0.38s" }}
-          >
-            <Button href="/ba-studio/pricing">See pricing</Button>
-            <Button href="/store" variant="ghost">
-              Visit the store
-            </Button>
+    <div className="ba-world didone-scope">
+      <section className="ba-hero" aria-labelledby="ba-title">
+        <div className="ba-hero-grid" aria-hidden />
+        <div className="container-page ba-hero-layout">
+          <div className="ba-hero-copy">
+            <p className="ba-label rise" style={{ animationDelay: ".04s" }}>
+              B∕A Studio · Mac &amp; iPhone
+            </p>
+            <h1 id="ba-title" className="rise" style={{ animationDelay: ".12s" }}>
+              Evidence,
+              <br />
+              <em>beautifully presented.</em>
+            </h1>
+            <p className="rise" style={{ animationDelay: ".21s" }}>
+              Capture comparable images, measure real change and publish
+              before-and-after results that remain credible when someone looks
+              closely.
+            </p>
+            <div className="ba-hero-actions rise" style={{ animationDelay: ".3s" }}>
+              <Button href="/ba-studio/pricing">Choose B∕A Studio</Button>
+              <Button href="#method" variant="ghost">See the method</Button>
+            </div>
           </div>
-        </div>
-        <div className="container-page relative pb-24 pt-6">
-          <div className="product-campaign-visual rise" style={{ animationDelay: "0.48s" }}>
+
+          <div className="ba-hero-art rise" style={{ animationDelay: ".18s" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={withBase("/art/ba-studio-devices.webp")}
-              alt="B/A Studio running on a Mac and iPhone with an honest measured comparison"
+              alt="B/A Studio on a Mac and iPhone showing a measured before-and-after comparison"
               width="1536"
               height="1024"
               loading="eager"
               decoding="async"
             />
           </div>
+
+          <p className="ba-hero-proof rise" style={{ animationDelay: ".38s" }}>
+            TWO ORIGINALS · ONE RIGID FRAME · ZERO COSMETIC EDITS
+          </p>
         </div>
       </section>
 
-      {/* Honesty, illustrated by the zero card */}
-      <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute top-4 right-4 md:right-10">
-          01
+      <nav className="ba-section-nav" aria-label="B/A Studio key features">
+        <div className="container-page">
+          <span>The method</span>
+          <a href="#method">Honest alignment</a>
+          <a href="#measurement">Lift Index</a>
+          <a href="#capture">Guided capture</a>
+          <a href="#publishing">Content engine</a>
         </div>
-        <div className="container-page grid items-center gap-14 py-24 md:grid-cols-2 md:py-32">
-          <div>
+      </nav>
+
+      <section id="method" className="ba-manifesto" aria-labelledby="method-title">
+        <div className="container-page ba-manifesto-layout">
+          <div className="ba-manifesto-copy">
             <Reveal>
-              <p className="eyebrow mb-5 text-jade">The thesis</p>
+              <p className="ba-label ba-label-light">The honest comparison</p>
             </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="display-md">
-                Honesty is <span className="shimmer-jade">the product.</span>
+            <Reveal delay={0.05}>
+              <h2 id="method-title">
+                Honesty is not a disclaimer.
+                <br />
+                <em>It is the architecture.</em>
               </h2>
             </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-ink/65">
-                Every editing app promises to make you look better. B∕A Studio
-                is architected so that it cannot. The comparison engine permits
-                only a rigid transform: move, rotate, uniformly scale. No warp,
-                no liquify, no local retouch exists anywhere in the pipeline,
-                and the one colour adjustment is a global tone match applied to
-                the whole frame. Your results can be defended in an argument,
-                because the dishonest operations do not exist in the code.
+            <Reveal delay={0.1}>
+              <p>
+                B∕A Studio permits only a rigid transform: move, rotate and
+                uniformly scale. No warp, liquify or local retouch exists in
+                the pipeline. The only colour correction is a global tone
+                match applied to the whole frame.
               </p>
             </Reveal>
-            <Reveal delay={0.24}>
-              <p className="mt-6 max-w-md text-[15px] italic leading-relaxed text-ink/50">
-                Shown here on an unchanged face: the card says so, out loud.
-                Lift Index 0, within noise, marked exploratory. The app was
-                deliberately built to fail to flatter.
-              </p>
+            <Reveal delay={0.14}>
+              <blockquote>
+                The dishonest operations are not hidden.
+                <br />
+                They do not exist.
+              </blockquote>
             </Reveal>
           </div>
-          <Tilt3D from={20} fromY={-7}>
-            <ScreenshotFrame
-              src="/screenshots/ba-studio/card-zero.webp"
-              alt="A live comparison card scoring an unchanged face: B/A Lift Index 0, within noise, labelled exploratory"
-              className="mx-auto max-w-md"
+
+          <Reveal delay={0.08} className="ba-zero-stage">
+            <div className="ba-card-caption">
+              <span>CONTROL RESULT</span>
+              <strong>Lift Index 0</strong>
+              <small>Within measured noise</small>
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={withBase("/screenshots/ba-studio/card-zero.webp")}
+              alt="An unchanged face scored Lift Index 0 and labelled within noise"
+              loading="lazy"
+              decoding="async"
             />
-          </Tilt3D>
+          </Reveal>
         </div>
       </section>
 
-      <GildedDivider />
-
-      {/* Measurement */}
-      <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute top-4 left-4 md:left-10">
-          02
+      <section id="measurement" className="ba-measure" aria-labelledby="measure-title">
+        <div className="container-page ba-measure-head">
+          <Reveal>
+            <p className="ba-label">The B∕A Lift Index</p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2 id="measure-title">
+              A result you can
+              <br />
+              <em>put a number on.</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.11}>
+            <p>
+              Facial landmarks are scaled to real millimetres. Change counts
+              only after it clears the app&rsquo;s own 95% noise limit, so a
+              measurement describes evidence rather than wishful precision.
+            </p>
+          </Reveal>
         </div>
-        <div className="container-page grid items-center gap-14 py-24 md:grid-cols-2 md:py-32">
-          <Tilt3D from={20} fromY={7} className="order-last md:order-first">
-            <ScreenshotFrame
-              src="/screenshots/ba-studio/measurement.webp"
-              alt="A measured comparison: anatomical guides in degrees and millimetres, B/A Lift Index 375 at +2.9 mm"
-              className="mx-auto max-w-md"
+
+        <div className="container-page ba-measure-stage">
+          <Reveal className="ba-measure-image">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={withBase("/screenshots/ba-studio/measurement.webp")}
+              alt="A B/A Studio comparison with anatomical guides and a measured lift of 2.9 millimetres"
+              loading="lazy"
+              decoding="async"
             />
-          </Tilt3D>
-          <div>
-            <Reveal>
-              <p className="eyebrow mb-5 text-jade">The B∕A Lift Index</p>
-            </Reveal>
+          </Reveal>
+          <div className="ba-measure-index">
             <Reveal delay={0.08}>
-              <h2 className="display-md">
-                Measured in <span className="shimmer-jade">millimetres.</span>
-              </h2>
+              <strong>375</strong>
+              <span>B∕A Lift Index</span>
+              <small>+2.9 mm measured lift</small>
             </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-ink/65">
-                Facial landmarks are detected on both originals, scaled to real
-                millimetres, and the vertical change of key features is
-                measured. Then the honest part: the app computes its own noise
-                floor, and only change that clears it with 95% confidence
-                counts. The scale is open, unbounded, and anchored to physics,
-                so anyone can audit it.
-              </p>
-            </Reveal>
-            <Reveal delay={0.24}>
-              <div className="glass-card glass-card-jade mt-9 px-7 py-6 text-center">
-                <div className="font-ui text-[13.5px] text-ink/70">
-                  Lift Index = 250 × max(0, measured lift − 95% noise limit)
-                </div>
-                <div className="font-ui mt-3 text-xs tracking-[0.24em] text-jade-soft">
-                  B∕A LIFT INDEX 375 · +2.9 MM
-                </div>
+            <Reveal delay={0.13}>
+              <div className="ba-formula">
+                <span>OPEN SCALE</span>
+                <p>250 × max(0, measured lift − 95% noise limit)</p>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      <GildedDivider />
-
-      {/* Capture */}
-      <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute top-4 right-4 md:right-10">
-          03
-        </div>
-        <div className="container-page py-24 md:py-32">
-          <div className="mx-auto max-w-3xl text-center">
+      <section id="capture" className="ba-capture" aria-labelledby="capture-title">
+        <div className="ba-capture-line" aria-hidden />
+        <div className="container-page ba-capture-layout">
+          <div className="ba-capture-copy">
             <Reveal>
-              <p className="eyebrow mb-5 text-jade">Guided capture</p>
+              <p className="ba-label">Guided capture · iPhone</p>
             </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="display-md">
-                The camera that{" "}
-                <span className="shimmer-jade">matches your last shot.</span>
+            <Reveal delay={0.05}>
+              <h2 id="capture-title">
+                Make the after shot
+                <br />
+                <em>comparable at capture.</em>
               </h2>
             </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mt-7 text-[16.5px] leading-[1.8] text-ink/65">
-                Comparability is created at capture time, not fixed afterwards.
-                The guided camera overlays a ghost of the before photo so the
-                after shot is framed to match. With Enhanced capture on iPhone,
-                LiDAR physically locks the shutter until your client is within
-                3&nbsp;cm of the same distance and 3° of the same pitch.
-                Perspective tricks, the oldest cheat in the genre, are simply
-                unavailable. LiDAR also grounds the millimetre scale in
-                measured depth and detects when someone photographs a screen
-                instead of a person.
+            <Reveal delay={0.1}>
+              <p>
+                A ghost of the original guides the frame. With Enhanced
+                capture, LiDAR locks the shutter until the client is within
+                3&nbsp;cm of the same distance and 3° of the same pitch. The
+                perspective trick disappears before it can happen.
               </p>
             </Reveal>
-            <Tilt3D from={18} className="mx-auto mt-14 max-w-xl">
-              <ScreenshotFrame
-                src="/screenshots/ba-studio/measure-flow.webp"
-                alt="The three-set measurement flow: brow tails, oral corners, lower contour lift"
+            <Reveal delay={0.14}>
+              <dl>
+                <div><dt>±3 cm</dt><dd>Distance tolerance</dd></div>
+                <div><dt>±3°</dt><dd>Pitch tolerance</dd></div>
+                <div><dt>LiDAR</dt><dd>Physical scale anchor</dd></div>
+              </dl>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.08} className="ba-capture-stage">
+            <div className="ba-capture-phone">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={withBase("/screenshots/ba-studio/measure-flow.webp")}
+                alt="The guided three-set B/A Studio measurement flow"
+                loading="lazy"
+                decoding="async"
               />
-            </Tilt3D>
-          </div>
+            </div>
+            <span>FRAME LOCKED · READY TO CAPTURE</span>
+          </Reveal>
         </div>
       </section>
 
-      <GildedDivider />
-
-      {/* Content engine */}
-      <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute top-4 left-4 md:left-10">
-          04
-        </div>
-        <div className="container-page grid items-center gap-14 py-24 md:grid-cols-2 md:py-32">
-          <Tilt3D from={20} fromY={7} className="order-last md:order-first">
-            <ScreenshotFrame
-              src="/screenshots/ba-studio/editorial-card.webp"
-              alt="A finished editorial comparison card: Before and After on a warm mat with a gilded seam"
-              className="mx-auto max-w-md"
-            />
-          </Tilt3D>
-          <div>
-            <Reveal>
-              <p className="eyebrow mb-5 text-jade">The content engine</p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="display-md">
-                One capture. <span className="shimmer-jade">A full campaign.</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-ink/65">
-                Every export is composed like a page from a fashion magazine:
-                warm mat, Bodoni titling, a gilded seam, your logo, an optional
-                metadata dock. One tap renders print-quality cards in 4:5, 1:1,
-                9:16 and 16:9. Video cards choreograph both clips into the same
-                frame, face-aligned. A trimmed range loops forever as a
-                transparent-cornered GIF that floats on any website.
-              </p>
-            </Reveal>
-            <Reveal delay={0.24}>
-              <ul className="mt-8 space-y-3 border-l border-jade/35 pl-5 font-ui text-[13.5px] text-ink/70">
-                <li>Full-resolution Display P3 stills for feed, story and print</li>
-                <li>Live preview renders pixel-for-pixel what you&rsquo;ll post</li>
-                <li>Measurement claims structurally excluded from video cards</li>
-              </ul>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      <GildedDivider />
-
-      {/* Trust */}
-      <section className="relative overflow-hidden">
-        <div aria-hidden className="chapter-num absolute top-4 right-4 md:right-10">
-          05
-        </div>
-        <div className="container-page py-24 md:py-32">
-          <div className="mx-auto max-w-3xl text-center">
-            <Reveal>
-              <p className="eyebrow mb-5 text-jade">Trust architecture</p>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="display-md">
-                Provenance without{" "}
-                <span className="shimmer-jade">surveillance.</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mt-7 text-[16.5px] leading-[1.8] text-ink/65">
-                Every export carries your logo visibly and an invisible license
-                signature woven into the image, robust to recompression and
-                disclosed openly. It can prove authorship if your results are
-                stolen. It attributes an export to a license; it never
-                identifies a client and never phones home. The app is fully
-                offline: no cloud, no telemetry, no face-recognition registry.
-                For software that handles faces, the strongest feature is what
-                it refuses to do.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Motto + CTA */}
-      <section className="relative py-24 text-center md:py-32">
-        <div className="hairline-jade absolute left-0 right-0 top-0 mx-auto max-w-4xl" />
-        <div className="container-page">
+      <section id="publishing" className="ba-publish" aria-labelledby="publish-title">
+        <div className="container-page ba-publish-head">
           <Reveal>
-            <p className="font-ui text-xs tracking-[0.4em] text-jade-soft">
-              TWO ORIGINALS · ONE RIGID FRAME · ZERO COSMETIC EDITS
+            <p className="ba-label">The content engine</p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2 id="publish-title">
+              One honest result.
+              <br />
+              <em>A complete campaign.</em>
+            </h2>
+          </Reveal>
+        </div>
+
+        <div className="container-page ba-publish-layout">
+          <Reveal className="ba-publish-card">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={withBase("/screenshots/ba-studio/editorial-card.webp")}
+              alt="A finished B/A Studio editorial before-and-after card"
+              loading="lazy"
+              decoding="async"
+            />
+          </Reveal>
+          <div className="ba-publish-copy">
+            <Reveal delay={0.07}>
+              <p>
+                Export print-quality cards in 4:5, 1:1, 9:16 and 16:9, with
+                your logo, an optional metadata dock and a live preview that
+                renders pixel-for-pixel as the finished asset.
+              </p>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <div className="ba-format-stack">
+                <span>4:5 · FEED</span>
+                <span>9:16 · STORY</span>
+                <span>16:9 · DISPLAY</span>
+                <span>1:1 · SQUARE</span>
+              </div>
+            </Reveal>
+            <Reveal delay={0.16}>
+              <blockquote>
+                Editorial enough to earn attention.
+                <br />
+                Honest enough to keep it.
+              </blockquote>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="ba-web" aria-labelledby="ba-web-title">
+        <div className="container-page ba-web-layout">
+          <div className="ba-web-copy">
+            <Reveal>
+              <p className="ba-label ba-label-light">Website-ready proof</p>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <h2 id="ba-web-title">The comparison can live where clients decide.</h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p>
+                Create an interactive wipe for your website or a looping,
+                transparent-cornered GIF from matched video. The visual proof
+                moves beyond the social feed without losing its integrity.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={0.08} className="ba-web-stage">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={withBase("/screenshots/ba-studio/web-wipe.webp")}
+              alt="A B/A Studio interactive comparison prepared for a website"
+              loading="lazy"
+              decoding="async"
+            />
+            <span><i /> DRAG TO COMPARE</span>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="ba-trust">
+        <div className="container-page ba-trust-layout">
+          <Reveal>
+            <p className="ba-label">Trust architecture</p>
+            <h2>Provenance without surveillance.</h2>
+          </Reveal>
+          <Reveal delay={0.07}>
+            <p>
+              Faces and client records stay on your devices. Exports can carry
+              your visible identity and a private authorship signature, but the
+              app never creates a face registry, never phones home and never
+              identifies a client.
             </p>
           </Reveal>
           <Reveal delay={0.12}>
-            <h2 className="display-lg mt-8">
+            <div className="ba-trust-tags">
+              <span>OFFLINE</span><span>NO TELEMETRY</span><span>NO FACE REGISTRY</span>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="ba-closing">
+        <div className="container-page">
+          <Reveal>
+            <p className="ba-label ba-label-light">B∕A Studio</p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2>
               Results that hold up
               <br />
-              when a <span className="shimmer-jade">skeptic</span> pushes back.
+              <em>when a skeptic pushes back.</em>
             </h2>
           </Reveal>
-          <Reveal delay={0.22}>
-            <div className="mt-10">
+          <Reveal delay={0.12}>
+            <div className="ba-closing-actions">
               <Button href="/ba-studio/pricing">Choose your plan</Button>
+              <Button href="/store" variant="ghost">Visit the store</Button>
             </div>
           </Reveal>
         </div>

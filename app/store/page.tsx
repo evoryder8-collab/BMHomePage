@@ -3,30 +3,38 @@ import Reveal from "@/components/ui/Reveal";
 import StoreProducts from "@/components/store/StoreProducts";
 
 export const metadata: Metadata = {
-  title: "Store",
+  title: "Software Store",
   description:
-    "Buy Finalova and B∕A Studio. Pay once or subscribe, with a free trial on both.",
+    "Buy Finalova or B∕A Studio directly from Barbu Media Software. Perpetual and subscription options with a free trial.",
 };
 
 export default function StorePage() {
   return (
-    <div>
-      <section className="container-page pb-8 pt-16 text-center md:pt-20">
-        <Reveal>
-          <h1 className="display-lg">
-            The <span className="shimmer-jade">store.</span>
-          </h1>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <p className="mx-auto mt-4 max-w-xl text-base text-ink/60">
-            Two instruments. Pay once or subscribe. Try both free before you
-            decide.
-          </p>
-        </Reveal>
+    <div className="store-world">
+      <section className="store-hero">
+        <div className="container-page store-hero-layout">
+          <Reveal>
+            <p>Barbu Media Software · Direct licenses</p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h1>
+              Software store.
+              <br />
+              <em>Choose the product first.</em>
+            </h1>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div>
+              <span>Free trials</span>
+              <span>Perpetual options</span>
+              <span>Secure checkout</span>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
-      <section className="container-page pb-24">
-        <Reveal delay={0.16}>
+      <section className="container-page store-catalog-wrap">
+        <Reveal delay={0.08}>
           <StoreProducts />
         </Reveal>
       </section>

@@ -16,7 +16,7 @@ describe("withBase", () => {
 
 describe("SITE", () => {
   it("carries the brand constants", () => {
-    expect(SITE.name).toBe("Barbu Media");
+    expect(SITE.name).toBe("Barbu Media Software");
     expect(SITE.supportEmail).toContain("@");
   });
 });

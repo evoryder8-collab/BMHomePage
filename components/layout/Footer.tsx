@@ -4,16 +4,16 @@ import { SITE } from "@/lib/site";
 
 const COLUMNS = [
   {
-    title: "Instruments",
+    title: "Software",
     links: [
       ["/finalova", "Finalova"],
       ["/ba-studio", "B∕A Studio"],
+      ["/apps", "All software"],
       ["/store", "Store"],
-      ["/apps", "All apps"],
     ],
   },
   {
-    title: "Studio",
+    title: "Company",
     links: [
       ["/press", "Press room"],
       ["/contact", "Contact"],
@@ -35,18 +35,29 @@ export default function Footer() {
   return (
     <footer className="bm-footer">
       <div className="container-page bm-footer-lead">
-        <p>Finalova · B∕A Studio</p>
-        <h2>Professional software,<br /><em>properly finished.</em></h2>
-        <Link href="/store">Enter the store <span aria-hidden>↗</span></Link>
+        <p>Barbu Media Software · Zürich</p>
+        <h2>
+          The useful idea,
+          <br />
+          <em>properly finished.</em>
+        </h2>
+        <Link href="/apps">
+          Explore the software <span aria-hidden>↗</span>
+        </Link>
       </div>
 
       <div className="container-page bm-footer-grid">
         <div className="bm-footer-brand">
           <Link href="/" className="bm-logo">
-            <span className="bm-logo-glyph" aria-hidden>B∕M</span>
-            <span><strong>BARBU MEDIA</strong><small>INDEPENDENT SOFTWARE ATELIER</small></span>
+            <span className="bm-logo-glyph" aria-hidden>
+              B∕M
+            </span>
+            <span>
+              <strong>BARBU MEDIA SOFTWARE</strong>
+              <small>INDEPENDENT SOFTWARE COMPANY</small>
+            </span>
           </Link>
-          <p>Focused instruments for people whose work has to hold up.</p>
+          <p>Purpose-built professional software without the missing pieces.</p>
           <SwissMark dark />
         </div>
 
@@ -55,7 +66,9 @@ export default function Footer() {
             <h3>{column.title}</h3>
             <ul>
               {column.links.map(([href, label]) => (
-                <li key={href}><Link href={href}>{label}</Link></li>
+                <li key={href}>
+                  <Link href={href}>{label}</Link>
+                </li>
               ))}
             </ul>
           </div>

@@ -1,9 +1,9 @@
 export const SITE = {
-  name: "Barbu Media",
+  name: "Barbu Media Software",
   url: "https://evoryder8-collab.github.io/BMHomePage",
   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
   supportEmail: "support@barbumedia.com",
-  tagline: "Instruments, not apps.",
+  tagline: "Software that finishes the thought.",
   location: "Zürich, Switzerland",
 } as const;
 

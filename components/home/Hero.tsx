@@ -6,86 +6,65 @@ const d = (seconds: number) => ({ animationDelay: `${seconds}s` });
 export default function Hero() {
   return (
     <>
-      <section className="bm-hero" aria-labelledby="home-title">
-        <div className="bm-hero-grid" aria-hidden />
-        <div className="bm-hero-glow bm-hero-glow-coral" aria-hidden />
-        <div className="bm-hero-glow bm-hero-glow-cyan" aria-hidden />
+      <section className="publisher-hero" aria-labelledby="home-title">
+        <div className="publisher-hero-rule" aria-hidden />
+        {/* This visual represents the publisher, not either product. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="publisher-hero-art rise"
+          style={d(0.08)}
+          src={withBase("/art/brand-completion-engine.png")}
+          alt="A precision-built abstract mechanism whose separate parts resolve into one complete instrument"
+          width="1536"
+          height="1024"
+          loading="eager"
+          decoding="async"
+        />
 
-        <div className="container-page bm-hero-layout">
-          <div className="bm-hero-copy">
-            <p className="bm-kicker rise" style={d(0.04)}>
-              Independent software atelier <span>·</span> Zürich
+        <div className="container-page publisher-hero-inner">
+          <div className="publisher-hero-copy">
+            <p className="publisher-overline rise" style={d(0.03)}>
+              Barbu Media Software <span>·</span> Zürich
             </p>
-            <h1 id="home-title" className="bm-hero-title rise" style={d(0.12)}>
-              Make your work
+            <h1 id="home-title" className="rise" style={d(0.1)}>
+              Software that
               <br />
-              <em>undeniable.</em>
+              <em>finishes the thought.</em>
             </h1>
-            <p className="bm-hero-lede rise" style={d(0.22)}>
-              Finalova turns one finished edit into every deliverable.
-              B∕A&nbsp;Studio turns real results into proof. Two native
-              instruments for professionals who refuse to ship almost.
+            <p className="publisher-hero-lede rise" style={d(0.19)}>
+              We build unusually complete professional tools around the part
+              of the job everyone else leaves to workarounds.
             </p>
-            <div className="bm-hero-actions rise" style={d(0.32)}>
-              <Button href="/finalova">Meet Finalova</Button>
-              <Button href="/ba-studio" variant="ghost">
-                Discover B∕A Studio
+            <div className="publisher-hero-actions rise" style={d(0.27)}>
+              <Button href="#products">Explore the software</Button>
+              <Button href="#standard" variant="ghost">
+                The Barbu standard
               </Button>
-            </div>
-            <div className="bm-hero-foot rise" style={d(0.4)}>
-              <span className="bm-status-dot" aria-hidden />
-              Native on Apple silicon
-              <span aria-hidden>·</span>
-              Private by design
             </div>
           </div>
 
-          <div className="bm-hero-visual rise" style={d(0.18)}>
-            <div className="bm-product-orbit" aria-hidden />
-            {/* Generated campaign cutout; the UI originates from the real app capture. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="bm-hero-devices"
-              src={withBase("/art/finalova-devices.webp")}
-              alt="Finalova running across a Mac and two phones, showing vertical and horizontal video formats"
-              width="1536"
-              height="1024"
-              loading="eager"
-              decoding="async"
-            />
-            <div className="bm-visual-caption bm-visual-caption-top">
-              <span>01</span>
-              <div>
-                <strong>Finalova</strong>
-                <small>Everything after the edit</small>
-              </div>
-            </div>
-            <div className="bm-visual-caption bm-visual-caption-bottom">
-              <span>9:16</span>
-              <span>16:9</span>
-              <span>4:5</span>
-              <span>1:1</span>
-            </div>
+          <div className="publisher-hero-index rise" style={d(0.32)}>
+            <span>Independent software company</span>
+            <strong>01—02</strong>
+            <small>Purpose-built products · more in development</small>
           </div>
         </div>
 
-        <a className="bm-scroll-cue" href="#instruments" aria-label="See the instruments">
-          <span>Scroll to enter</span>
+        <a className="publisher-scroll" href="#products">
+          <span>Meet the software</span>
           <i aria-hidden />
         </a>
       </section>
 
-      <div className="bm-signal-strip" aria-label="Barbu Media principles">
+      <div className="publisher-proofline" aria-label="Barbu Media Software principles">
         <div>
-          <span>Native macOS</span>
+          <span>Useful out of the box</span>
           <i aria-hidden />
-          <span>Offline first</span>
+          <span>Native on Apple silicon</span>
           <i aria-hidden />
-          <span>Preview equals export</span>
+          <span>Private by construction</span>
           <i aria-hidden />
-          <span>Built in Zürich</span>
-          <i aria-hidden />
-          <span>No telemetry</span>
+          <span>Built to own</span>
         </div>
       </div>
     </>
