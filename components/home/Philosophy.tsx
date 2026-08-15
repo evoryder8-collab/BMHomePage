@@ -33,7 +33,7 @@ export default function Philosophy() {
           </h2>
         </Reveal>
         <Reveal delay={0.12}>
-          <p className="lede mt-6 max-w-xl text-pearl/60">
+          <p className="lede mt-6 max-w-xl text-ink/60">
             Every instrument is built in Zürich on the same three promises.
           </p>
         </Reveal>
@@ -42,10 +42,10 @@ export default function Philosophy() {
             <Reveal key={p.title} delay={0.1 + i * 0.08}>
               <div className="glass-card gleam-border h-full p-8">
                 <div className="font-display text-4xl text-gold/45">{p.n}</div>
-                <h3 className="font-ui mt-5 text-lg font-semibold tracking-wide text-pearl">
+                <h3 className="font-ui mt-5 text-lg font-semibold tracking-wide text-ink">
                   {p.title}
                 </h3>
-                <p className="mt-4 text-[15.5px] leading-relaxed text-pearl/60">
+                <p className="mt-4 text-[15.5px] leading-relaxed text-ink/60">
                   {p.body}
                 </p>
               </div>
@@ -55,7 +55,7 @@ export default function Philosophy() {
         <Reveal delay={0.2}>
           <div className="mt-16 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
             <Button href="/store">Visit the store</Button>
-            <span className="text-[15px] italic text-pearl/50">
+            <span className="text-[15px] italic text-ink/50">
               Try before you buy. Both apps ship with a free trial.
             </span>
           </div>

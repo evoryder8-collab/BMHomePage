@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function BaPricingPage() {
   return (
-    <div>
+    <div className="didone-scope">
       <section className="container-page py-20 text-center md:py-24">
         <Reveal>
           <p className="eyebrow mb-4 text-gold">B∕A Studio pricing</p>
@@ -23,7 +23,7 @@ export default function BaPricingPage() {
           </h1>
         </Reveal>
         <Reveal delay={0.16}>
-          <p className="mx-auto mt-6 max-w-2xl text-base text-pearl/60">
+          <p className="mx-auto mt-6 max-w-2xl text-base text-ink/60">
             Because that&rsquo;s what it is. Exports carry your logo, so your
             license markets your studio and no one else&rsquo;s. Monthly,
             annual, or one purchase forever.
@@ -54,10 +54,10 @@ export default function BaPricingPage() {
 
       <section className="container-page pb-24">
         <Reveal>
-          <div className="mx-auto flex max-w-2xl flex-col items-center gap-5 rounded-2xl border border-pearl/10 bg-obsidian-soft px-8 py-7 text-center">
+          <div className="mx-auto flex max-w-2xl flex-col items-center gap-5 rounded-2xl border border-ink/10 bg-linen px-8 py-7 text-center">
             <div>
               <h2 className="text-lg font-semibold">On iPhone</h2>
-              <p className="mt-3 text-sm leading-relaxed text-pearl/65">
+              <p className="mt-3 text-sm leading-relaxed text-ink/65">
                 B∕A Studio for iPhone brings the guided camera with LiDAR
                 Enhanced capture. It ships through the App&nbsp;Store, and
                 subscriptions there run through your Apple&nbsp;ID. Mac

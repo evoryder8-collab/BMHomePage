@@ -18,7 +18,7 @@ export default function AppsPage() {
           <h1 className="display-lg">The <span className="shimmer-gold">instruments.</span></h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-5 max-w-xl text-base text-pearl/60">
+          <p className="mx-auto mt-5 max-w-xl text-base text-ink/60">
             Each one built in Zürich to do a professional job completely, and
             to pay for itself in the work it wins you.
           </p>
@@ -29,12 +29,12 @@ export default function AppsPage() {
         <Reveal>
           <Link
             href="/finalova"
-            className="group block overflow-hidden rounded-2xl bg-obsidian-soft text-pearl shadow-lg transition-shadow hover:shadow-2xl"
+            className="group block overflow-hidden rounded-2xl bg-linen text-ink shadow-lg transition-shadow hover:shadow-2xl"
           >
             <div className=" p-8">
               <p className="eyebrow mb-3 text-gold-soft">For Mac</p>
               <h2 className="display-md">Finalova</h2>
-              <p className="mt-3 text-sm leading-relaxed text-pearl/70">
+              <p className="mt-3 text-sm leading-relaxed text-ink/70">
                 The intelligent media adaptation and delivery studio.
                 Everything after the edit, handled.
               </p>
@@ -53,12 +53,12 @@ export default function AppsPage() {
         <Reveal delay={0.1}>
           <Link
             href="/ba-studio"
-            className="group block overflow-hidden rounded-2xl bg-obsidian-soft shadow-lg transition-shadow hover:shadow-2xl"
+            className="didone-scope group block overflow-hidden rounded-2xl bg-linen shadow-lg transition-shadow hover:shadow-2xl"
           >
             <div className="p-8">
               <p className="eyebrow mb-3 text-gold">For Mac &amp; iPhone</p>
               <h2 className="display-md font-display">B∕A Studio</h2>
-              <p className="mt-3 text-sm leading-relaxed text-pearl/65">
+              <p className="mt-3 text-sm leading-relaxed text-ink/65">
                 The before-and-after studio that can&rsquo;t lie. Credibility,
                 measured in millimetres.
               </p>
@@ -75,12 +75,12 @@ export default function AppsPage() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="flex min-h-[16rem] flex-col items-center justify-center rounded-2xl border border-dashed border-pearl/20 p-8 text-center md:col-span-2">
-            <p className="eyebrow mb-3 text-pearl/40">Next</p>
-            <h2 className="display-md text-pearl/70">
+          <div className="flex min-h-[16rem] flex-col items-center justify-center rounded-2xl border border-dashed border-ink/20 p-8 text-center md:col-span-2">
+            <p className="eyebrow mb-3 text-ink/40">Next</p>
+            <h2 className="display-md text-ink/70">
               The next instrument is on the bench.
             </h2>
-            <p className="mt-3 max-w-md text-sm text-pearl/50">
+            <p className="mt-3 max-w-md text-sm text-ink/50">
               Barbu Media builds one tool at a time, completely. Follow along;
               new instruments land here first.
             </p>

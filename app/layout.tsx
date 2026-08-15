@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Newsreader, Space_Grotesk } from "next/font/google";
+import { Bodoni_Moda, Newsreader, Space_Grotesk, Syne } from "next/font/google";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import AmbientBackground from "@/components/layout/AmbientBackground";
@@ -23,6 +23,10 @@ const grotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-grotesk",
 });
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -40,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bodoni.variable} ${newsreader.variable} ${grotesk.variable}`}
+      className={`${bodoni.variable} ${newsreader.variable} ${grotesk.variable} ${syne.variable}`}
     >
       <body className="flex min-h-screen flex-col antialiased">
         <AmbientBackground />

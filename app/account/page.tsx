@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 
 function ZeroState({ label }: { label: string }) {
   return (
-    <p className="rounded-xl border border-dashed border-pearl/15 px-5 py-8 text-center text-sm text-pearl/50">
+    <p className="rounded-xl border border-dashed border-ink/15 px-5 py-8 text-center text-sm text-ink/50">
       {label}
     </p>
   );
@@ -23,7 +23,7 @@ export default function AccountPage() {
 
   if (loading || !user) {
     return (
-      <div className="container-page flex min-h-[60vh] items-center justify-center text-sm text-pearl/50">
+      <div className="container-page flex min-h-[60vh] items-center justify-center text-sm text-ink/50">
         Loading your account…
       </div>
     );
@@ -33,7 +33,7 @@ export default function AccountPage() {
     <div className="container-page max-w-3xl py-16">
       <div className="mb-10 flex items-end justify-between gap-4">
         <div>
-          <div className="eyebrow mb-2 text-pearl/50">Your account</div>
+          <div className="eyebrow mb-2 text-ink/50">Your account</div>
           <h1 className="display-md">{user.email}</h1>
         </div>
         <Button variant="ghost" onClick={() => void signOut()}>

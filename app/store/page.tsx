@@ -51,8 +51,8 @@ function AppTile({
       href={href}
       className={`group relative overflow-hidden rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-6 ${
         dark
-          ? "border-pearl/10 bg-obsidian-soft text-pearl"
-          : "border-pearl/10 bg-obsidian-soft text-pearl"
+          ? "border-ink/10 bg-linen text-ink"
+          : "border-ink/10 bg-linen text-ink"
       }`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -65,7 +65,7 @@ function AppTile({
       <div className={`text-base font-bold sm:text-lg ${serif ? "font-display" : ""}`}>
         {name}
       </div>
-      <div className={`mt-1 text-xs sm:text-sm ${dark ? "text-pearl/60" : "text-pearl/60"}`}>
+      <div className={`mt-1 text-xs sm:text-sm ${dark ? "text-ink/60" : "text-ink/60"}`}>
         {price}
       </div>
       <span
@@ -87,7 +87,7 @@ export default function StorePage() {
           <h1 className="display-lg">The <span className="shimmer-gold">store.</span></h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-4 max-w-xl text-base text-pearl/60">
+          <p className="mx-auto mt-4 max-w-xl text-base text-ink/60">
             Two instruments. Own them outright or subscribe. Try both free
             before you decide.
           </p>
@@ -118,7 +118,7 @@ export default function StorePage() {
           <div className="mb-8 flex items-end justify-between">
             <div>
               <h2 className="display-md">Finalova</h2>
-              <p className="mt-1 text-sm text-pearl/55">
+              <p className="mt-1 text-sm text-ink/55">
                 For Mac · free 14-day trial, full Studio
               </p>
             </div>
@@ -140,12 +140,12 @@ export default function StorePage() {
         </div>
       </section>
 
-      <section id="ba-studio" className="container-page scroll-mt-24 pb-24">
+      <section id="ba-studio" className="didone-scope container-page scroll-mt-24 pb-24">
         <Reveal>
           <div className="mb-8 flex items-end justify-between">
             <div>
               <h2 className="display-md font-display">B∕A Studio</h2>
-              <p className="mt-1 text-sm text-pearl/55">
+              <p className="mt-1 text-sm text-ink/55">
                 For Mac &amp; iPhone · free trial included
               </p>
             </div>
@@ -165,12 +165,12 @@ export default function StorePage() {
           ))}
         </div>
         <Reveal delay={0.2}>
-          <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-pearl/10 bg-obsidian-soft px-8 py-7 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-ink/10 bg-linen px-8 py-7 sm:flex-row">
             <div>
               <h3 className="text-lg font-semibold">
                 B∕A Studio for iPhone
               </h3>
-              <p className="mt-1.5 max-w-md text-sm leading-relaxed text-pearl/65">
+              <p className="mt-1.5 max-w-md text-sm leading-relaxed text-ink/65">
                 The guided camera with LiDAR Enhanced capture lives on your
                 iPhone. Get it on the App&nbsp;Store; subscriptions there run
                 through your Apple&nbsp;ID.

@@ -1,36 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  /* Obsidian atelier palette */
-  --color-obsidian: #0a0910;
-  --color-obsidian-soft: #131118;
-  --color-obsidian-raised: #1a1720;
-  --color-pearl: #f0e9db;
-  --color-pearl-dim: #b9b2a4;
-  --color-gold: #c8a44b;
-  --color-gold-soft: #e6cf8d;
-  --color-gold-deep: #8a6d2b;
-  --color-aurora-from: #7c5cff;
-  --color-aurora-mid: #4f46e5;
-  --color-aurora-to: #38bdf8;
+  /* Sage atelier palette: bright muted green, warm gold, deep moss ink */
+  --color-sage: #dde5cf;
+  --color-sage-deep: #c9d4b6;
+  --color-linen: #f4f6ec;
+  --color-ink: #222a1e;
+  --color-ink-soft: #3a4433;
+  --color-espresso: #241d09;
+  --color-gold: #a9852f;
+  --color-gold-soft: #c8a44b;
+  --color-gold-deep: #7c611f;
+  --color-aurora-from: #5b21b6;
+  --color-aurora-mid: #4338ca;
+  --color-aurora-to: #0369a1;
 }
 
 /* Font stacks (outside @theme so Tailwind never prunes them). next/font
    defines the --font-* variables on <html>. */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   --font-body: var(--font-newsreader), "Newsreader", Georgia, serif;
   --font-ui: var(--font-grotesk), "Space Grotesk", ui-sans-serif, sans-serif;
-  --font-display: var(--font-bodoni), "Bodoni Moda", "Bodoni 72", Didot, serif;
+  --font-modern: var(--font-syne), "Syne", "Space Grotesk", sans-serif;
+  --font-didone: var(--font-bodoni), "Bodoni Moda", "Bodoni 72", Didot, serif;
 }
 
 html {
-  background: var(--color-obsidian);
+  background: var(--color-sage);
 }
 
 body {
   background: transparent;
-  color: var(--color-pearl);
+  color: var(--color-ink);
   font-family: var(--font-body);
   font-size: 1.0625rem;
   -webkit-font-smoothing: antialiased;
@@ -42,30 +44,44 @@ body {
   font-family: var(--font-ui);
 }
 .font-display {
-  font-family: var(--font-display);
+  font-family: var(--font-modern);
+}
+.font-didone {
+  font-family: var(--font-didone);
 }
 
 .display-xl {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 8.5vw, 6.5rem);
+  font-family: var(--font-modern);
+  font-size: clamp(2.9rem, 8vw, 6rem);
   line-height: 1.02;
-  letter-spacing: -0.015em;
-  font-weight: 500;
+  letter-spacing: -0.025em;
+  font-weight: 700;
 }
 .display-lg {
-  font-family: var(--font-display);
-  font-size: clamp(2.3rem, 5.4vw, 4.2rem);
+  font-family: var(--font-modern);
+  font-size: clamp(2.2rem, 5.2vw, 4rem);
   line-height: 1.05;
-  letter-spacing: -0.012em;
-  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 .display-md {
-  font-family: var(--font-display);
-  font-size: clamp(1.7rem, 3.6vw, 2.7rem);
+  font-family: var(--font-modern);
+  font-size: clamp(1.65rem, 3.5vw, 2.6rem);
   line-height: 1.12;
-  letter-spacing: -0.008em;
-  font-weight: 500;
+  letter-spacing: -0.015em;
+  font-weight: 700;
 }
+
+/* B∕A Studio scope: everything display-weight inside speaks Bodoni. */
+.didone-scope .display-xl,
+.didone-scope .display-lg,
+.didone-scope .display-md,
+.didone-scope .font-display {
+  font-family: var(--font-didone);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
 .eyebrow {
   font-family: var(--font-ui);
   font-size: 0.72rem;
@@ -92,68 +108,69 @@ body {
   inset: 0;
   z-index: -2;
   overflow: hidden;
-  background: var(--color-obsidian);
+  background:
+    linear-gradient(175deg, #e6ecda 0%, var(--color-sage) 40%, #d2dcc0 100%);
 }
 .ambient::after {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.055;
+  opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
 .ambient-blob {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(90px);
+  filter: blur(85px);
   will-change: transform, opacity;
 }
 .ambient-gold {
   width: 55vw;
   height: 55vw;
-  right: -18vw;
-  top: -22vw;
+  right: -16vw;
+  top: -20vw;
   background: radial-gradient(
     circle,
-    rgba(200, 164, 75, 0.20),
+    rgba(200, 164, 75, 0.34),
     rgba(200, 164, 75, 0) 65%
   );
-  animation: breathe-a 16s ease-in-out infinite alternate;
+  animation: breathe-a 15s ease-in-out infinite alternate;
 }
-.ambient-violet {
-  width: 62vw;
-  height: 62vw;
+.ambient-meadow {
+  width: 64vw;
+  height: 64vw;
   left: -24vw;
-  top: 22vh;
+  top: 24vh;
   background: radial-gradient(
     circle,
-    rgba(124, 92, 255, 0.16),
-    rgba(124, 92, 255, 0) 65%
+    rgba(112, 154, 90, 0.38),
+    rgba(112, 154, 90, 0) 65%
   );
-  animation: breathe-b 21s ease-in-out infinite alternate;
+  animation: breathe-b 20s ease-in-out infinite alternate;
 }
-.ambient-blue {
-  width: 48vw;
-  height: 48vw;
-  right: -10vw;
-  bottom: -18vw;
+.ambient-cream {
+  width: 50vw;
+  height: 50vw;
+  right: -12vw;
+  bottom: -16vw;
   background: radial-gradient(
     circle,
-    rgba(56, 189, 248, 0.10),
-    rgba(56, 189, 248, 0) 65%
+    rgba(255, 250, 228, 0.85),
+    rgba(255, 250, 228, 0) 65%
   );
-  animation: breathe-c 26s ease-in-out infinite alternate;
+  animation: breathe-c 24s ease-in-out infinite alternate;
 }
 @keyframes breathe-a {
-  from { transform: translate(0, 0) scale(1); opacity: 0.75; }
-  to { transform: translate(-9vw, 7vh) scale(1.22); opacity: 1; }
+  from { transform: translate(0, 0) scale(1); opacity: 0.7; }
+  to { transform: translate(-9vw, 7vh) scale(1.25); opacity: 1; }
 }
 @keyframes breathe-b {
-  from { transform: translate(0, 0) scale(1.15); opacity: 0.65; }
-  to { transform: translate(7vw, -6vh) scale(0.95); opacity: 1; }
+  from { transform: translate(0, 0) scale(1.15); opacity: 0.6; }
+  to { transform: translate(8vw, -7vh) scale(0.92); opacity: 1; }
 }
 @keyframes breathe-c {
-  from { transform: translate(0, 0) scale(0.9); opacity: 0.6; }
-  to { transform: translate(-6vw, -8vh) scale(1.18); opacity: 0.95; }
+  from { transform: translate(0, 0) scale(0.9); opacity: 0.55; }
+  to { transform: translate(-7vw, -9vh) scale(1.2); opacity: 0.95; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ambient-blob {
@@ -166,10 +183,11 @@ body {
   background: linear-gradient(
     100deg,
     var(--color-gold-deep) 0%,
-    var(--color-gold) 28%,
-    #fff6db 46%,
-    var(--color-gold-soft) 54%,
-    var(--color-gold) 72%,
+    var(--color-gold) 30%,
+    #ecd9a0 46%,
+    #f7ecc7 50%,
+    #ecd9a0 54%,
+    var(--color-gold) 70%,
     var(--color-gold-deep) 100%
   );
   background-size: 220% auto;
@@ -182,10 +200,11 @@ body {
   background: linear-gradient(
     100deg,
     var(--color-aurora-from) 0%,
-    #b7a4ff 26%,
-    #eaf6ff 46%,
-    #9fd9ff 54%,
-    var(--color-aurora-to) 74%,
+    #7c53e8 30%,
+    #b79bff 46%,
+    #d7e6ff 50%,
+    #6aa9e8 54%,
+    var(--color-aurora-to) 70%,
     var(--color-aurora-from) 100%
   );
   background-size: 220% auto;
@@ -213,9 +232,9 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(200, 164, 75, 0.55) 18%,
-    rgba(230, 207, 141, 0.9) 50%,
-    rgba(200, 164, 75, 0.55) 82%,
+    rgba(169, 133, 47, 0.5) 18%,
+    rgba(200, 164, 75, 0.95) 50%,
+    rgba(169, 133, 47, 0.5) 82%,
     transparent
   );
 }
@@ -223,18 +242,19 @@ body {
   position: relative;
   background: linear-gradient(
     160deg,
-    rgba(255, 255, 255, 0.055),
-    rgba(255, 255, 255, 0.015) 55%
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.45) 60%
   );
-  border: 1px solid rgba(240, 233, 219, 0.10);
+  border: 1px solid rgba(34, 42, 30, 0.10);
   backdrop-filter: blur(14px);
   border-radius: 1.4rem;
+  box-shadow: 0 24px 60px -30px rgba(34, 42, 30, 0.25);
 }
 .glass-card-gold {
-  border-color: rgba(200, 164, 75, 0.35);
+  border-color: rgba(169, 133, 47, 0.4);
   box-shadow:
-    0 0 0 1px rgba(200, 164, 75, 0.08) inset,
-    0 30px 70px -30px rgba(200, 164, 75, 0.25);
+    0 0 0 1px rgba(200, 164, 75, 0.1) inset,
+    0 30px 70px -30px rgba(169, 133, 47, 0.35);
 }
 
 /* Border gleam sweep on hover */
@@ -250,8 +270,8 @@ body {
   background: linear-gradient(
     115deg,
     transparent 30%,
-    rgba(230, 207, 141, 0.14) 48%,
-    rgba(255, 246, 219, 0.22) 52%,
+    rgba(200, 164, 75, 0.14) 48%,
+    rgba(255, 246, 219, 0.5) 52%,
     transparent 70%
   );
   transform: translateX(-130%);
@@ -261,14 +281,31 @@ body {
   transform: translateX(130%);
 }
 
+/* ---------- The leaf button ---------- */
+.btn-leaf {
+  border-radius: 1.7rem 0.5rem 1.7rem 0.5rem;
+  transition:
+    border-radius 0.45s cubic-bezier(0.34, 1.4, 0.64, 1),
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+.btn-leaf:hover {
+  border-radius: 0.5rem 1.7rem 0.5rem 1.7rem;
+  transform: translateY(-2px);
+}
+.btn-leaf:active {
+  transform: translateY(0) scale(0.98);
+}
+
 /* ---------- Giant chapter numerals ---------- */
 .chapter-num {
-  font-family: var(--font-display);
+  font-family: var(--font-didone);
   font-size: clamp(7rem, 18vw, 15rem);
   line-height: 1;
   font-weight: 400;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(240, 233, 219, 0.13);
+  -webkit-text-stroke: 1px rgba(34, 42, 30, 0.16);
   user-select: none;
   pointer-events: none;
 }
@@ -307,7 +344,7 @@ body {
   background: linear-gradient(
     105deg,
     transparent 42%,
-    rgba(255, 248, 226, 0.26) 50%,
+    rgba(255, 250, 228, 0.45) 50%,
     transparent 58%
   );
   transform: translateX(-120%) skewX(-8deg);
@@ -331,7 +368,7 @@ body {
   appearance: none;
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-gold), rgba(240, 233, 219, 0.12));
+  background: linear-gradient(90deg, var(--color-gold), rgba(34, 42, 30, 0.15));
   outline-offset: 4px;
 }
 .slider-gold::-webkit-slider-thumb {
@@ -339,9 +376,9 @@ body {
   height: 20px;
   width: 20px;
   border-radius: 999px;
-  background: linear-gradient(140deg, #e6cf8d, #c8a44b);
-  border: 2px solid #fff6db;
-  box-shadow: 0 2px 14px rgba(200, 164, 75, 0.6);
+  background: linear-gradient(140deg, #c8a44b, #a9852f);
+  border: 2px solid #fffae4;
+  box-shadow: 0 2px 14px rgba(169, 133, 47, 0.55);
   cursor: pointer;
   transition: transform 0.15s ease;
 }
@@ -352,12 +389,12 @@ body {
   height: 20px;
   width: 20px;
   border-radius: 999px;
-  background: linear-gradient(140deg, #e6cf8d, #c8a44b);
-  border: 2px solid #fff6db;
+  background: linear-gradient(140deg, #c8a44b, #a9852f);
+  border: 2px solid #fffae4;
   cursor: pointer;
 }
 
 ::selection {
   background: rgba(200, 164, 75, 0.45);
-  color: #fff;
+  color: var(--color-espresso);
 }

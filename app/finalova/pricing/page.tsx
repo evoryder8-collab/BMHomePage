@@ -25,13 +25,13 @@ const COMPARISON: { feature: string; base: boolean; studio: boolean }[] = [
 function Mark({ on }: { on: boolean }) {
   return on ? (
     <span
-      className="mx-auto flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold text-obsidian"
+      className="mx-auto flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold text-espresso"
       style={{ background: "linear-gradient(120deg,#7c5cff,#38bdf8)" }}
     >
       ✓
     </span>
   ) : (
-    <span className="mx-auto block h-1.5 w-1.5 rounded-full bg-pearl/15" />
+    <span className="mx-auto block h-1.5 w-1.5 rounded-full bg-ink/15" />
   );
 }
 
@@ -40,7 +40,7 @@ export default function FinalovaPricingPage() {
     <div>
       <section className="container-page py-20 text-center md:py-24">
         <Reveal>
-          <p className="eyebrow mb-4 text-pearl/50">Finalova pricing</p>
+          <p className="eyebrow mb-4 text-ink/50">Finalova pricing</p>
         </Reveal>
         <Reveal delay={0.08}>
           <h1 className="display-lg">
@@ -50,7 +50,7 @@ export default function FinalovaPricingPage() {
           </h1>
         </Reveal>
         <Reveal delay={0.16}>
-          <p className="mx-auto mt-6 max-w-2xl text-base text-pearl/60">
+          <p className="mx-auto mt-6 max-w-2xl text-base text-ink/60">
             A perpetual license includes a year of updates and keeps working
             forever. Renewing is optional and $49. Every license works on 2 of
             your Macs, and Studio is free to try for 14 days, full-featured.
@@ -89,10 +89,10 @@ export default function FinalovaPricingPage() {
           <h2 className="display-md mb-8 text-center">Two editions, <span className="shimmer-aurora">one line.</span></h2>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="overflow-x-auto rounded-2xl border border-pearl/10 bg-obsidian-soft shadow-sm">
+          <div className="overflow-x-auto rounded-2xl border border-ink/10 bg-linen shadow-sm">
             <table className="w-full min-w-[36rem] text-left text-sm">
               <thead>
-                <tr className="border-b border-pearl/10">
+                <tr className="border-b border-ink/10">
                   <th className="px-6 py-4 font-semibold">Capability</th>
                   <th className="px-6 py-4 text-center font-semibold">Finalova</th>
                   <th className="px-6 py-4 text-center font-semibold">
@@ -102,8 +102,8 @@ export default function FinalovaPricingPage() {
               </thead>
               <tbody>
                 {COMPARISON.map((row) => (
-                  <tr key={row.feature} className="border-b border-pearl/5 last:border-0">
-                    <td className="px-6 py-3.5 text-pearl/75">{row.feature}</td>
+                  <tr key={row.feature} className="border-b border-ink/5 last:border-0">
+                    <td className="px-6 py-3.5 text-ink/75">{row.feature}</td>
                     <td className="px-6 py-3.5 text-center">
                       <Mark on={row.base} />
                     </td>
@@ -117,7 +117,7 @@ export default function FinalovaPricingPage() {
           </div>
         </Reveal>
         <Reveal delay={0.16}>
-          <p className="mt-5 text-center text-sm text-pearl/55">
+          <p className="mt-5 text-center text-sm text-ink/55">
             Already own Finalova? Upgrade to Studio for the difference. Your
             key, your Macs and your presets carry over untouched.
           </p>

@@ -21,29 +21,29 @@ export default function CheckoutModal() {
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-pearl/50 p-4"
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/50 p-4"
       role="dialog"
       aria-modal="true"
       aria-label="Checkout"
       onClick={() => setVisible(false)}
     >
       <div
-        className="w-full max-w-md rounded-2xl bg-obsidian-soft p-8 shadow-2xl"
+        className="w-full max-w-md rounded-2xl bg-linen p-8 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="eyebrow mb-2 text-gold">Sandbox</div>
         <h2 className="display-md mb-3">Almost open.</h2>
-        <p className="mb-5 text-sm leading-relaxed text-pearl/65">
+        <p className="mb-5 text-sm leading-relaxed text-ink/65">
           Secure worldwide checkout is almost ready. Your cart is saved on
           this device and will be waiting.
         </p>
-        <ul className="mb-5 space-y-2 border-y border-pearl/10 py-4">
+        <ul className="mb-5 space-y-2 border-y border-ink/10 py-4">
           {cart.items.map((i) => {
             const p = PRODUCTS[i.sku];
             return (
               <li key={i.sku} className="flex justify-between text-sm">
                 <span>
-                  {p.name} <span className="text-pearl/50">· {p.edition}</span>
+                  {p.name} <span className="text-ink/50">· {p.edition}</span>
                 </span>
                 <span className="font-semibold">{formatPrice(p)}</span>
               </li>
@@ -56,7 +56,7 @@ export default function CheckoutModal() {
             </span>
           </li>
         </ul>
-        <p className="mb-5 text-xs text-pearl/50">
+        <p className="mb-5 text-xs text-ink/50">
           Want to be first through the door? Write to{" "}
           <a
             className="underline underline-offset-2"

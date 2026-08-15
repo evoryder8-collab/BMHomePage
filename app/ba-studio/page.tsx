@@ -16,7 +16,7 @@ function GildedDivider() {
 
 export default function BaStudioPage() {
   return (
-    <div>
+    <div className="didone-scope">
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="container-page flex min-h-[78vh] flex-col items-center justify-center pt-24 text-center">
@@ -32,7 +32,7 @@ export default function BaStudioPage() {
             <span className="shimmer-gold">that can&rsquo;t lie.</span>
           </h1>
           <p
-            className="lede rise mt-8 max-w-2xl text-pearl/70"
+            className="lede rise mt-8 max-w-2xl text-ink/70"
             style={{ animationDelay: "0.26s" }}
           >
             Two originals. One rigid frame. Zero cosmetic edits, enforced by
@@ -77,7 +77,7 @@ export default function BaStudioPage() {
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-pearl/65">
+              <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-ink/65">
                 Every editing app promises to make you look better. B∕A Studio
                 is architected so that it cannot. The comparison engine permits
                 only a rigid transform: move, rotate, uniformly scale. No warp,
@@ -88,7 +88,7 @@ export default function BaStudioPage() {
               </p>
             </Reveal>
             <Reveal delay={0.24}>
-              <p className="mt-6 max-w-md text-[15px] italic leading-relaxed text-pearl/50">
+              <p className="mt-6 max-w-md text-[15px] italic leading-relaxed text-ink/50">
                 Shown here on an unchanged face: the card says so, out loud.
                 Lift Index 0, within noise, marked exploratory. The app was
                 deliberately built to fail to flatter.
@@ -130,7 +130,7 @@ export default function BaStudioPage() {
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-pearl/65">
+              <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-ink/65">
                 Facial landmarks are detected on both originals, scaled to real
                 millimetres, and the vertical change of key features is
                 measured. Then the honest part: the app computes its own noise
@@ -141,7 +141,7 @@ export default function BaStudioPage() {
             </Reveal>
             <Reveal delay={0.24}>
               <div className="glass-card glass-card-gold mt-9 px-7 py-6 text-center">
-                <div className="font-ui text-[13.5px] text-pearl/70">
+                <div className="font-ui text-[13.5px] text-ink/70">
                   Lift Index = 250 × max(0, measured lift − 95% noise limit)
                 </div>
                 <div className="font-ui mt-3 text-xs tracking-[0.24em] text-gold-soft">
@@ -172,7 +172,7 @@ export default function BaStudioPage() {
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="mt-7 text-[16.5px] leading-[1.8] text-pearl/65">
+              <p className="mt-7 text-[16.5px] leading-[1.8] text-ink/65">
                 Comparability is created at capture time, not fixed afterwards.
                 The guided camera overlays a ghost of the before photo so the
                 after shot is framed to match. With Enhanced capture on iPhone,
@@ -219,7 +219,7 @@ export default function BaStudioPage() {
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-pearl/65">
+              <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-ink/65">
                 Every export is composed like a page from a fashion magazine:
                 warm mat, Bodoni titling, a gilded seam, your logo, an optional
                 metadata dock. One tap renders print-quality cards in 4:5, 1:1,
@@ -229,7 +229,7 @@ export default function BaStudioPage() {
               </p>
             </Reveal>
             <Reveal delay={0.24}>
-              <ul className="mt-8 space-y-3 border-l border-gold/35 pl-5 font-ui text-[13.5px] text-pearl/70">
+              <ul className="mt-8 space-y-3 border-l border-gold/35 pl-5 font-ui text-[13.5px] text-ink/70">
                 <li>Full-resolution Display P3 stills for feed, story and print</li>
                 <li>Live preview renders pixel-for-pixel what you&rsquo;ll post</li>
                 <li>Measurement claims structurally excluded from video cards</li>
@@ -258,7 +258,7 @@ export default function BaStudioPage() {
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="mt-7 text-[16.5px] leading-[1.8] text-pearl/65">
+              <p className="mt-7 text-[16.5px] leading-[1.8] text-ink/65">
                 Every export carries your logo visibly and an invisible license
                 signature woven into the image, robust to recompression and
                 disclosed openly. It can prove authorship if your results are

@@ -51,7 +51,7 @@ export default function RoiCalculator() {
             <br />
             <span className="shimmer-gold">Now sell the delivery.</span>
           </h3>
-          <p className="mt-5 max-w-sm text-[15.5px] leading-[1.8] text-pearl/60">
+          <p className="mt-5 max-w-sm text-[15.5px] leading-[1.8] text-ink/60">
             Studios charge for the ready-to-post package: every channel, every
             format, named and organized. Finalova Studio builds it in one
             click. Slide your numbers.
@@ -60,10 +60,10 @@ export default function RoiCalculator() {
           <div className="mt-10 space-y-8">
             <label className="block">
               <span className="mb-3 flex items-baseline justify-between">
-                <span className="font-ui text-[13px] text-pearl/55">
+                <span className="font-ui text-[13px] text-ink/55">
                   Shoots you deliver monthly
                 </span>
-                <span className="font-display text-2xl text-pearl">
+                <span className="font-display text-2xl text-ink">
                   {shoots}
                 </span>
               </span>
@@ -79,10 +79,10 @@ export default function RoiCalculator() {
             </label>
             <label className="block">
               <span className="mb-3 flex items-baseline justify-between">
-                <span className="font-ui text-[13px] text-pearl/55">
+                <span className="font-ui text-[13px] text-ink/55">
                   What you charge for the package
                 </span>
-                <span className="font-display text-2xl text-pearl">
+                <span className="font-display text-2xl text-ink">
                   ${fee}
                 </span>
               </span>
@@ -101,7 +101,7 @@ export default function RoiCalculator() {
         </div>
 
         {/* Result */}
-        <div className="relative flex flex-col justify-center gap-9 border-t border-pearl/10 p-9 sm:p-12 lg:border-l lg:border-t-0">
+        <div className="relative flex flex-col justify-center gap-9 border-t border-ink/10 p-9 sm:p-12 lg:border-l lg:border-t-0">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 opacity-70"
@@ -111,7 +111,7 @@ export default function RoiCalculator() {
             }}
           />
           <div className="relative">
-            <div className="font-ui text-[13px] uppercase tracking-[0.18em] text-pearl/50">
+            <div className="font-ui text-[13px] uppercase tracking-[0.18em] text-ink/50">
               That&rsquo;s new revenue of
             </div>
             <div
@@ -120,17 +120,17 @@ export default function RoiCalculator() {
             >
               $<RollingNumber value={r.monthlyRevenue} />
             </div>
-            <div className="mt-2 text-[15px] italic text-pearl/55">
+            <div className="mt-2 text-[15px] italic text-ink/55">
               every month, for work that takes one click
             </div>
           </div>
 
-          <div className="relative border-t border-pearl/10 pt-7">
+          <div className="relative border-t border-ink/10 pt-7">
             <motion.div
               key={r.shootsToPayOff}
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-lg text-pearl"
+              className="text-lg text-ink"
             >
               Studio has paid for itself{" "}
               <span className="text-gold-soft">
@@ -140,7 +140,7 @@ export default function RoiCalculator() {
               </span>
               .
             </motion.div>
-            <div className="font-ui mt-2 text-xs text-pearl/40">
+            <div className="font-ui mt-2 text-xs text-ink/40">
               Finalova Studio, $249 once. Everything after that is margin.
             </div>
           </div>

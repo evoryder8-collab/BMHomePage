@@ -133,7 +133,7 @@ export default function FinalovaPage() {
             The <span className="shimmer-aurora">finishing</span> line.
           </h1>
           <p
-            className="lede rise mt-8 max-w-2xl text-pearl/70"
+            className="lede rise mt-8 max-w-2xl text-ink/70"
             style={{ animationDelay: "0.26s" }}
           >
             The intelligent media adaptation and delivery studio. One finished
@@ -175,7 +175,7 @@ export default function FinalovaPage() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-2xl text-[16.5px] leading-[1.8] text-pearl/65">
+            <p className="mx-auto mt-6 max-w-2xl text-[16.5px] leading-[1.8] text-ink/65">
               A Metal-backed Core Image pipeline for photos. VideoToolbox and
               Apple&rsquo;s media engines for video. Concurrency that exploits
               an M2&nbsp;Max and protects an M1&nbsp;Air. No Electron, no
@@ -183,7 +183,7 @@ export default function FinalovaPage() {
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="font-ui mt-11 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-[12.5px] uppercase tracking-[0.18em] text-pearl/45">
+            <div className="font-ui mt-11 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-[12.5px] uppercase tracking-[0.18em] text-ink/45">
               <span>Fully offline</span>
               <span className="text-gold/60">·</span>
               <span>No telemetry</span>
@@ -208,7 +208,7 @@ export default function FinalovaPage() {
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="lede mx-auto mt-7 max-w-xl text-pearl/65">
+            <p className="lede mx-auto mt-7 max-w-xl text-ink/65">
               Finalova Studio turns &ldquo;can you also make the socials
               versions?&rdquo; into a one-click, billable deliverable.
             </p>

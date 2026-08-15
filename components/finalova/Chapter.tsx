@@ -45,16 +45,16 @@ export default function Chapter({
             <p className="eyebrow mb-5 text-aurora-to/90">{eyebrow}</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="display-md text-pearl">{title}</h2>
+            <h2 className="display-md text-ink">{title}</h2>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-pearl/65">
+            <p className="mt-6 max-w-md text-[16.5px] leading-[1.8] text-ink/65">
               {body}
             </p>
           </Reveal>
           {points && (
             <Reveal delay={0.24}>
-              <ul className="mt-7 space-y-3 border-l border-aurora-from/30 pl-5 font-ui text-[13.5px] text-pearl/70">
+              <ul className="mt-7 space-y-3 border-l border-aurora-from/30 pl-5 font-ui text-[13.5px] text-ink/70">
                 {points.map((p) => (
                   <li key={p}>{p}</li>
                 ))}

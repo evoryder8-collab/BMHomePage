@@ -20,7 +20,7 @@ export default function ScreenshotFrame({
 }: ScreenshotFrameProps) {
   return (
     <Gleam
-      className={`rounded-2xl bg-white/[0.05] p-2 ring-1 ring-pearl/12 shadow-[0_50px_100px_-30px_rgba(0,0,0,0.8),0_24px_60px_-30px_rgba(200,164,75,0.18)] backdrop-blur-sm ${className}`}
+      className={`rounded-2xl bg-white/55 p-2 ring-1 ring-ink/15 shadow-[0_44px_90px_-32px_rgba(34,42,30,0.45),0_20px_50px_-28px_rgba(169,133,47,0.3)] backdrop-blur-sm ${className}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img

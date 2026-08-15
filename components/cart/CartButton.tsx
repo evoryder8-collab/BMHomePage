@@ -8,7 +8,7 @@ export default function CartButton() {
     <button
       aria-label={`Cart, ${count} item${count === 1 ? "" : "s"}`}
       onClick={() => setOpen(true)}
-      className="relative flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-pearl/5"
+      className="relative flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-ink/5"
     >
       <svg
         width="19"

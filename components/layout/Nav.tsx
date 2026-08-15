@@ -18,11 +18,11 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-pearl/8 bg-obsidian/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-ink/10 bg-sage/80 backdrop-blur-xl">
       <nav className="container-page flex h-[4.5rem] items-center justify-between">
         <Link
           href="/"
-          className="font-display text-lg tracking-[0.22em] text-pearl"
+          className="font-display text-lg tracking-[0.22em] text-ink"
           onClick={() => setOpen(false)}
         >
           BARBU&nbsp;MEDIA
@@ -33,7 +33,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="font-ui text-[13px] tracking-[0.08em] text-pearl/60 transition-colors duration-200 hover:text-gold-soft"
+              className="font-ui text-[13px] tracking-[0.08em] text-ink/60 transition-colors duration-200 hover:text-gold-soft"
             >
               {l.label}
             </Link>
@@ -50,20 +50,20 @@ export default function Nav() {
             className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
             onClick={() => setOpen((v) => !v)}
           >
-            <span className="h-px w-5 bg-pearl" />
-            <span className="h-px w-5 bg-pearl" />
+            <span className="h-px w-5 bg-ink" />
+            <span className="h-px w-5 bg-ink" />
           </button>
         </div>
       </nav>
 
       {open && (
-        <div className="border-t border-pearl/8 bg-obsidian md:hidden">
+        <div className="border-t border-ink/10 bg-sage md:hidden">
           <div className="container-page flex flex-col gap-4 py-6">
             {[...LINKS, { href: "/login", label: "Log in" }].map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="font-ui text-base text-pearl/80"
+                className="font-ui text-base text-ink/80"
                 onClick={() => setOpen(false)}
               >
                 {l.label}

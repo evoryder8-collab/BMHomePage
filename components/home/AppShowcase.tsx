@@ -30,14 +30,14 @@ export default function AppShowcase() {
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="lede mt-7 max-w-md text-pearl/65">
+              <p className="lede mt-7 max-w-md text-ink/65">
                 One finished film becomes a Reel, a square ad, a captioned cut,
                 a clean client master and a web-ready set, all from one
                 workspace that understands your media.
               </p>
             </Reveal>
             <Reveal delay={0.24}>
-              <ul className="mt-9 space-y-3.5 font-ui text-[14px] text-pearl/75">
+              <ul className="mt-9 space-y-3.5 font-ui text-[14px] text-ink/75">
                 <li className="flex gap-3">
                   <span className="text-aurora-to">01</span> Watermarks that
                   stay visually consistent in every shape
@@ -55,7 +55,7 @@ export default function AppShowcase() {
             <Reveal delay={0.3}>
               <Link
                 href="/finalova"
-                className="font-ui mt-10 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-aurora-to transition-colors hover:text-pearl"
+                className="font-ui mt-10 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-aurora-to transition-colors hover:text-ink"
               >
                 Discover Finalova <span aria-hidden>→</span>
               </Link>
@@ -71,7 +71,7 @@ export default function AppShowcase() {
       </section>
 
       {/* Act II: B∕A Studio */}
-      <section className="relative overflow-hidden py-28">
+      <section className="didone-scope relative overflow-hidden py-28">
         <div
           aria-hidden
           className="chapter-num absolute -top-8 left-2 select-none md:left-10"
@@ -100,7 +100,7 @@ export default function AppShowcase() {
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="lede mt-7 max-w-md text-pearl/65">
+              <p className="lede mt-7 max-w-md text-ink/65">
                 Two originals. One rigid frame. Zero cosmetic edits, enforced
                 by mathematics. Results measured in millimetres, on a card that
                 looks like a page from a fashion magazine.
@@ -115,7 +115,7 @@ export default function AppShowcase() {
             <Reveal delay={0.3}>
               <Link
                 href="/ba-studio"
-                className="font-ui mt-9 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-gold transition-colors hover:text-pearl"
+                className="font-ui mt-9 inline-flex items-center gap-3 text-[13px] font-semibold uppercase tracking-[0.18em] text-gold transition-colors hover:text-ink"
               >
                 Discover B∕A Studio <span aria-hidden>→</span>
               </Link>

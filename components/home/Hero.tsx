@@ -20,7 +20,7 @@ export default function Hero() {
           <span className="shimmer-gold">not apps.</span>
         </h1>
         <p
-          className="lede rise mt-9 max-w-2xl text-pearl/70"
+          className="lede rise mt-9 max-w-2xl text-ink/70"
           style={d(0.26)}
         >
           Professional Mac and iPhone software that pays for itself. Precision

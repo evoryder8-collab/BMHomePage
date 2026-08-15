@@ -37,10 +37,10 @@ export default function Footer() {
       <div className="hairline-gold" />
       <div className="container-page grid gap-12 py-16 md:grid-cols-4">
         <div className="space-y-5">
-          <div className="font-display text-lg tracking-[0.22em] text-pearl">
+          <div className="font-display text-lg tracking-[0.22em] text-ink">
             BARBU&nbsp;MEDIA
           </div>
-          <p className="max-w-[16rem] text-[15px] italic leading-relaxed text-pearl-dim">
+          <p className="max-w-[16rem] text-[15px] italic leading-relaxed text-ink/55">
             Professional instruments for people whose work has to hold up.
           </p>
           <SwissMark dark />
@@ -53,7 +53,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="font-ui text-sm text-pearl/55 transition-colors hover:text-gold-soft"
+                    className="font-ui text-sm text-ink/55 transition-colors hover:text-gold-soft"
                   >
                     {l.label}
                   </Link>
@@ -63,8 +63,8 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <div className="border-t border-pearl/8">
-        <div className="container-page flex flex-col gap-2 py-6 font-ui text-xs text-pearl/40 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-ink/10">
+        <div className="container-page flex flex-col gap-2 py-6 font-ui text-xs text-ink/40 sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {new Date().getFullYear()} {SITE.name}, {SITE.location}. All
             rights reserved.
