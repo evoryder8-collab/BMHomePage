@@ -31,7 +31,7 @@ const syne = Syne({
 export const metadata: Metadata = {
   applicationName: "Barbu Media Software",
   title: {
-    default: "Barbu Media Software: Software that finishes the thought.",
+    default: "Barbu Media Software: Useful software, thought through.",
     template: "%s · Barbu Media Software",
   },
   description:
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "Barbu Media Software: Software that finishes the thought.",
+    title: "Barbu Media Software: Useful software, thought through.",
     description:
       "Purpose-built professional software that resolves the whole job, not just the obvious feature.",
     url: "/",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Barbu Media Software: Software that finishes the thought.",
+    title: "Barbu Media Software: Useful software, thought through.",
     description:
       "Purpose-built professional software that resolves the whole job, not just the obvious feature.",
     images: ["/social/barbu-media-social-card.jpg"],

@@ -8,13 +8,13 @@ export default function Hero() {
     <>
       <section className="publisher-hero" aria-labelledby="home-title">
         <div className="publisher-hero-rule" aria-hidden />
-        {/* This visual represents the publisher, not either product. */}
+        {/* A human-scale studio represents the publisher; products retain their own imagery. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="publisher-hero-art rise"
           style={d(0.08)}
-          src={withBase("/art/brand-completion-engine.png")}
-          alt="A precision-built abstract mechanism whose separate parts resolve into one complete instrument"
+          src={withBase("/art/barbu-clinical-materials.png")}
+          alt="A precise composition of white ceramic, optical glass and aluminium"
           width="1536"
           height="1024"
           loading="eager"
@@ -24,19 +24,19 @@ export default function Hero() {
         <div className="container-page publisher-hero-inner">
           <div className="publisher-hero-copy">
             <p className="publisher-overline rise" style={d(0.03)}>
-              Barbu Media Software <span>·</span> Zürich
+              Independent software company <span>·</span> Zürich
             </p>
             <h1 id="home-title" className="rise" style={d(0.1)}>
-              Software that
+              Useful software,
               <br />
-              <em>finishes the thought.</em>
+              <em>thought through.</em>
             </h1>
             <p className="publisher-hero-lede rise" style={d(0.19)}>
-              We build unusually complete professional tools around the part
-              of the job everyone else leaves to workarounds.
+              Focused professional tools, designed around the whole job—not
+              just the feature that fits on a sales page.
             </p>
             <div className="publisher-hero-actions rise" style={d(0.27)}>
-              <Button href="#products">Explore the software</Button>
+              <Button href="#products">Meet the software</Button>
               <Button href="#standard" variant="ghost">
                 The Barbu standard
               </Button>
@@ -44,9 +44,9 @@ export default function Hero() {
           </div>
 
           <div className="publisher-hero-index rise" style={d(0.32)}>
-            <span>Independent software company</span>
-            <strong>01—02</strong>
-            <small>Purpose-built products · more in development</small>
+            <span>Conceived and engineered in Switzerland</span>
+            <strong>CH—ZH</strong>
+            <small>Independent · private · product-led</small>
           </div>
         </div>
 
@@ -57,15 +57,9 @@ export default function Hero() {
       </section>
 
       <div className="publisher-proofline" aria-label="Barbu Media Software principles">
-        <div>
-          <span>Useful out of the box</span>
-          <i aria-hidden />
-          <span>Native on Apple silicon</span>
-          <i aria-hidden />
-          <span>Private by construction</span>
-          <i aria-hidden />
-          <span>Built to own</span>
-        </div>
+        <span>Useful on day one</span>
+        <span>Private by construction</span>
+        <span>Built with judgment</span>
       </div>
     </>
   );

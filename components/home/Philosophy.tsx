@@ -16,15 +16,9 @@ const PRINCIPLES = [
   },
   {
     n: "03",
-    title: "Native and local",
-    body: "Apple-native frameworks, hardware acceleration and private on-device processing make the software fast, calm and dependable.",
+    title: "Private and ownable",
+    body: "Native performance, local processing and clear ownership keep the tool fast, dependable and answerable to the person who bought it.",
     proof: "Your work stays on the machines you trust.",
-  },
-  {
-    n: "04",
-    title: "Built to own",
-    body: "Clear pricing, perpetual options and software that remains useful without a permanent cloud dependency or an artificial upgrade treadmill.",
-    proof: "A tool should answer to its owner.",
   },
 ] as const;
 
@@ -46,10 +40,8 @@ export default function Philosophy() {
             </Reveal>
             <Reveal delay={0.12}>
               <p>
-                Barbu Media Software is a developer and publisher of focused
-                professional software. Our reputation is meant to travel ahead
-                of every new product: if we built it, the awkward parts have
-                already been thought through.
+                We make focused professional software. If our name is on it,
+                the awkward parts should already have been considered.
               </p>
             </Reveal>
           </div>
@@ -77,15 +69,15 @@ export default function Philosophy() {
           </Reveal>
           <Reveal delay={0.06}>
             <h2>
-              Built to remove
+              The useful idea,
               <br />
-              <em>the last workaround.</em>
+              <em>properly finished.</em>
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p>
-              Explore each product on its own terms, try the complete workflow
-              and choose the tool that belongs in your work.
+              Explore each product on its own terms and choose the one that
+              belongs in your work.
             </p>
           </Reveal>
           <Reveal delay={0.18}>

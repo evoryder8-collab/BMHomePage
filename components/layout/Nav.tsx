@@ -31,7 +31,7 @@ export default function Nav() {
           </span>
           <span>
             <strong>BARBU MEDIA SOFTWARE</strong>
-            <small>INDEPENDENT · ZÜRICH</small>
+            <small>INDEPENDENT SOFTWARE · ZÜRICH</small>
           </span>
         </Link>
 

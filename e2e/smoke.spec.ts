@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 const ROUTES: [string, string | RegExp][] = [
-  [".", "Software that"],
+  [".", "Useful software,"],
   ["apps/", "Purpose-built software."],
   ["finalova/", /Everything after/],
   ["finalova/pricing/", /Choose the workflow\./],
@@ -66,7 +66,7 @@ test("hero renders under reduced motion", async ({ browser, baseURL }) => {
   const ctx = await browser.newContext({ reducedMotion: "reduce" });
   const page = await ctx.newPage();
   await page.goto(baseURL!);
-  await expect(page.locator("h1")).toContainText("Software that");
+  await expect(page.locator("h1")).toContainText("Useful software,");
   await ctx.close();
 });
 

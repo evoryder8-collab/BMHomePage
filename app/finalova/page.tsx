@@ -40,7 +40,7 @@ export default function FinalovaPage() {
         <div className="container-page fin-hero-layout">
           <div className="fin-hero-copy">
             <p className="fin-label rise" style={{ animationDelay: ".04s" }}>
-              Finalova · Professional media finishing for Mac
+              Finalova · Media finishing for Mac
             </p>
             <h1 id="finalova-title" className="rise" style={{ animationDelay: ".12s" }}>
               Everything after
@@ -71,11 +71,9 @@ export default function FinalovaPage() {
             />
           </div>
 
-          <div className="fin-hero-meta rise" style={{ animationDelay: ".38s" }}>
-            <span>Native macOS</span>
-            <span>Private processing</span>
-            <span>Preview = export</span>
-          </div>
+          <p className="fin-hero-meta rise" style={{ animationDelay: ".38s" }}>
+            Native macOS · private processing · exact export previews
+          </p>
         </div>
       </section>
 

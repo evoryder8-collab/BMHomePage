@@ -9,8 +9,8 @@ const PRODUCTS = [
     index: "01",
     category: "Media finishing · macOS",
     name: "Finalova",
-    promise: "The complete system after the edit.",
-    body: "Turn one finished film into every version, web asset, captioned cut and client-ready delivery—without rebuilding the same job four times.",
+    promise: "Everything after the edit, in one system.",
+    body: "Adapt, automate and deliver finished media without rebuilding the same work for every platform and client.",
     image: "/art/finalova-devices.webp",
     imageAlt:
       "Finalova on a Mac with portrait and landscape delivery previews on phones",
@@ -22,8 +22,8 @@ const PRODUCTS = [
     index: "02",
     category: "Before-and-after proof · Mac & iPhone",
     name: "B∕A Studio",
-    promise: "The comparison studio that cannot lie.",
-    body: "Capture, align, measure and publish defensible before-and-after results with honest geometry, client-ready design and private processing.",
+    promise: "Credible evidence, beautifully presented.",
+    body: "Capture, align, measure and publish defensible before-and-after results—privately, with honest geometry.",
     image: "/art/ba-studio-devices.webp",
     imageAlt:
       "B/A Studio on a Mac and iPhone showing a measured before-and-after comparison",
@@ -43,17 +43,15 @@ export default function AppShowcase() {
           </Reveal>
           <Reveal delay={0.06}>
             <h2 id="products-title">
-              Different professions.
+              Two products.
               <br />
-              <em>The same level of resolve.</em>
+              <em>Each given its own world.</em>
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p>
-              Finalova and B∕A Studio are independent products. They do not
-              share a workflow, a customer journey or a sales pitch. What they
-              share is the company that refuses to leave the last 20% of a job
-              unfinished.
+              Finalova and B∕A Studio solve unrelated professional problems.
+              The connection is simply the standard behind them.
             </p>
           </Reveal>
         </div>
@@ -90,14 +88,9 @@ export default function AppShowcase() {
         </div>
 
         <Reveal delay={0.14}>
-          <div className="publisher-products-note">
-            <span>One company</span>
-            <p>
-              Two separate products, each with its own worthy page, language
-              and decision path.
-            </p>
-            <Link href="/apps">View the software directory ↗</Link>
-          </div>
+          <Link className="publisher-products-note" href="/apps">
+            View the complete software directory <span aria-hidden>↗</span>
+          </Link>
         </Reveal>
       </div>
     </section>
