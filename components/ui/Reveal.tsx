@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { createElement } from "react";
+import { createElement, useEffect, useState } from "react";
 import type { ElementType, ReactNode } from "react";
 
 interface RevealProps {
@@ -20,9 +20,14 @@ export default function Reveal({
   className,
 }: RevealProps) {
   const reduce = useReducedMotion();
+  const [canObserve, setCanObserve] = useState(true);
   const M = motion.create(as);
 
-  if (reduce) {
+  useEffect(() => {
+    setCanObserve("IntersectionObserver" in window);
+  }, []);
+
+  if (reduce || !canObserve) {
     return createElement(as, { className }, children);
   }
 

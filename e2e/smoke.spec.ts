@@ -7,7 +7,7 @@ const ROUTES: [string, string | RegExp][] = [
   ["finalova/pricing/", /Choose the workflow\./],
   ["ba-studio/", /Evidence,/],
   ["ba-studio/pricing/", /Invest in proof\./],
-  ["store/", "Software store."],
+  ["store/", "Software worth owning."],
   ["press/", "Press."],
   ["contact/", "Talk to us."],
   ["login/", "Welcome back."],
@@ -40,7 +40,7 @@ test("add to cart updates badge, persists across reload, opens checkout stub", a
 }) => {
   await page.goto("store/");
   await page
-    .getByRole("button", { name: "Add to cart" })
+    .getByRole("button", { name: "Choose this edition" })
     .first()
     .click();
   // drawer opens

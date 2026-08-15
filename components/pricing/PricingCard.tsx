@@ -9,6 +9,7 @@ interface PricingCardProps {
   highlight?: boolean;
   accent?: [string, string];
   note?: string;
+  position?: number;
 }
 
 export default function PricingCard({
@@ -16,6 +17,7 @@ export default function PricingCard({
   highlight = false,
   accent = ["#ff553d", "#65ddec"],
   note,
+  position = 1,
 }: PricingCardProps) {
   const { add } = useCart();
   const period =
@@ -30,6 +32,8 @@ export default function PricingCard({
       className={`commerce-plan is-${product.app} ${highlight ? "is-featured" : ""}`}
       style={{ "--plan-accent": accent[0], "--plan-accent-2": accent[1] } as CSSProperties}
     >
+      <div className="commerce-plan-sheen" aria-hidden />
+      <span className="commerce-plan-number" aria-hidden>{String(position).padStart(2, "0")}</span>
       <div className="commerce-plan-heading">
         <div className="commerce-plan-edition">
           <span>{product.edition}</span>
@@ -46,6 +50,9 @@ export default function PricingCard({
       </div>
 
       <ul className="commerce-plan-features">
+        <li className="commerce-plan-includes">
+          <span>Everything included</span>
+        </li>
         {product.features.map((feature) => (
           <li key={feature}>
             <i aria-hidden />
@@ -55,7 +62,9 @@ export default function PricingCard({
       </ul>
 
       <div className="commerce-plan-action">
-        <button onClick={() => add(product.sku)}>Add to cart <span aria-hidden>→</span></button>
+        <button onClick={() => add(product.sku)}>
+          Choose this edition <span aria-hidden>↗</span>
+        </button>
         {note && <p>{note}</p>}
       </div>
     </article>

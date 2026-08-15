@@ -70,6 +70,11 @@ export default function StoreProducts() {
               <h2>{active.name}</h2>
               <strong>{active.statement}</strong>
               <span>{active.from}</span>
+              <div className="store-product-facts" aria-label={`${active.name} purchase benefits`}>
+                <span>Free trial</span>
+                <span>Secure license</span>
+                <span>Built in Zürich</span>
+              </div>
             </div>
             <div className="store-product-art">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -83,11 +88,14 @@ export default function StoreProducts() {
           </div>
 
           <div className="store-pricing-head">
-            <span>Purchase options</span>
+            <div>
+              <small>Licensing, made clear</small>
+              <span>Choose how you want to own it.</span>
+            </div>
             <p>
               {selected === "finalova"
-                ? "14-day full trial · licenses work on two Macs"
-                : "Free trial included · Mac licenses sold here"}
+                ? "14-day full trial · every license works on two Macs"
+                : "Free trial included · Mac licenses sold directly here"}
             </p>
           </div>
           <PricingSwitcher app={selected} accent={active.accent} />

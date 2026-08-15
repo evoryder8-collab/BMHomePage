@@ -26,8 +26,6 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /BMHomePage
       - run: npx playwright install --with-deps chromium
       - run: npx playwright test
       - run: touch out/.nojekyll

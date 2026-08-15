@@ -114,13 +114,14 @@ export default function PricingSwitcher({
           transition={{ duration: .3, ease: [0.22, 1, 0.36, 1] }}
           className="pricing-lane"
         >
-          {items.map(({ sku, highlight, note }) => (
+          {items.map(({ sku, highlight, note }, index) => (
             <PricingCard
               key={sku}
               product={PRODUCTS[sku]}
               highlight={highlight}
               accent={accent}
               note={note}
+              position={index + 1}
             />
           ))}
         </motion.div>
