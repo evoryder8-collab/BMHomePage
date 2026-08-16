@@ -1,6 +1,6 @@
 import Link from "next/link";
 import SwissMark from "@/components/ui/SwissMark";
-import { SITE } from "@/lib/site";
+import { SITE, withBase } from "@/lib/site";
 
 const COLUMNS = [
   {
@@ -50,7 +50,8 @@ export default function Footer() {
         <div className="bm-footer-brand">
           <Link href="/" className="bm-logo">
             <span className="bm-logo-glyph" aria-hidden>
-              B∕M
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={withBase("/brand/barbu-media-mark.png")} alt="" />
             </span>
             <span>
               <strong>BARBU MEDIA SOFTWARE</strong>

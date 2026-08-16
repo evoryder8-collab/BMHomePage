@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import CartButton from "@/components/cart/CartButton";
 import AccountLink from "@/components/auth/AccountLink";
+import { withBase } from "@/lib/site";
 
 const LINKS = [
   { href: "/apps", label: "Software" },
@@ -27,7 +28,8 @@ export default function Nav() {
       <nav className="container-page bm-nav-inner" aria-label="Main navigation">
         <Link href="/" className="bm-logo" onClick={() => setOpen(false)}>
           <span className="bm-logo-glyph" aria-hidden>
-            B∕M
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={withBase("/brand/barbu-media-mark.png")} alt="" />
           </span>
           <span>
             <strong>BARBU MEDIA SOFTWARE</strong>

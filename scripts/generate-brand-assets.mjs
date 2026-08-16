@@ -1,18 +1,31 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 import sharp from "sharp";
 
-const socialSource = "public/art/barbu-clinical-materials.png";
+const socialSource = "public/art/barbu-media-signal-blueprint.png";
 const socialPng = "public/social/barbu-media-social-card.png";
 const socialJpg = "public/social/barbu-media-social-card.jpg";
-const iconSvg = "app/icon.svg";
+const logoSource = "assets/brand/barbu-media-mark-source.png";
+
+const brandLogo = await sharp(logoSource)
+  .trim()
+  .resize({ width: 640, withoutEnlargement: true })
+  .png({ compressionLevel: 9 })
+  .toBuffer();
+
+await writeFile("public/brand/barbu-media-mark.png", brandLogo);
+
+const socialLogo = await sharp(brandLogo)
+  .resize({ width: 42, height: 42, fit: "contain" })
+  .png()
+  .toBuffer();
 
 const socialOverlay = Buffer.from(`
   <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="fade" x1="0" y1="0" x2="810" y2="0" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#11100f" stop-opacity="0.99"/>
-        <stop offset="0.68" stop-color="#11100f" stop-opacity="0.88"/>
-        <stop offset="1" stop-color="#050608" stop-opacity="0"/>
+        <stop stop-color="#050b13" stop-opacity="0.99"/>
+        <stop offset="0.68" stop-color="#050b13" stop-opacity="0.91"/>
+        <stop offset="1" stop-color="#050b13" stop-opacity="0"/>
       </linearGradient>
     </defs>
 
@@ -20,8 +33,7 @@ const socialOverlay = Buffer.from(`
     <rect x="42" y="40" width="1116" height="550" rx="12" fill="none" stroke="#f6f0e7" stroke-opacity="0.16"/>
 
     <g transform="translate(82 70)">
-      <rect width="54" height="54" rx="10" fill="#f7f4ee" fill-opacity="0.08" stroke="#fff" stroke-opacity="0.24"/>
-      <text x="27" y="34" text-anchor="middle" fill="#f7f4ee" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="-1">B/M</text>
+      <rect width="54" height="54" rx="10" fill="#000" fill-opacity="0.92" stroke="#fff" stroke-opacity="0.2"/>
       <text x="76" y="20" fill="#f7f4ee" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2.8">BARBU MEDIA SOFTWARE</text>
       <text x="76" y="45" fill="#f7f4ee" fill-opacity="0.48" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="2.15">INDEPENDENT SOFTWARE COMPANY</text>
     </g>
@@ -45,13 +57,14 @@ const socialOverlay = Buffer.from(`
 
 const preparedBackground = await sharp(socialSource)
   .resize(1200, 630, { fit: "cover", position: "centre" })
-  .modulate({ saturation: 0.78, brightness: 0.86 })
+  .modulate({ saturation: 1.04, brightness: 0.9 })
   .sharpen({ sigma: 0.55 })
   .png()
   .toBuffer();
 
 const socialCard = sharp(preparedBackground).composite([
   { input: socialOverlay, top: 0, left: 0 },
+  { input: socialLogo, top: 76, left: 88 },
 ]);
 
 await socialCard.clone().png({ compressionLevel: 9 }).toFile(socialPng);
@@ -60,14 +73,31 @@ await socialCard
   .jpeg({ quality: 92, chromaSubsampling: "4:4:4", progressive: true })
   .toFile(socialJpg);
 
-const icon = await readFile(iconSvg);
+const iconBase = Buffer.from(`
+  <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <rect x="8" y="8" width="496" height="496" rx="112" fill="#000"/>
+    <rect x="9" y="9" width="494" height="494" rx="111" fill="none" stroke="#fff" stroke-opacity=".13" stroke-width="2"/>
+  </svg>
+`);
+
+const iconLogo = await sharp(brandLogo)
+  .resize({ width: 344, height: 344, fit: "contain" })
+  .png()
+  .toBuffer();
+
+const icon = await sharp(iconBase)
+  .composite([{ input: iconLogo, top: 84, left: 84 }])
+  .png()
+  .toBuffer();
+
+await writeFile("app/icon.png", icon);
 await sharp(icon).resize(180, 180).png().toFile("app/apple-icon.png");
 await sharp(icon).resize(32, 32).png().toFile("public/favicon-32x32.png");
 await sharp(icon).resize(192, 192).png().toFile("public/icon-192.png");
-await sharp(icon).resize(512, 512).png().toFile("public/icon-512.png");
+await writeFile("public/icon-512.png", icon);
 
 // ICO supports PNG-compressed image payloads. A single 128px entry gives
-// legacy favicon requests a crisp source while modern browsers use icon.svg.
+// legacy favicon requests a crisp source while modern browsers use icon.png.
 const faviconPng = await sharp(icon).resize(128, 128).png().toBuffer();
 const icoHeader = Buffer.alloc(22);
 icoHeader.writeUInt16LE(0, 0); // reserved

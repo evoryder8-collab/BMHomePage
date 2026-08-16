@@ -3331,7 +3331,7 @@ img {
   margin-inline: auto;
   padding: 1.4rem;
   border: 1px solid rgba(244,236,227,.26);
-  background: rgba(255,255,255,.045);
+  background: #000;
 }
 
 .ba-zero-stage img { width: 100%; }
@@ -4521,6 +4521,12 @@ img {
   font-size: .55rem;
 }
 
+.bm-logo-glyph img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
 .bm-logo strong {
   font-size: .66rem;
   font-weight: 600;
@@ -4573,7 +4579,7 @@ img {
   object-fit: cover;
   object-position: 61% center;
   transform: none;
-  filter: saturate(.78) contrast(1.02);
+  filter: saturate(1.05) contrast(1.04);
 }
 
 .publisher-hero-inner {

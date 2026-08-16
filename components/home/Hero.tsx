@@ -13,8 +13,8 @@ export default function Hero() {
         <img
           className="publisher-hero-art rise"
           style={d(0.08)}
-          src={withBase("/art/barbu-clinical-materials.png")}
-          alt="A precise composition of white ceramic, optical glass and aluminium"
+          src={withBase("/art/barbu-media-signal-blueprint.png")}
+          alt="A media transformation blueprint connecting video frames, aspect ratios, timelines and audio waveforms"
           width="1536"
           height="1024"
           loading="eager"
