@@ -124,7 +124,7 @@ export default function BaStudioPage() {
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={withBase("/screenshots/ba-studio/card-zero.webp")}
+              src={withBase("/screenshots/ba-studio/card-zero-balanced.jpg")}
               alt="An unchanged face scored Lift Index 0 and labelled within noise"
               loading="lazy"
               decoding="async"

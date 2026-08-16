@@ -97,6 +97,8 @@ test("homepage proof line is a moving, high-contrast marquee", async ({ page }) 
       background: getComputedStyle(element).backgroundImage,
       color: getComputedStyle(item).color,
       overflow: getComputedStyle(element).overflowX,
+      prooflineHeight: element.clientHeight,
+      trackHeight: track.getBoundingClientRect().height,
     };
   });
 
@@ -104,6 +106,9 @@ test("homepage proof line is a moving, high-contrast marquee", async ({ page }) 
   expect(presentation.background).toContain("linear-gradient");
   expect(presentation.color).toContain("255, 255, 255");
   expect(presentation.overflow).toBe("hidden");
+  expect(Math.abs(presentation.prooflineHeight - presentation.trackHeight)).toBeLessThan(
+    1,
+  );
 });
 
 test("key pages remain contained and readable on mobile", async ({
@@ -179,6 +184,25 @@ test("key pages remain contained and readable on mobile", async ({
         }));
       expect(productImage.opacity).toBe("1");
       expect(productImage.filter).toContain("contrast(1.15)");
+    }
+
+    if (path === "ba-studio/") {
+      const zeroStage = await page.evaluate(() => {
+        const stage = document.querySelector<HTMLElement>(".ba-zero-stage")!;
+        const image = stage.querySelector<HTMLImageElement>(":scope > img")!;
+        const result = stage.querySelector<HTMLElement>(".ba-card-caption strong")!;
+        const stageRect = stage.getBoundingClientRect();
+        const imageRect = image.getBoundingClientRect();
+        const resultRect = result.getBoundingClientRect();
+        return {
+          imageLeftInset: imageRect.left - stageRect.left,
+          imageRightInset: stageRect.right - imageRect.right,
+          resultRightInset: stageRect.right - resultRect.right,
+        };
+      });
+
+      expect(Math.abs(zeroStage.imageLeftInset - zeroStage.imageRightInset)).toBeLessThan(1);
+      expect(zeroStage.resultRightInset).toBeGreaterThan(20);
     }
   }
 
