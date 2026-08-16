@@ -1,10 +1,66 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import sharp from "sharp";
 
-const socialSource = "public/art/barbu-media-signal-blueprint-pearl.png";
+const posterBase = "public/art/barbu-media-ar-orbit-base.png";
+const posterPng = "public/art/barbu-media-ar-orbit.png";
+const posterWebp = "public/art/barbu-media-ar-orbit.webp";
+const socialSource = posterPng;
 const socialPng = "public/social/barbu-media-social-card.png";
 const socialJpg = "public/social/barbu-media-social-card.jpg";
 const logoSource = "assets/brand/barbu-media-mark-source.png";
+
+const PLATFORM_BADGES = [
+  { icon: "public/brand/social-instagram.svg", left: 998, top: 82, size: 84, rotate: -2 },
+  { icon: "public/brand/social-tiktok.svg", left: 1000, top: 174, size: 82, rotate: 2 },
+  { icon: "public/brand/social-linkedin.svg", left: 1001, top: 264, size: 82, rotate: -1 },
+  { icon: "public/brand/social-youtube.svg", left: 148, top: 348, size: 66, rotate: -10 },
+  { icon: "public/brand/social-facebook.svg", left: 1544, top: 708, size: 64, rotate: 8 },
+];
+
+async function platformBadge({ icon, size, rotate }) {
+  const shell = Buffer.from(`
+    <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#765271" flood-opacity=".18"/>
+        </filter>
+        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+          <stop stop-color="#ffffff" stop-opacity=".92"/>
+          <stop offset="1" stop-color="#edf8fb" stop-opacity=".72"/>
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="${size - 16}" height="${size - 16}" rx="${Math.round(size * .24)}" fill="url(#glass)" stroke="#ffffff" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="9" y="9" width="${size - 18}" height="${size - 18}" rx="${Math.round(size * .23)}" fill="none" stroke="#8e6d8b" stroke-opacity=".22"/>
+    </svg>
+  `);
+  const iconBuffer = await sharp(await readFile(icon))
+    .resize({ width: Math.round(size * .4), height: Math.round(size * .4), fit: "contain" })
+    .png()
+    .toBuffer();
+  const composed = await sharp(shell)
+    .composite([{ input: iconBuffer, left: Math.round(size * .3), top: Math.round(size * .3) }])
+    .png()
+    .toBuffer();
+  return sharp(composed)
+    .rotate(rotate, { background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .png()
+    .toBuffer();
+}
+
+const posterComposites = await Promise.all(
+  PLATFORM_BADGES.map(async (badge) => ({
+    input: await platformBadge(badge),
+    left: badge.left,
+    top: badge.top,
+  })),
+);
+
+const brandedPoster = sharp(posterBase).composite(posterComposites);
+await brandedPoster.clone().png({ compressionLevel: 9 }).toFile(posterPng);
+await brandedPoster
+  .clone()
+  .webp({ quality: 92, smartSubsample: true, effort: 6 })
+  .toFile(posterWebp);
 
 const brandLogo = await sharp(logoSource)
   .trim()

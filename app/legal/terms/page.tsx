@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/legal/LegalLayout";
 import { SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Terms of Use",
   description: "Terms of Use for Barbu Media software and this website.",
-};
+  path: "/legal/terms/",
+});
 
 export default function TermsPage() {
   return (

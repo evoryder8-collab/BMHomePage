@@ -8,6 +8,7 @@ const ROUTES: [string, string | RegExp][] = [
   ["ba-studio/", /Evidence,/],
   ["ba-studio/pricing/", /Invest in proof\./],
   ["store/", "Software worth owning."],
+  ["about/", "Built from the"],
   ["press/", "Press."],
   ["contact/", "Talk to us."],
   ["login/", "Welcome back."],

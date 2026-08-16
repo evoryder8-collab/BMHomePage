@@ -1,40 +1,63 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
+import JsonLd from "@/components/seo/JsonLd";
 import { withBase } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, finalovaJsonLd } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "Finalova: everything after the edit",
+export const metadata: Metadata = pageMetadata({
+  title: "Finalova: media adaptation and delivery for Mac",
   description:
-    "Finalova is the complete media adaptation, automation and delivery system for Mac: Client Delivery Packs, Watch Folders, Website Builder Mode and more.",
-};
+    "Adapt one approved edit for social, web and client delivery from a native Mac workspace with multi-ratio previews, Watch Folders and Client Delivery Packs.",
+  path: "/finalova/",
+  keywords: [
+    "Mac media delivery software",
+    "video aspect ratio converter",
+    "social media batch export",
+    "video watermark sizing",
+    "watch folder video automation",
+    "website image compression Mac",
+  ],
+  image: "/art/finalova-devices.webp",
+  imageAlt: "Finalova media adaptation workspace on Mac with portrait and landscape previews",
+});
 
 const SUPPORTING = [
   {
     index: "01",
     title: "Media Bay",
-    body: "Hundreds of photos and videos become one coherent job, with real Mac selection, filters, source colour coding and batch decisions.",
+    body: "Bring hundreds of photos and videos into one coherent job. Filter, select and apply batch decisions without rebuilding a timeline for every destination.",
   },
   {
     index: "02",
     title: "Aspect calibration",
-    body: "Balance logos for the way 9:16, 4:5 and 16:9 actually look—not one naive percentage copied across every shape.",
+    body: "Preview 9:16, 4:5, 1:1 and 16:9 together, reposition in real time and keep a watermark optically balanced instead of copying one percentage across every shape.",
   },
   {
     index: "03",
     title: "Local captions",
-    body: "Speech recognition stays on your Mac. Phrase timing respects clauses and holds, while the editable timeline renders exactly as exported.",
+    body: "Transcribe on your Mac, refine the timing on an editable caption track and preview the same result that will be written into every requested export.",
   },
   {
     index: "04",
     title: "Cinematic reframing",
-    body: "See beyond the crop, keyframe the subject and create camera-like movement using a shape-preserving minimum-jerk path.",
+    body: "See beyond the crop, keyframe the subject and create smooth reframing while every destination remains visible in the same workspace.",
   },
 ] as const;
 
 export default function FinalovaPage() {
   return (
     <div className="finalova-world">
+      <JsonLd
+        data={[
+          finalovaJsonLd,
+          breadcrumbJsonLd([
+            ["Barbu Media Software", "/"],
+            ["Finalova", "/finalova/"],
+          ]),
+        ]}
+      />
       <section className="fin-hero" aria-labelledby="finalova-title">
         <div className="fin-hero-grid" aria-hidden />
         <div className="container-page fin-hero-layout">
@@ -48,8 +71,9 @@ export default function FinalovaPage() {
               the edit. <em>One system.</em>
             </h1>
             <p className="rise" style={{ animationDelay: ".21s" }}>
-              Adapt, automate and deliver finished media without rebuilding
-              the same work for every platform, website and client handoff.
+              Turn one approved edit into the social, website and client
+              versions it actually needs, without rebuilding the work for
+              every destination.
             </p>
             <div className="fin-hero-actions rise" style={{ animationDelay: ".3s" }}>
               <Button href="/finalova/pricing">Start the full trial</Button>
@@ -100,10 +124,10 @@ export default function FinalovaPage() {
           </Reveal>
           <Reveal delay={0.12}>
             <p>
-              Social shapes, branded versions, clean masters, captions,
-              compressed web files, sensible names and client folders are not
-              side tasks. They are the delivery. Finalova treats them as one
-              connected production system.
+              Social crops, branded versions, clean masters, captions,
+              compressed web files and client folders are the delivery.
+              Finalova keeps those decisions together so a change can be
+              reviewed once and carried through every required output.
             </p>
           </Reveal>
         </div>
@@ -149,10 +173,10 @@ export default function FinalovaPage() {
             <Reveal delay={0.1}>
               <div className="fin-monument-copy">
                 <p>
-                  Define the complete delivery once—social crops, clean
-                  masters, website media and client-ready naming. Finalova
-                  builds the full folder tree in one action and skips branches
-                  that have nothing useful to contain.
+                  Define the complete delivery once: social crops, clean
+                  masters, website media, naming and folder structure.
+                  Finalova builds the useful branches in a single batch export
+                  and leaves empty destinations out.
                 </p>
                 <ul>
                   <li>Branding rules per destination</li>
@@ -168,7 +192,7 @@ export default function FinalovaPage() {
                 <div className="fin-window-bar">
                   <i /><i /><i />
                   <span>CLIENT DELIVERY PACK</span>
-                  <small>ONE-CLICK HANDOFF</small>
+                  <small>SINGLE BATCH HANDOFF</small>
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -209,9 +233,9 @@ export default function FinalovaPage() {
               <Reveal delay={0.11}>
                 <p>
                   Point Finalova at the folder where Resolve, Premiere, Final
-                  Cut or CapCut finishes its renders. It waits for each file to
-                  complete, then applies the finishing recipe automatically
-                  while you move to the next job.
+                  Cut or CapCut finishes a render. It waits until the file is
+                  complete, then applies the approved crop, branding, caption,
+                  duration and delivery rules while you move to the next job.
                 </p>
               </Reveal>
               <Reveal delay={0.16}>
@@ -279,10 +303,10 @@ export default function FinalovaPage() {
             <div className="fin-web-copy">
               <Reveal delay={0.07}>
                 <p>
-                  Export WebP, AVIF, JPEG, PNG or HEIF at exact target sizes.
-                  Finalova performs the real encode and measures the finished
-                  bytes, then lets you inspect original versus compressed
-                  through a draggable split.
+                  Export WebP, AVIF, JPEG, PNG or HEIF against a real file-size
+                  target. Finalova performs the encode, measures the finished
+                  bytes and lets you compare the original with the compressed
+                  result through a draggable split before delivery.
                 </p>
               </Reveal>
               <Reveal delay={0.12}>
@@ -341,7 +365,7 @@ export default function FinalovaPage() {
           <Reveal delay={0.08}>
             <p>
               Metal-backed Core Image, VideoToolbox and Apple&rsquo;s media
-              engines—not a web wrapper, not an upload queue. Originals stay
+              engines. It is not a web wrapper or an upload queue. Originals stay
               untouched, processing stays local and the geometry you approve
               is the geometry Finalova exports.
             </p>

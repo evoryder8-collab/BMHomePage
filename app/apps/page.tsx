@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 import { withBase } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Software",
   description:
-    "Explore Finalova and B∕A Studio—two independent, purpose-built products from Barbu Media Software.",
-};
+    "Explore focused professional software from Barbu Media, including Finalova for media delivery and B/A Studio for credible visual comparisons.",
+  path: "/apps/",
+  keywords: ["Barbu Media apps", "Mac creative software", "native Mac workflow tools"],
+});
 
 export default function AppsPage() {
   return (
@@ -38,7 +41,7 @@ export default function AppsPage() {
               <span>01 · Media finishing for Mac</span>
               <h2>Finalova</h2>
               <strong>Everything after the edit. One system.</strong>
-              <p>Adaptation, automation, website media and complete client delivery.</p>
+              <p>Prepare social formats, website media and complete client handoffs from one coherent workspace.</p>
               <Link href="/finalova">Explore Finalova <i aria-hidden>↗</i></Link>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -52,7 +55,7 @@ export default function AppsPage() {
               <span>02 · Before-and-after proof for Mac &amp; iPhone</span>
               <h2>B∕A Studio</h2>
               <strong>Evidence, beautifully presented.</strong>
-              <p>Guided capture, honest alignment, defensible measurement and editorial export.</p>
+              <p>Capture comparable images, align them honestly, measure visible change and publish the result.</p>
               <Link href="/ba-studio">Explore B∕A Studio <i aria-hidden>↗</i></Link>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -65,7 +68,7 @@ export default function AppsPage() {
         <div className="container-page">
           <Reveal><span>03</span></Reveal>
           <Reveal delay={0.04}><h2>The next useful idea is on the bench.</h2></Reveal>
-          <Reveal delay={0.08}><p>We release one focused product at a time—and finish it before announcing the next.</p></Reveal>
+          <Reveal delay={0.08}><p>We release one focused product at a time and finish it before announcing the next.</p></Reveal>
         </div>
       </section>
     </div>

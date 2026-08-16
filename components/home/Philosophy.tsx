@@ -6,7 +6,7 @@ const PRINCIPLES = [
     n: "01",
     title: "Complete by design",
     body: "We start with the whole professional outcome, then engineer backwards until the handoffs, edge cases and repetitive last steps disappear.",
-    proof: "The job—not the feature list—is the unit of design.",
+    proof: "The complete job, rather than the feature list, is the unit of design.",
   },
   {
     n: "02",

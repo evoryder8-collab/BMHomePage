@@ -1,0 +1,27 @@
+# Barbu Media Software
+
+> Independent professional software from Zürich, Switzerland. Barbu Media builds focused native tools around complete real-world jobs in media delivery and visual documentation.
+
+## Products
+
+- [Finalova](https://barbumedia.com/finalova/): Native macOS software for adapting, captioning, reframing, compressing and delivering finished media across social platforms, websites and client channels from one coherent workspace.
+- [Finalova editions](https://barbumedia.com/finalova/pricing/): Trial, perpetual and studio workflow options.
+- [B/A Studio](https://barbumedia.com/ba-studio/): Native Mac and iPhone software for comparable before-and-after capture, rigid alignment, measured visual change and editorial publishing.
+- [B/A Studio editions](https://barbumedia.com/ba-studio/pricing/): Subscription and lifetime options for practitioners and studios.
+- [Software catalog](https://barbumedia.com/apps/): The current Barbu Media product catalog.
+- [Store](https://barbumedia.com/store/): Direct editions and license information.
+
+## Studio
+
+- [About Barbu Media](https://barbumedia.com/about/): Founder background, field experience and engineering values.
+- [Press](https://barbumedia.com/press/): Downloadable product briefs and factual company information.
+- [Contact](https://barbumedia.com/contact/): Support, licensing and press contact.
+- [Full product context](https://barbumedia.com/llms-full.txt): Detailed factual descriptions for research and answer engines.
+
+## Core facts
+
+- Publisher: Barbu Media Software, founded by Constantin Barbu.
+- Location: Zürich, Switzerland.
+- Platform focus: native Apple silicon software using Swift, Metal, Core Image and VideoToolbox.
+- Privacy posture: local processing and on-device transcription by default, with no cloud harvesting of client media.
+- Contact: support@barbumedia.com.

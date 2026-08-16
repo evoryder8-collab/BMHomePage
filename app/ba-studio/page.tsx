@@ -1,17 +1,40 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
+import JsonLd from "@/components/seo/JsonLd";
 import { withBase } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
+import { baStudioJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "B∕A Studio: evidence, beautifully presented",
+export const metadata: Metadata = pageMetadata({
+  title: "B/A Studio: credible before-and-after software",
   description:
-    "The before-and-after studio for aesthetics professionals: guided capture, rigid alignment, defensible measurement and editorial exports on Mac and iPhone.",
-};
+    "Capture comparable images, align them without warping, measure visible change and publish credible before-and-after results on Mac and iPhone.",
+  path: "/ba-studio/",
+  keywords: [
+    "before and after software",
+    "aesthetic clinic photography app",
+    "before after photo alignment",
+    "LiDAR guided photo capture",
+    "before after measurement software",
+    "before after website slider",
+  ],
+  image: "/art/ba-studio-devices.webp",
+  imageAlt: "B/A Studio on Mac and iPhone with a measured before-and-after comparison",
+});
 
 export default function BaStudioPage() {
   return (
     <div className="ba-world didone-scope">
+      <JsonLd
+        data={[
+          baStudioJsonLd,
+          breadcrumbJsonLd([
+            ["Barbu Media Software", "/"],
+            ["B/A Studio", "/ba-studio/"],
+          ]),
+        ]}
+      />
       <section className="ba-hero" aria-labelledby="ba-title">
         <div className="ba-hero-grid" aria-hidden />
         <div className="container-page ba-hero-layout">
@@ -25,9 +48,9 @@ export default function BaStudioPage() {
               <em>beautifully presented.</em>
             </h1>
             <p className="rise" style={{ animationDelay: ".21s" }}>
-              Capture comparable images, measure real change and publish
-              before-and-after results that remain credible when someone looks
-              closely.
+              Capture comparable images, measure visible change and publish
+              before-and-after results that remain credible when someone
+              examines the details.
             </p>
             <div className="ba-hero-actions rise" style={{ animationDelay: ".3s" }}>
               <Button href="/ba-studio/pricing">Choose B∕A Studio</Button>
@@ -79,9 +102,9 @@ export default function BaStudioPage() {
             <Reveal delay={0.1}>
               <p>
                 B∕A Studio permits only a rigid transform: move, rotate and
-                uniformly scale. No warp, liquify or local retouch exists in
-                the pipeline. The only colour correction is a global tone
-                match applied to the whole frame.
+                uniformly scale. You can align the frames in real time, but
+                there is no warp, liquify or local retouch in the pipeline.
+                Colour matching is applied globally to the whole frame.
               </p>
             </Reveal>
             <Reveal delay={0.14}>
@@ -125,8 +148,9 @@ export default function BaStudioPage() {
           <Reveal delay={0.11}>
             <p>
               Facial landmarks are scaled to real millimetres. Change counts
-              only after it clears the app&rsquo;s own 95% noise limit, so a
-              measurement describes evidence rather than wishful precision.
+              only after it clears the app&rsquo;s own 95% noise limit, so the
+              reported number describes measured evidence rather than false
+              precision.
             </p>
           </Reveal>
         </div>
@@ -230,9 +254,9 @@ export default function BaStudioPage() {
           <div className="ba-publish-copy">
             <Reveal delay={0.07}>
               <p>
-                Export print-quality cards in 4:5, 1:1, 9:16 and 16:9, with
-                your logo, an optional metadata dock and a live preview that
-                renders pixel-for-pixel as the finished asset.
+                Preview 4:5, 1:1, 9:16 and 16:9 together, reposition the
+                comparison in real time and export each format with your logo,
+                an optional metadata dock and a pixel-accurate final preview.
               </p>
             </Reveal>
             <Reveal delay={0.12}>

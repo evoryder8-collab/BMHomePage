@@ -5,9 +5,11 @@ import Footer from "@/components/layout/Footer";
 import AmbientBackground from "@/components/layout/AmbientBackground";
 import CartDrawer from "@/components/cart/CartDrawer";
 import CheckoutModal from "@/components/cart/CheckoutModal";
+import JsonLd from "@/components/seo/JsonLd";
 import { CartProvider } from "@/lib/cart";
 import { AuthProvider } from "@/lib/auth";
 import { SITE } from "@/lib/site";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
 const bodoni = Bodoni_Moda({
@@ -36,10 +38,17 @@ export const metadata: Metadata = {
   },
   description:
     "Purpose-built professional software from Zürich. Barbu Media Software creates unusually complete native tools without the missing pieces.",
+  authors: [{ name: "Constantin Barbu", url: SITE.url }],
+  keywords: [
+    "Mac software",
+    "media delivery software",
+    "video aspect ratio editor",
+    "social media video export",
+    "before and after software",
+    "native Apple silicon software",
+    "Swiss software company",
+  ],
   metadataBase: new URL(SITE.url),
-  alternates: {
-    canonical: "/",
-  },
   icons: {
     icon: [
       { url: "/icon.png", sizes: "512x512", type: "image/png" },
@@ -61,7 +70,7 @@ export const metadata: Metadata = {
         url: "/social/barbu-media-social-card.jpg",
         width: 1200,
         height: 630,
-        alt: "Barbu Media Software — software that finishes the thought, conceived and built in Zürich",
+        alt: "Barbu Media Software, professional software conceived and built in Zürich",
       },
     ],
   },
@@ -87,6 +96,7 @@ export default function RootLayout({
       className={`${bodoni.variable} ${newsreader.variable} ${grotesk.variable} ${syne.variable}`}
     >
       <body className="flex min-h-screen flex-col antialiased">
+        <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
         <AmbientBackground />
         <AuthProvider>
           <CartProvider>

@@ -1,4 +1,4 @@
-# Finalova — Press & Product Brief
+# Finalova: Press & Product Brief
 
 **Barbu Media · Zürich, Switzerland · press contact: support@barbumedia.com**
 
@@ -7,7 +7,7 @@
 Finalova is a local, source-aware media adaptation and delivery studio for
 macOS that turns mixed photos and videos into accurately branded,
 intelligently reframed, professionally captioned, platform-ready,
-web-optimized and beautifully organized deliverables — from one coherent
+web-optimized and beautifully organized deliverables from one coherent
 workspace.
 
 ## The problem
@@ -15,7 +15,7 @@ workspace.
 Producing the photograph or video is no longer the end of the job. One
 finished piece must become an Instagram Reel, a square ad, a Google Maps
 clip, a LinkedIn asset, a website image, a subtitled version, a clean client
-master and several branded variations — each destination with its own
+master and several branded variations, each destination with its own
 proportions, duration limits, safe areas, compression rules and naming
 conventions. Professionals solve this today with a fragmented pile of
 editors, watermark utilities, compression websites and manual folder work.
@@ -30,7 +30,7 @@ destination, a "passthrough" export that quietly lost most of its bitrate.
   files; selection, filtering and fuzzy search behave like a real Mac app.
 - **Perceptually intelligent watermarking.** Aspect-aware calibration
   balances a mark across shape families (vertical, square, widescreen…) for
-  perceived sameness — not one naive percentage. Multi-logo layouts,
+  perceived sameness, not one naive percentage. Multi-logo layouts,
   linked opacity/sizing, per-file and per-ratio overrides.
 - **Reframing and platform-aware trims.** Overscan crop views, keyframed
   motion following a shape-preserving minimum-jerk path, duration limits
@@ -39,9 +39,9 @@ destination, a "passthrough" export that quietly lost most of its bitrate.
   runs on-device; a timing engine respects clause boundaries, hesitations
   and phrase-final holds. Every block is editable on a timeline; preview and
   export share the same geometry.
-- **Client Delivery Packs.** A whole delivery structure — Instagram in three
+- **Client Delivery Packs.** A whole delivery structure: Instagram in three
   ratios, Google Maps within limits, LinkedIn, clean website files, native
-  client masters — produced as one folder tree in one click.
+  client masters, produced as one organized folder tree in a single batch export.
 - **Watch Folders.** Automation that picks up finished renders from
   DaVinci Resolve, Premiere Pro, Final Cut Pro or CapCut and carries them
   through branding and delivery, optionally into a cloud-synced folder.
@@ -49,7 +49,7 @@ destination, a "passthrough" export that quietly lost most of its bitrate.
   measured output sizes (the app performs the actual encode), split-view
   compression inspection, preserved transparency.
 - **Honest, source-aware quality.** If pixels change, video must be
-  re-encoded — Finalova says so, then preserves dimensions, fractional
+  re-encoded. Finalova says so, then preserves dimensions, fractional
   cadence, codec family, color metadata, bit depth and a quality budget with
   generation headroom.
 
@@ -63,9 +63,9 @@ originals are never modified.
 
 ## Pricing
 
-- Finalova (perpetual): **$99 launch** (list $129) — includes 12 months of
+- Finalova (perpetual): **$99 launch** (list $129), including 12 months of
   updates; the app keeps working forever.
-- Finalova Studio (perpetual): **$249** — adds Client Delivery Packs, Watch
+- Finalova Studio (perpetual): **$249**, adding Client Delivery Packs, Watch
   Folders and web-optimized export sets.
 - Studio subscription: **$19/mo** or **$182/yr**.
 - Update renewal: **$49/yr**, optional and penalty-free.

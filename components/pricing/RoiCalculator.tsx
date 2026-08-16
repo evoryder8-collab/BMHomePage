@@ -53,8 +53,8 @@ export default function RoiCalculator() {
           </h3>
           <p className="mt-5 max-w-sm text-[15.5px] leading-[1.8] text-ink/60">
             Studios charge for the ready-to-post package: every channel, every
-            format, named and organized. Finalova Studio builds it in one
-            click. Slide your numbers.
+            format, named and organized. Finalova Studio builds the approved
+            set in one unified pass. Slide your numbers.
           </p>
 
           <div className="mt-10 space-y-8">
@@ -121,7 +121,7 @@ export default function RoiCalculator() {
               $<RollingNumber value={r.monthlyRevenue} />
             </div>
             <div className="mt-2 text-[15px] italic text-ink/55">
-              every month, for work that takes one click
+              every month, for a delivery prepared in one unified pass
             </div>
           </div>
 

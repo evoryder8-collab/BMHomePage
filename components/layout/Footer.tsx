@@ -15,6 +15,7 @@ const COLUMNS = [
   {
     title: "Company",
     links: [
+      ["/about", "About the studio"],
       ["/press", "Press room"],
       ["/contact", "Contact"],
       ["/account", "Your account"],
@@ -78,7 +79,7 @@ export default function Footer() {
 
       <div className="container-page bm-footer-bottom">
         <span>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</span>
-        <span>Zürich, Switzerland · 47.3769° N, 8.5417° E</span>
+        <span>Conceived and built in Zürich, Switzerland · 47.3769° N, 8.5417° E.</span>
       </div>
     </footer>
   );

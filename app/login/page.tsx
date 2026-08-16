@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import AuthForm from "@/components/auth/AuthForm";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Log in",
   description: "Access your Barbu Media licenses, downloads and invoices.",
-};
+  path: "/login/",
+  noIndex: true,
+});
 
 export default function LoginPage() {
   return (

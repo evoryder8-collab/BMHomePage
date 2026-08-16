@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/ui/Reveal";
 import { withBase, SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Press",
   description:
     "Press briefs, product facts and contact for journalists covering Barbu Media, Finalova and B∕A Studio.",
-};
+  path: "/press/",
+  keywords: [
+    "Barbu Media press kit",
+    "Finalova press kit",
+    "B/A Studio press kit",
+  ],
+});
 
 const FACTS = [
   ["Company", "Barbu Media, sole proprietorship, Zürich, Switzerland"],

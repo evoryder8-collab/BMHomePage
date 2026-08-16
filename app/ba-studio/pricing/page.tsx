@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Reveal from "@/components/ui/Reveal";
 import PricingSwitcher from "@/components/pricing/PricingSwitcher";
 import AppStoreBadge from "@/components/ui/AppStoreBadge";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "B∕A Studio Pricing",
   description:
     "Choose B∕A Studio Lite, Pro or Lifetime. Subscription and lifetime options for Mac, with the iPhone edition on the App Store.",
-};
+  path: "/ba-studio/pricing/",
+  keywords: ["B/A Studio price", "before and after app pricing", "aesthetics photography software"],
+});
 
 const BA_ACCENT: [string, string] = ["#361528", "#62c4aa"];
 

@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/ui/Reveal";
 import StoreProducts from "@/components/store/StoreProducts";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Software Store",
   description:
     "Buy Finalova or B∕A Studio directly from Barbu Media Software. Perpetual and subscription options with a free trial.",
-};
+  path: "/store/",
+  keywords: ["buy Finalova", "B/A Studio pricing", "Mac software perpetual license"],
+});
 
 export default function StorePage() {
   return (

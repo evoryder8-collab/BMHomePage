@@ -15,7 +15,8 @@ const LINKS = [
 const MOBILE_LINKS = [
   ...LINKS,
   { href: "/store", label: "Store" },
-  { href: "/press", label: "Company" },
+  { href: "/about", label: "About" },
+  { href: "/press", label: "Press" },
   { href: "/contact", label: "Contact" },
   { href: "/login", label: "Log in" },
 ];

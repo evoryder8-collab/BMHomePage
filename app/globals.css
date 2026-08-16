@@ -15,6 +15,366 @@
   --color-aurora-to: #3ebce7;
 }
 
+/* About the studio */
+.about-world {
+  color: #f3eee6;
+  background: #09090a;
+}
+
+.about-hero {
+  position: relative;
+  min-height: min(54rem, calc(100svh - 4.25rem));
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 82% 22%, rgba(119,91,113,.32), transparent 27rem),
+    radial-gradient(circle at 72% 78%, rgba(179,171,158,.12), transparent 25rem),
+    #09090a;
+}
+
+.about-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  opacity: .22;
+  background-image:
+    linear-gradient(rgba(243,238,230,.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243,238,230,.09) 1px, transparent 1px);
+  background-size: 8rem 8rem;
+  mask-image: linear-gradient(90deg, transparent, #000 55%, transparent);
+}
+
+.about-hero-orbit {
+  position: absolute;
+  z-index: -1;
+  top: 12%;
+  right: -8rem;
+  width: min(56vw, 49rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(221,211,201,.16);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 5rem rgba(255,255,255,.018),
+    0 0 0 10rem rgba(255,255,255,.012),
+    inset 0 0 8rem rgba(145,105,137,.16);
+  transform: rotate(-14deg) scaleY(.52);
+}
+
+.about-hero-layout {
+  display: grid;
+  min-height: min(54rem, calc(100svh - 4.25rem));
+  grid-template-columns: .34fr 1.25fr .7fr;
+  align-content: center;
+  gap: clamp(1.5rem, 4vw, 5rem);
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.about-label {
+  color: rgba(243,238,230,.48);
+  font-family: var(--font-ui);
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .17em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.about-hero h1 {
+  color: #f3eee6;
+  font-family: var(--font-body);
+  font-size: clamp(4.7rem, 7vw, 8rem);
+  font-weight: 350;
+  letter-spacing: -.065em;
+  line-height: .86;
+}
+
+.about-hero h1 em,
+.about-values h2 em {
+  color: #b6a8b5;
+  font-family: var(--font-didone);
+  font-weight: 400;
+}
+
+.about-hero-intro {
+  max-width: 31rem;
+  color: rgba(243,238,230,.67);
+  font-size: 1.02rem;
+  line-height: 1.78;
+}
+
+.about-stamp {
+  align-self: end;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(243,238,230,.17);
+  color: rgba(243,238,230,.47);
+  font-family: var(--font-ui);
+}
+
+.about-stamp span,
+.about-stamp small {
+  display: block;
+  font-size: .54rem;
+  letter-spacing: .12em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.about-stamp strong {
+  display: block;
+  margin-block: .5rem;
+  color: #f3eee6;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.about-story {
+  color: #2f2b2f;
+  background: #d9d3c9;
+  border-block: 1px solid rgba(18,18,19,.22);
+}
+
+.about-chapter {
+  display: grid;
+  grid-template-columns: .42fr 1fr 1.08fr;
+  gap: clamp(2rem, 4vw, 5rem);
+  padding-block: clamp(4rem, 7vw, 7rem);
+  border-bottom: 1px solid rgba(47,43,47,.17);
+}
+
+.about-chapter:last-child {
+  border-bottom: 0;
+}
+
+.about-chapter-index span,
+.about-chapter-index small {
+  display: block;
+}
+
+.about-chapter-index span {
+  color: #765271;
+  font-family: var(--font-body);
+  font-size: clamp(3rem, 4vw, 5rem);
+  font-weight: 350;
+  line-height: 1;
+}
+
+.about-chapter-index small {
+  margin-top: 1rem;
+  color: rgba(47,43,47,.52);
+  font-family: var(--font-ui);
+  font-size: .56rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.about-chapter h2 {
+  max-width: 28rem;
+  font-family: var(--font-body);
+  font-size: clamp(2.6rem, 4.3vw, 5rem);
+  font-weight: 350;
+  letter-spacing: -.055em;
+  line-height: .96;
+}
+
+.about-chapter > div:last-child {
+  max-width: 37rem;
+}
+
+.about-chapter > div:last-child p {
+  color: rgba(47,43,47,.72);
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+.about-chapter > div:last-child p + p {
+  margin-top: 1.25rem;
+}
+
+.about-values {
+  padding-block: clamp(6rem, 10vw, 10rem);
+  background:
+    radial-gradient(circle at 10% 15%, rgba(118,82,113,.2), transparent 28rem),
+    #0c0c0d;
+}
+
+.about-values-head {
+  display: grid;
+  grid-template-columns: .43fr 1.57fr;
+  gap: 3rem;
+  margin-bottom: clamp(3.5rem, 6vw, 6rem);
+}
+
+.about-values h2 {
+  font-family: var(--font-body);
+  font-size: clamp(3.7rem, 6.2vw, 7rem);
+  font-weight: 350;
+  letter-spacing: -.062em;
+  line-height: .9;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgba(243,238,230,.15);
+}
+
+.about-values-grid article {
+  min-height: 24rem;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  border-right: 1px solid rgba(243,238,230,.15);
+}
+
+.about-values-grid > *:last-child article {
+  border-right: 0;
+}
+
+.about-values-grid span {
+  color: #b6a8b5;
+  font-family: var(--font-ui);
+  font-size: .62rem;
+  letter-spacing: .15em;
+}
+
+.about-values-grid h3 {
+  margin-top: 8rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.8rem, 2.7vw, 3rem);
+  font-weight: 350;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+
+.about-values-grid p {
+  margin-top: 1.4rem;
+  color: rgba(243,238,230,.58);
+  line-height: 1.75;
+}
+
+.about-closing {
+  padding-block: clamp(6rem, 10vw, 10rem);
+  color: #2f2b2f;
+  background: #ece7df;
+}
+
+.about-closing .about-label {
+  color: rgba(47,43,47,.5);
+}
+
+.about-closing-layout {
+  display: grid;
+  grid-template-columns: 1.15fr .7fr;
+  gap: clamp(3rem, 8vw, 9rem);
+}
+
+.about-closing h2 {
+  max-width: 50rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: clamp(3.3rem, 5.5vw, 6.5rem);
+  font-weight: 350;
+  letter-spacing: -.06em;
+  line-height: .92;
+}
+
+.about-closing-layout > div:last-child > p {
+  color: rgba(47,43,47,.67);
+  line-height: 1.75;
+}
+
+.about-closing-layout > div:last-child > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .about-hero-layout {
+    grid-template-columns: .35fr 1.65fr;
+  }
+
+  .about-hero-layout > div:nth-child(3),
+  .about-hero-layout > div:nth-child(4) {
+    grid-column: 2;
+  }
+
+  .about-chapter {
+    grid-template-columns: .3fr 1.1fr;
+  }
+
+  .about-chapter > div:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-hero-layout {
+    display: block;
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
+
+  .about-hero h1 {
+    margin-top: 1.5rem;
+    font-size: clamp(3.8rem, 17vw, 5.4rem);
+  }
+
+  .about-hero-intro {
+    margin-top: 2rem;
+  }
+
+  .about-stamp {
+    margin-top: 3rem;
+  }
+
+  .about-chapter {
+    display: block;
+    padding-block: 4rem;
+  }
+
+  .about-chapter h2 {
+    margin-top: 2.5rem;
+    font-size: clamp(3rem, 14vw, 4rem);
+  }
+
+  .about-chapter > div:last-child {
+    margin-top: 2rem;
+  }
+
+  .about-values-head,
+  .about-values-grid,
+  .about-closing-layout {
+    display: block;
+  }
+
+  .about-values h2 {
+    margin-top: 1.5rem;
+    font-size: clamp(3.3rem, 15vw, 4.7rem);
+  }
+
+  .about-values-grid article {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(243,238,230,.15);
+  }
+
+  .about-values-grid > *:last-child article {
+    border-bottom: 0;
+  }
+
+  .about-values-grid h3 {
+    margin-top: 4rem;
+  }
+
+  .about-closing-layout > div:last-child {
+    margin-top: 2.5rem;
+  }
+}
+
 :root {
   color-scheme: light;
   --font-body: var(--font-newsreader), "Newsreader", Georgia, serif;
@@ -1889,7 +2249,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Barbu Media Software — publisher identity                                  */
+/* Barbu Media Software: publisher identity                                   */
 /* -------------------------------------------------------------------------- */
 
 .bm-logo strong {
@@ -2499,7 +2859,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Finalova — industrial media system                                          */
+/* Finalova: industrial media system                                           */
 /* -------------------------------------------------------------------------- */
 
 .finalova-world {
@@ -3128,7 +3488,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------- */
-/* B/A Studio — warm editorial evidence system                               */
+/* B/A Studio: warm editorial evidence system                                */
 /* -------------------------------------------------------------------------- */
 
 .ba-world {
@@ -3734,7 +4094,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Commerce — luminous software ownership                                     */
+/* Commerce: luminous software ownership                                      */
 /* -------------------------------------------------------------------------- */
 
 .pricing-system {
@@ -4555,7 +4915,7 @@ img {
   font-size: .57rem;
 }
 
-/* Publisher home — a luminous media blueprint with a calm editorial copy field. */
+/* Publisher home: a luminous media blueprint with a calm editorial copy field. */
 .publisher-hero {
   min-height: min(52rem, calc(100svh - 4.25rem));
   color: #433549;
@@ -4891,7 +5251,7 @@ img {
   color: #f5f0e7;
 }
 
-/* Finalova — calm product authority, with copy and imagery kept separate. */
+/* Finalova: calm product authority, with copy and imagery kept separate. */
 .fin-hero {
   min-height: min(50rem, calc(100svh - 4.25rem));
   background: #101010;
@@ -5029,7 +5389,7 @@ img {
   background: #131313;
 }
 
-/* B/A Studio — editorial evidence, not a decorative template. */
+/* B/A Studio: editorial evidence, not a decorative template. */
 .ba-hero {
   min-height: min(50rem, calc(100svh - 4.25rem));
   background: #e6ded4;

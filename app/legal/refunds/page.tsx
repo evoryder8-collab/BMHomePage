@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/legal/LegalLayout";
 import { SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Refund Policy",
   description: "14-day money-back guarantee on direct purchases.",
-};
+  path: "/legal/refunds/",
+});
 
 export default function RefundsPage() {
   return (

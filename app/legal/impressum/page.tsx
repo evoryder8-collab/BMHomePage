@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/legal/LegalLayout";
 import { SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Impressum",
   description: "Legal disclosure for Barbu Media, Zürich, Switzerland.",
-};
+  path: "/legal/impressum/",
+});
 
 export default function ImpressumPage() {
   return (

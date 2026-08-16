@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Reveal from "@/components/ui/Reveal";
 import PricingSwitcher from "@/components/pricing/PricingSwitcher";
 import RoiCalculator from "@/components/pricing/RoiCalculator";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Finalova Pricing",
   description:
     "Choose Finalova or Finalova Studio. Pay once or subscribe, with a 14-day full trial and perpetual ownership options.",
-};
+  path: "/finalova/pricing/",
+  keywords: ["Finalova price", "Finalova Studio license", "media delivery software pricing"],
+});
 
 const FINALOVA_ACCENT: [string, string] = ["#ff553d", "#65ddec"];
 

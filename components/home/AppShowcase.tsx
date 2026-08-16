@@ -23,7 +23,7 @@ const PRODUCTS = [
     category: "Before-and-after proof · Mac & iPhone",
     name: "B∕A Studio",
     promise: "Credible evidence, beautifully presented.",
-    body: "Capture, align, measure and publish defensible before-and-after results—privately, with honest geometry.",
+    body: "Capture comparable images, measure visible change and publish credible before-and-after results while client records remain private.",
     image: "/art/ba-studio-devices.webp",
     imageAlt:
       "B/A Studio on a Mac and iPhone showing a measured before-and-after comparison",
@@ -38,20 +38,20 @@ export default function AppShowcase() {
         <div className="publisher-products-head">
           <Reveal>
             <p className="publisher-overline publisher-overline-dark">
-              The software · 01—02
+              The software
             </p>
           </Reveal>
           <Reveal delay={0.06}>
             <h2 id="products-title">
-              Two products.
+              Focused tools.
               <br />
-              <em>Each given its own world.</em>
+              <em>Each built around a distinct professional job.</em>
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p>
-              Finalova and B∕A Studio solve unrelated professional problems.
-              The connection is simply the standard behind them.
+              Finalova and B∕A Studio solve different professional problems.
+              What connects them is the care taken over the full working job.
             </p>
           </Reveal>
         </div>

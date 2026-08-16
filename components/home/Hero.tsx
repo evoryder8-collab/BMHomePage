@@ -13,8 +13,8 @@ export default function Hero() {
         <img
           className="publisher-hero-art rise"
           style={d(0.08)}
-          src={withBase("/art/barbu-media-signal-blueprint-pearl.png")}
-          alt="A pearl-toned media blueprint connecting master frames, aspect ratios, timelines and audio waveforms"
+          src={withBase("/art/barbu-media-ar-orbit.webp")}
+          alt="A cinematic spatial media workflow with floating Finalova interfaces, social platform outputs and a B/A Studio comparison"
           width="1672"
           height="941"
           loading="eager"
@@ -32,7 +32,7 @@ export default function Hero() {
               <em>thought through.</em>
             </h1>
             <p className="publisher-hero-lede rise" style={d(0.19)}>
-              Focused professional tools, designed around the whole job—not
+              Focused professional tools, designed around the whole job, not
               just the feature that fits on a sales page.
             </p>
             <div className="publisher-hero-actions rise" style={d(0.27)}>
@@ -45,7 +45,7 @@ export default function Hero() {
 
           <div className="publisher-hero-index rise" style={d(0.32)}>
             <span>Conceived and engineered in Switzerland</span>
-            <strong>CH—ZH</strong>
+            <strong>CH / ZH</strong>
             <small>Independent · private · product-led</small>
           </div>
         </div>
