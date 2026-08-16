@@ -71,6 +71,56 @@ test("hero renders under reduced motion", async ({ browser, baseURL }) => {
   await ctx.close();
 });
 
+test("key pages remain contained and readable on mobile", async ({
+  browser,
+  baseURL,
+}) => {
+  const ctx = await browser.newContext({
+    deviceScaleFactor: 3,
+    isMobile: true,
+    viewport: { width: 390, height: 844 },
+  });
+  const page = await ctx.newPage();
+
+  for (const path of [
+    "",
+    "apps/",
+    "finalova/",
+    "ba-studio/",
+    "about/",
+    "store/",
+  ]) {
+    await page.goto(`${baseURL}${path}`);
+    await expect(page.locator("h1").first()).toBeVisible();
+
+    const layout = await page.evaluate(() => ({
+      bodyWidth: document.body.scrollWidth,
+      headingSize: Number.parseFloat(
+        getComputedStyle(document.querySelector("h1")!).fontSize,
+      ),
+      overflowers: [...document.querySelectorAll<HTMLElement>("body *")]
+        .filter((element) => element.getBoundingClientRect().right > innerWidth + 1)
+        .slice(0, 8)
+        .map((element) => ({
+          className: element.className,
+          right: Math.round(element.getBoundingClientRect().right),
+          tagName: element.tagName,
+        })),
+      viewportWidth: document.documentElement.clientWidth,
+    }));
+
+    expect(
+      layout.bodyWidth,
+      `${path || "/"} should not overflow: ${JSON.stringify(layout.overflowers)}`,
+    ).toBeLessThanOrEqual(layout.viewportWidth + 1);
+    expect(layout.headingSize, `${path || "/"} heading should stay legible`).toBeGreaterThan(
+      38,
+    );
+  }
+
+  await ctx.close();
+});
+
 test("login form shows inline error for bad credentials", async ({ page }) => {
   await page.goto("login/");
   await page.getByPlaceholder("you@studio.com").fill("nobody@example.com");
