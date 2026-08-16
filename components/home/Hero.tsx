@@ -8,15 +8,15 @@ export default function Hero() {
     <>
       <section className="publisher-hero" aria-labelledby="home-title">
         <div className="publisher-hero-rule" aria-hidden />
-        {/* A human-scale studio represents the publisher; products retain their own imagery. */}
+        {/* The publisher is expressed as a media system; products retain their own imagery. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="publisher-hero-art rise"
           style={d(0.08)}
-          src={withBase("/art/barbu-media-signal-blueprint.png")}
-          alt="A media transformation blueprint connecting video frames, aspect ratios, timelines and audio waveforms"
-          width="1536"
-          height="1024"
+          src={withBase("/art/barbu-media-signal-blueprint-pearl.png")}
+          alt="A pearl-toned media blueprint connecting master frames, aspect ratios, timelines and audio waveforms"
+          width="1672"
+          height="941"
           loading="eager"
           decoding="async"
         />

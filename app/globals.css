@@ -4555,15 +4555,22 @@ img {
   font-size: .57rem;
 }
 
-/* Publisher home — a true split canvas rather than copy laid over artwork. */
+/* Publisher home — a luminous media blueprint with a calm editorial copy field. */
 .publisher-hero {
   min-height: min(52rem, calc(100svh - 4.25rem));
-  background: #0d0d0d;
+  color: #433549;
+  background:
+    radial-gradient(circle at 88% 74%, rgba(230,213,226,.72), transparent 32%),
+    radial-gradient(circle at 80% 12%, rgba(212,235,240,.82), transparent 34%),
+    #f3f6f6;
 }
 
 .publisher-hero::before {
   z-index: 1;
-  background: linear-gradient(90deg, #0d0d0d 0%, #0d0d0d 41%, rgba(13,13,13,.92) 47%, rgba(13,13,13,.08) 59%, transparent 100%);
+  display: block;
+  background:
+    linear-gradient(90deg, rgba(246,248,248,1) 0%, rgba(246,248,248,.98) 35%, rgba(246,248,248,.82) 47%, rgba(246,248,248,.08) 65%, transparent 100%),
+    linear-gradient(0deg, rgba(237,227,237,.28), transparent 38%);
 }
 
 .publisher-hero::after,
@@ -4574,12 +4581,12 @@ img {
 .publisher-hero-art {
   top: 0;
   right: 0;
-  width: 58%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 61% center;
+  object-position: center;
   transform: none;
-  filter: saturate(1.05) contrast(1.04);
+  filter: saturate(1.01) contrast(1.01);
 }
 
 .publisher-hero-inner {
@@ -4595,8 +4602,13 @@ img {
 }
 
 .publisher-overline {
+  color: rgba(67,53,73,.56);
   font-size: .57rem;
   letter-spacing: .18em;
+}
+
+.publisher-overline span {
+  color: #8d6685;
 }
 
 .publisher-hero h1 {
@@ -4607,10 +4619,11 @@ img {
   font-weight: 350;
   letter-spacing: -.058em;
   line-height: .88;
+  color: #433549;
 }
 
 .publisher-hero h1 em {
-  color: #f3efe6;
+  color: #765271;
   font-family: var(--font-body);
   font-weight: 350;
   letter-spacing: -.058em;
@@ -4619,10 +4632,26 @@ img {
 .publisher-hero-lede {
   max-width: 30rem;
   margin-top: 1.8rem;
-  color: rgba(243,239,230,.66);
+  color: rgba(67,53,73,.66);
   font-family: var(--font-ui);
   font-size: 1rem;
   line-height: 1.65;
+}
+
+.home-page .publisher-hero .bm-button-primary {
+  color: #f8f7f4;
+  background: #433549;
+  box-shadow: 0 1.1rem 2.8rem -1rem rgba(67,53,73,.35);
+}
+
+.home-page .publisher-hero .bm-button-ghost {
+  border-color: rgba(67,53,73,.25);
+  color: #433549;
+  background: rgba(255,255,255,.42);
+}
+
+.home-page .publisher-hero .bm-button-ghost:hover {
+  border-color: rgba(67,53,73,.52);
 }
 
 .publisher-hero-index {
@@ -5127,7 +5156,7 @@ img {
 
 @media (max-width: 1080px) {
   .publisher-hero-art {
-    width: 61%;
+    width: 100%;
     right: 0;
     opacity: 1;
   }
