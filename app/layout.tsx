@@ -6,6 +6,7 @@ import AmbientBackground from "@/components/layout/AmbientBackground";
 import CartDrawer from "@/components/cart/CartDrawer";
 import CheckoutModal from "@/components/cart/CheckoutModal";
 import JsonLd from "@/components/seo/JsonLd";
+import SpatialVfx from "@/components/ui/SpatialVfx";
 import { CartProvider } from "@/lib/cart";
 import { AuthProvider } from "@/lib/auth";
 import { SITE } from "@/lib/site";
@@ -98,6 +99,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col antialiased">
         <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
         <AmbientBackground />
+        <SpatialVfx />
         <AuthProvider>
           <CartProvider>
             <Nav />

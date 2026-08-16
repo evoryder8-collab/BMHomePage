@@ -68,6 +68,12 @@ test("hero renders under reduced motion", async ({ browser, baseURL }) => {
   const page = await ctx.newPage();
   await page.goto(baseURL!);
   await expect(page.locator("h1")).toContainText("Useful software,");
+  await expect(page.locator("html")).toHaveAttribute("data-bm-vfx", "reduced");
+  expect(
+    await page.locator(".publisher-hero").evaluate((element) =>
+      getComputedStyle(element).animationName,
+    ),
+  ).toBe("none");
   await ctx.close();
 });
 
@@ -116,6 +122,18 @@ test("key pages remain contained and readable on mobile", async ({
     expect(layout.headingSize, `${path || "/"} heading should stay legible`).toBeGreaterThan(
       38,
     );
+
+    if (path === "apps/") {
+      const productImage = await page
+        .locator(".software-directory-product > img")
+        .first()
+        .evaluate((element) => ({
+          filter: getComputedStyle(element).filter,
+          opacity: getComputedStyle(element).opacity,
+        }));
+      expect(productImage.opacity).toBe("1");
+      expect(productImage.filter).toContain("contrast(1.15)");
+    }
   }
 
   await ctx.close();
