@@ -74,7 +74,36 @@ test("hero renders under reduced motion", async ({ browser, baseURL }) => {
       getComputedStyle(element).animationName,
     ),
   ).toBe("none");
+  expect(
+    await page.locator(".publisher-proofline-track").evaluate((element) =>
+      getComputedStyle(element).animationName,
+    ),
+  ).toBe("none");
   await ctx.close();
+});
+
+test("homepage proof line is a moving, high-contrast marquee", async ({ page }) => {
+  await page.goto(".");
+
+  const proofline = page.locator(".publisher-proofline");
+  await expect(proofline).toBeVisible();
+  await expect(page.locator(".publisher-proofline-group")).toHaveCount(2);
+
+  const presentation = await proofline.evaluate((element) => {
+    const track = element.querySelector<HTMLElement>(".publisher-proofline-track")!;
+    const item = element.querySelector<HTMLElement>(".publisher-proofline-group span")!;
+    return {
+      animationName: getComputedStyle(track).animationName,
+      background: getComputedStyle(element).backgroundImage,
+      color: getComputedStyle(item).color,
+      overflow: getComputedStyle(element).overflowX,
+    };
+  });
+
+  expect(presentation.animationName).toBe("bm-proofline-marquee");
+  expect(presentation.background).toContain("linear-gradient");
+  expect(presentation.color).toContain("255, 255, 255");
+  expect(presentation.overflow).toBe("hidden");
 });
 
 test("key pages remain contained and readable on mobile", async ({
@@ -122,6 +151,23 @@ test("key pages remain contained and readable on mobile", async ({
     expect(layout.headingSize, `${path || "/"} heading should stay legible`).toBeGreaterThan(
       38,
     );
+
+    if (path === "") {
+      const homeEffects = await page.evaluate(() => ({
+        buttonShadow: getComputedStyle(
+          document.querySelector<HTMLElement>(".publisher-hero .btn-leaf")!,
+        ).boxShadow,
+        marqueeAnimation: getComputedStyle(
+          document.querySelector<HTMLElement>(".publisher-proofline-track")!,
+        ).animationName,
+        vfxAnimation: getComputedStyle(
+          document.querySelector<HTMLElement>(".publisher-hero-vfx-cyan")!,
+        ).animationName,
+      }));
+      expect(homeEffects.buttonShadow).not.toBe("none");
+      expect(homeEffects.marqueeAnimation).toBe("bm-proofline-marquee");
+      expect(homeEffects.vfxAnimation).toBe("bm-hero-cyan-breathe");
+    }
 
     if (path === "apps/") {
       const productImage = await page

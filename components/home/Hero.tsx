@@ -4,10 +4,23 @@ import { withBase } from "@/lib/site";
 const d = (seconds: number) => ({ animationDelay: `${seconds}s` });
 
 export default function Hero() {
+  const principles = [
+    "Useful on day one",
+    "Private by construction",
+    "Built with judgment",
+    "Native Apple Silicon",
+    "Conceived in Zürich",
+  ];
+
   return (
     <>
       <section className="publisher-hero" aria-labelledby="home-title">
         <div className="publisher-hero-rule" aria-hidden />
+        <div className="publisher-hero-vfx" aria-hidden>
+          <span className="publisher-hero-vfx-cyan" />
+          <span className="publisher-hero-vfx-pink" />
+          <span className="publisher-hero-vfx-prism" />
+        </div>
         {/* The publisher is expressed as a media system; products retain their own imagery. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -56,10 +69,22 @@ export default function Hero() {
         </a>
       </section>
 
-      <div className="publisher-proofline" aria-label="Barbu Media Software principles">
-        <span>Useful on day one</span>
-        <span>Private by construction</span>
-        <span>Built with judgment</span>
+      <div
+        className="publisher-proofline"
+        aria-label="Barbu Media Software principles"
+      >
+        <div className="publisher-proofline-track">
+          <div className="publisher-proofline-group">
+            {principles.map((principle) => (
+              <span key={principle}>{principle}</span>
+            ))}
+          </div>
+          <div className="publisher-proofline-group" aria-hidden="true">
+            {principles.map((principle) => (
+              <span key={principle}>{principle}</span>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

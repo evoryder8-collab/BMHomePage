@@ -32,13 +32,13 @@ export default function Button({
   if (href) {
     return (
       <Link href={href} className={cls}>
-        {children}
+        <span className="btn-leaf-label">{children}</span>
       </Link>
     );
   }
   return (
     <button type={type} onClick={onClick} className={cls} disabled={disabled}>
-      {children}
+      <span className="btn-leaf-label">{children}</span>
     </button>
   );
 }
