@@ -10,6 +10,8 @@ const ROUTES = [
   { path: "/apps", priority: 0.9, changeFrequency: "monthly" },
   { path: "/finalova", priority: 0.95, changeFrequency: "weekly", images: ["/art/finalova-devices.webp", "/screenshots/finalova/window-main.webp", "/screenshots/finalova/delivery-pack.webp"] },
   { path: "/finalova/pricing", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/finalova/privacy", priority: 0.3, changeFrequency: "yearly", updated: "2026-10-04T00:00:00+02:00" },
+  { path: "/finalova/support", priority: 0.6, changeFrequency: "monthly", updated: "2026-10-04T00:00:00+02:00" },
   { path: "/ba-studio", priority: 0.95, changeFrequency: "weekly", images: ["/art/ba-studio-devices.webp", "/screenshots/ba-studio/editorial-card.webp", "/screenshots/ba-studio/measurement.webp"] },
   { path: "/ba-studio/pricing", priority: 0.9, changeFrequency: "weekly" },
   { path: "/store", priority: 0.9, changeFrequency: "weekly" },
@@ -25,7 +27,7 @@ const ROUTES = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return ROUTES.map((route) => ({
     url: `${SITE.url}${route.path}/`,
-    lastModified: LAST_UPDATED,
+    lastModified: "updated" in route ? new Date(route.updated) : LAST_UPDATED,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
     images: "images" in route
