@@ -2,7 +2,7 @@ import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Finalova for iPhone — Support",
+  title: "Finalova for iPhone: Support",
   description: "Help with Finalova media, captions, exports and Apple-managed Premium purchases.",
   path: "/finalova/support/",
 });

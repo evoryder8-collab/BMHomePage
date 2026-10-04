@@ -3,7 +3,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Finalova for iPhone — Privacy Policy",
+  title: "Finalova for iPhone: Privacy Policy",
   description: "How Finalova for iPhone handles your media, saved work, permissions and App Store purchases.",
   path: "/finalova/privacy/",
 });
